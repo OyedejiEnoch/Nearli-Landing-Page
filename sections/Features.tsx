@@ -2,95 +2,134 @@
 import Tagline from '@/components/Tagline';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { Heart, MapPin, MessageSquare, BarChart3, Smartphone, UserPlus, Tag } from 'lucide-react';
+import { Heart, MapPin, MessageSquare, BarChart3, Smartphone, UserPlus } from 'lucide-react';
 import { useRef } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
     icon: Heart,
     title: "Social Product Posts",
-    description: "Every product you list becomes engaging social content that customers can like, comment on, and share"
+    description: "Every product you list becomes engaging social content that customers can like, comment on, and share."
   },
   {
     icon: UserPlus,
     title: "Store Follows & Engagement",
-    description: "Build a loyal following. Customers can follow your store and get notified when you post new products"
+    description: "Build a loyal following. Customers can follow your store and get notified when you post new products."
   },
   {
     icon: MapPin,
     title: "Location-Based Discovery",
-    description: "Get discovered by customers nearby. Our algorithm shows your products to people in your area first"
+    description: "Get discovered by customers nearby. Our algorithm shows your products to people in your area first."
   },
   {
     icon: BarChart3,
     title: "Seller Dashboard",
-    description: "Track views, likes, followers, and sales. Understand what products resonate with your audience"
+    description: "Track views, likes, followers, and sales. Understand what products resonate with your audience."
   },
   {
     icon: MessageSquare,
     title: "Direct Messaging",
-    description: "Chat with customers directly. Answer questions, negotiate, and close sales in one place"
+    description: "Chat with customers directly. Answer questions, negotiate, and close sales — all in one place."
   },
   {
     icon: Smartphone,
     title: "Mobile-First Experience",
-    description: "Built for the way you work. Manage your entire business from your phone, anywhere, anytime"
+    description: "Built for the way you work. Manage your entire business from your phone, anywhere, anytime."
   }
 ];
+
 export function Features() {
+    const containerRef = useRef<HTMLDivElement>(null);
     const featuresRef = useRef<(HTMLDivElement | null)[]>([])
 
-    useGSAP(()=>{
+    useGSAP(() => {
+      const tl = gsap.timeline({
+        scrollTrigger:{
+          trigger: containerRef.current,
+          start:'top 65%',
+        }
+      });
 
-    const tl =gsap.timeline({
-      scrollTrigger:{
-        trigger:'#features',
-        start:'top 35%',
-      }
-    })
+      tl.from(".features-heading .word-reveal", {
+        yPercent: 100,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power4.out"
+      });
 
-        // tl.from("#features h2", {opacity:0, duration:0.7, ease:"power1.inOut"})
-        // tl.from("#features p", {opacity:0, duration:0.6, ease:"power1.inOut"})
-      .to(featuresRef.current, { //animating 
-        y: 0,
-        delay:0.2,
-        opacity: 1,
-        duration: 1.3,
-        stagger: 0.18,
-        ease: "back.out",
-        
-      }, '-=0.2');
+      tl.from(".features-desc", {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        ease: "power2.out"
+      }, "-=0.4");
 
-  },[])
+      tl.from(featuresRef.current, {
+        y: 40,
+        opacity: 0,
+        duration: 1.2,
+        stagger: 0.1,
+        ease: "expo.out",
+      }, "-=0.2");
+
+      // Highlight section parallax
+      gsap.from(".highlight-img", {
+        scale: 1.15,
+        opacity: 0.8,
+        scrollTrigger: {
+            trigger: ".highlight-container",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+        }
+      });
+    }, { scope: containerRef });
 
   return (
-    <section id="features" className="py-16 md:py-24 lg:py-32 bg-white">
-      <div className="container mx-auto px-4 lg:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
+    <section ref={containerRef} id="features" className="py-20 md:py-28 lg:py-36 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
             <Tagline text='Features' />
-
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-900 mb-6 font-medium">
-            Everything You Need to Succeed
+          <h2 className="features-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#1a1a1a] mb-6 font-bold tracking-tight">
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block">EVERYTHING</span>
+            </div>
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block">YOU</span>
+            </div>
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block text-[#0F2854]">NEED</span>
+            </div>
+            <br />
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block">TO</span>
+            </div>
+            <div className="overflow-hidden inline-block">
+              <span className="word-reveal inline-block">SUCCEED.</span>
+            </div>
           </h2>
-          <p className="text-sm md:text-lg lg:text-xl text-gray-600">
-            Powerful tools designed for small businesses, not enterprise complexity
+          <p className="features-desc text-base md:text-lg text-[#555] max-w-lg mx-auto leading-relaxed">
+            Powerful tools designed for small businesses, not enterprise complexity.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px max-w-7xl mx-auto bg-[#e5e5e5]">
           {features.map((feature, index) => (
             <div 
               key={index}
                ref={(el) => { featuresRef.current[index] = el }}
-              className="group translate-y-25 opacity-0 relative bg-white rounded-3xl p-8 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 border border-gray-200"
+              className="bg-white p-8 lg:p-10 group hover:bg-[#F8F7F4] transition-colors duration-500"
             >
-              <div className="w-16 h-16 bg-linear-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-purple-500/20">
-                <feature.icon className="w-8 h-8 text-white" />
+              <div className="w-12 h-12 bg-[#0F2854] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 ease-elastic shadow-lg shadow-navy/20">
+                <feature.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-[#1a1a1a] mb-3 group-hover:text-[#0F2854] transition-colors duration-500">
                 {feature.title}
               </h3>
-              <p className="text-base text-gray-600 leading-relaxed">
+              <p className="text-sm text-[#555] leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -98,42 +137,35 @@ export function Features() {
         </div>
 
         {/* Feature Highlight */}
-        <div className="mt-24 max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center bg-linear-to-br from-purple-50 via-blue-50 to-purple-50 rounded-3xl p-10 md:p-14 lg:p-16 shadow-xl shadow-purple-500/5 border border-purple-100">
+        <div className="highlight-container mt-24 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center bg-[#F8F7F4] p-10 md:p-14 lg:p-16 border border-[#e5e5e5] overflow-hidden">
             <div>
-              <h3 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6 leading-tight">
-                Designed for Mobile-First Users
+              <h3 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6 leading-tight font-[family-name:var(--font-barlow)] tracking-tight uppercase">
+                Designed for mobile-first users
               </h3>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 font-light leading-relaxed">
-                In emerging markets, your phone is your office. We built our platform mobile-first because that's how you and your customers actually work.
+              <p className="text-base md:text-lg text-[#555] mb-8 leading-relaxed">
+                In emerging markets, your phone is your office. We built our platform mobile-first because that&apos;s how you and your customers actually work.
               </p>
               <ul className="space-y-4">
-                <li className="flex items-start gap-4">
-                  <div className="w-7 h-7 bg-linear-to-br bg-[#0F2854] rounded-full flex items-center justify-center shrink-0 mt-0.5 shadow-sm shadow-purple-500/10">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <span className="text-gray-700 text-lg">Fast loading even on slow connections</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-7 h-7 bg-linear-to-br bg-[#0F2854] rounded-full flex items-center justify-center shrink-0 mt-0.5 shadow-sm shadow-purple-500/10">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <span className="text-gray-700 text-lg">Works offline with smart caching</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-7 h-7 bg-linear-to-br bg-[#0F2854] rounded-full flex items-center justify-center shrink-0 mt-0.5 shadow-sm shadow-purple-500/10">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <span className="text-gray-700 text-lg">Optimized for low data usage</span>
-                </li>
+                {[
+                    "Fast loading even on slow connections",
+                    "Works offline with smart caching",
+                    "Optimized for low data usage"
+                ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-4 group">
+                        <span className="text-[#0F2854] font-bold text-sm mt-0.5 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                        <span className="text-[#333] text-base group-hover:text-[#0F2854] transition-colors duration-300">{item}</span>
+                    </li>
+                ))}
               </ul>
             </div>
-            <div className="relative">
+            <div className="relative overflow-hidden group">
               <img 
-                src="https://images.unsplash.com/photo-1766806756904-bad81fe3b104?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJrZXRwbGFjZSUyMG1vYmlsZSUyMHBob25lJTIwc2hvcHBpbmd8ZW58MXx8fHwxNzY3NzMwNzMzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1766806756904-bad81fe3b104?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                 alt="Mobile shopping"
-                className="rounded-3xl shadow-2xl border border-purple-200"
+                className="highlight-img w-full object-cover group-hover:scale-105 transition-transform duration-1000"
               />
+              <div className="absolute inset-0 bg-navy/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
           </div>
         </div>

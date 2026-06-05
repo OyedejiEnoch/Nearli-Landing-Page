@@ -1,4 +1,5 @@
 "use client"
+import Tagline from '@/components/Tagline';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Users, MessageCircle, TrendingDown, DollarSign } from 'lucide-react';
@@ -8,108 +9,136 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-  const problems = [
-    {
-      icon: Users,
-      title: "Limited Visibility",
-      description: "Your products only reach friends, family and your existing followers, never new customers"
-    },
-    // {
-    //   icon: MessageCircle,
-    //   title: "No Way to Be Discovered",
-    //   description: "No dedicated platform to browse businesses by what they sell. Unlike restaurants or services, product-based businesses remain invisible to shoppers"
-    // },
-    {
-      icon: MessageCircle,
-      title: "WhatsApp Overload",
-      description: "Managing orders through DMs is chaotic and unprofessional"
-    },
-    {
-      icon: TrendingDown,
-      title: "No Online Presence",
-      description: "Building a website is expensive and requires technical skills"
-    },
-    {
-      icon: DollarSign,
-      title: "High Marketing Costs",
-      description: "Ads are too expensive for small budgets and uncertain returns"
-    }
-  ];
+const problems = [
+  {
+    number: "01",
+    title: "Limited Visibility",
+    description: "Your products only reach friends, family and your existing followers — never new customers."
+  },
+  {
+    number: "02",
+    title: "WhatsApp Overload",
+    description: "Managing orders through DMs is chaotic and unprofessional."
+  },
+  {
+    number: "03",
+    title: "No Online Presence",
+    description: "Building a website is expensive and requires technical skills most don't have."
+  },
+  {
+    number: "04",
+    title: "High Marketing Costs",
+    description: "Ads are too expensive for small budgets and uncertain returns."
+  }
+];
 
 export function Problem() {
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([])
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-     useGSAP(()=>{
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '#problem',
-                start: 'top 75%'
-            }
-        })
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 70%'
+      }
+    });
 
-        tl.from('.price-title', { opacity: 0, duration: 0.5, ease: 'power1.in' })
-            //   .to('.price-paragraph', {opacity:1, duration:1}, '-=0.6')
-            tl.to(cardsRef.current, {
-            y: 0,
-            delay:0.2,
-            opacity: 1,
-            duration: 1.2,
-            stagger: 0.22,
-            ease: "back.out",
-            }, '-=0.3');
-    }, [])
-  
- 
+    tl.from(".problem-heading .word-reveal", {
+      yPercent: 100,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: "power4.out"
+    });
+
+    tl.from(".problem-desc", {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: "power2.out"
+    }, "-=0.4");
+
+    tl.from(cardsRef.current, {
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.1,
+      ease: "expo.out"
+    }, "-=0.2");
+
+    tl.from(".testimonial-reveal", {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".testimonial-reveal",
+        start: "top 85%"
+      }
+    });
+  }, { scope: containerRef });
 
   return (
-    <section id='problem' className="py-16 md:py-24 lg:py-32 bg-white">
-      <div className="container mx-auto px-4 lg:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900 mb-6">
-            The Reality for Small Businesses
+    <section ref={containerRef} id='problem' className="py-20 md:py-28 lg:py-36 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
+          <Tagline text="The Problem" />
+          <h2 className="problem-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#1a1a1a] mb-6 tracking-tight">
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block">THE</span>
+            </div>
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block">REALITY</span>
+            </div>
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block text-[#0F2854]">FOR</span>
+            </div>
+            <br />
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block">SMALL</span>
+            </div>
+            <div className="overflow-hidden inline-block">
+              <span className="word-reveal inline-block">BUSINESSES.</span>
+            </div>
           </h2>
-          <p className="problem-paragraph text-sm md:text-lg lg:text-xl text-gray-600">
-            Businesses are invisible online, You have amazing products. But your customers? They're limited to your contacts and people who already know you,
-            which is a struggle to reach beyond your immediate circle
+          <p className="problem-desc text-base md:text-lg text-[#555] max-w-2xl mx-auto leading-relaxed">
+            You have amazing products. But your customers are limited to your contacts 
+            and people who already know you.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px max-w-7xl mx-auto bg-[#e5e5e5] border border-[#e5e5e5]">
           {problems.map((problem, index) => (
             <div 
               key={index}
               ref={(el) => { cardsRef.current[index] = el }}
-              className="translate-y-25 opacity-0  bg-linear-to-br from-gray-50 to-white rounded-3xl p-8 hover:shadow-2xl hover:shadow-purple-500/5 transition-all duration-300 border border-gray-100 group"
+              className="bg-white p-8 lg:p-10 hover:bg-[#F8F7F4] transition-colors duration-500 group"
             >
-              <div className="w-14 h-14 bg-linear-to-br from-purple-100 to-blue-100 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                <problem.icon className="w-7 h-7 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <span className="text-5xl font-bold text-[#e8e8e8] font-[family-name:var(--font-barlow)] block mb-6 group-hover:text-[#0F2854] transition-colors duration-500">
+                {problem.number}
+              </span>
+              <div className="section-divider mb-5 group-hover:w-full transition-all duration-700 ease-in-out"></div>
+              <h3 className="text-lg font-semibold text-[#1a1a1a] mb-3">
                 {problem.title}
               </h3>
-              <p className="text-base text-gray-600 leading-relaxed">
+              <p className="text-sm text-[#555] leading-relaxed">
                 {problem.description}
               </p>
             </div>
           ))}
         </div>
 
-
         {/* Testimonial Quote */}
-        <div className="mt-20 max-w-4xl mx-auto bg-linear-to-br from-purple-50 via-blue-50 to-purple-50 rounded-3xl p-8 md:p-12 lg:p-14 shadow-xl shadow-purple-500/5 border border-purple-100">
-          {/* <div className="flex gap-1 text-purple-500 mb-6 text-xl">
-            {[...Array(5)].map((_, i) => (
-              <span key={i}>★</span>
-            ))}
-          </div> */}
-          <p className="text-xl md:text-2xl lg:text-2xl text-gray-800 mb-6">
-            "I was spending hours on Instagram and WhatsApp just to reach a few customers. I needed something better, something that could help me grow."
+        <div className="testimonial-reveal mt-20 max-w-4xl mx-auto border-t border-[#e5e5e5] pt-12">
+          <p className="text-xl md:text-2xl text-[#1a1a1a] mb-8 leading-relaxed font-light italic">
+            &ldquo;I was spending hours on Instagram and WhatsApp just to reach a few customers. 
+            I needed something better, something that could help me grow.&rdquo;
           </p>
           <div className="flex items-center gap-4">
-            <Image src="/assets/amaka.jpg" alt="Amara K." width={36} height={36} className=' w-14 h-14 object-cover rounded-3xl ring-4 ring-purple-100' />
+            <Image src="/assets/amaka.jpg" alt="Amara K." width={48} height={48} className='w-12 h-12 object-cover rounded-full border-2 border-[#F8F7F4]' />
             <div>
-              <div className="font-semibold text-gray-900 text-lg">Amara K.</div>
-              <div className="text-base text-gray-600">Jewelry Maker, Lagos</div>
+              <div className="font-semibold text-[#1a1a1a] text-sm tracking-wide uppercase">Amara K.</div>
+              <div className="text-xs text-[#888] font-medium tracking-wider uppercase">Jewelry Maker, Lagos</div>
             </div>
           </div>
         </div>

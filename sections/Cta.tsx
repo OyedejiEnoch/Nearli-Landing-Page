@@ -2,103 +2,183 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ArrowRight, Mail } from 'lucide-react';
-import { useState } from 'react';
-
+import { useState, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 export function Cta() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const btnRef = useRef<HTMLDivElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 70%',
+      }
+    });
+
+    tl.from(".cta-heading .word-reveal", {
+      yPercent: 100,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: "power4.out"
+    });
+
+    tl.from(".cta-desc", {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: "power2.out"
+    }, "-=0.4");
+
+    tl.from(".cta-form", {
+        opacity: 0,
+        y: 40,
+        duration: 1.2,
+        ease: "expo.out"
+    }, "-=0.2");
+
+    tl.from(".trust-item", {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".trust-indicators",
+            start: "top 90%"
+        }
+    });
+
+    // Magnetic Button Logic
+    const handleMagnetic = (e: React.MouseEvent) => {
+        if (!btnRef.current) return;
+        const rect = btnRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        gsap.to(btnRef.current, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: "power2.out" });
+    };
+
+    const resetMagnetic = () => {
+        if (!btnRef.current) return;
+        gsap.to(btnRef.current, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.3)" });
+    };
+
+    if (btnRef.current) {
+        btnRef.current.addEventListener("mousemove", handleMagnetic as any);
+        btnRef.current.addEventListener("mouseleave", resetMagnetic);
+    }
+
+  }, { scope: containerRef });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
       setSubmitted(true);
-      // In a real implementation, this would connect to a backend
-      console.log('Email submitted:', email);
+      
+      try {
+        // TODO: Replace with your actual Google Form action URL
+        const formUrl = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
+        
+        const formData = new FormData();
+        // TODO: Replace 'entry.XXXXXX' with the actual entry ID from your form
+        formData.append("entry.XXXXXX", email);
+
+        await fetch(formUrl, {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        });
+        
+        console.log('Email submitted to Google Forms (no-cors mode):', email);
+      } catch (error) {
+        console.error("Error submitting to Google Forms:", error);
+      }
     }
   };
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-linear-to-b from-gray-50 to-white text-[#0F2854] relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
-          backgroundSize: '30px 30px'
-        }}></div>
-      </div>
-
-      <div className="container mx-auto px-4 lg:px-6 relative z-10">
+    <section id="cta" ref={containerRef} className="py-20 md:py-28 lg:py-36 bg-[#F8F7F4] overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-            Ready to Grow Your Business?
+          <h2 className="cta-heading text-4xl md:text-5xl lg:text-6xl xl:text-[5.5rem] font-bold mb-8 leading-[0.95] tracking-tight text-[#1a1a1a]">
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block">READY</span>
+            </div>
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block">TO</span>
+            </div>
+            <div className="overflow-hidden inline-block">
+              <span className="word-reveal inline-block text-[#0F2854]">GROW?</span>
+            </div>
           </h2>
-          <p className="text-sm md:text-lg lg:text-xl text-[#0F2854] mb-14 max-w-2xl mx-auto">
-            Join thousands of entrepreneurs who are already reaching new customers every day. Create your store in minutes.
+          <p className="cta-desc text-base md:text-lg text-[#555] mb-14 max-w-xl mx-auto leading-relaxed">
+            Join thousands of entrepreneurs who are already reaching new customers every day.
           </p>
 
           {!submitted ? (
-            <div className="max-w-2xl mx-auto">
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 mb-10">
+            <div className="max-w-xl mx-auto">
+              <form onSubmit={handleSubmit} className="cta-form flex flex-col sm:flex-row gap-4 mb-10">
                 <div className="flex-1 relative">
-                  <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#bbb]" />
                   <Input
                     type="email"
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full pl-14 pr-6 py-7 text-lg bg-white text-gray-900 border-0 rounded-xl shadow-lg focus:ring-2 focus:ring-white/50"
+                    className="w-full pl-14 pr-6 py-8 text-base bg-white text-[#1a1a1a] border border-[#d5d5d5] rounded-lg focus:ring-1 focus:ring-[#0F2854] focus:border-[#0F2854] shadow-sm"
                   />
                 </div>
-                <Button 
-                  type="submit"
-                  size="lg"
-                  className="bg-gray-900 hover:bg-gray-800 text-white px-10 py-7 whitespace-nowrap shadow-xl hover:shadow-2xl transition-all text-lg"
-                >
-                  Get Early Access
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <div ref={btnRef} className="magnetic-btn shrink-0">
+                    <Button 
+                    type="submit"
+                    size="lg"
+                    className="bg-[#0F2854] hover:bg-[#0a1c3a] text-white px-10 py-8 whitespace-nowrap transition-all text-sm font-bold tracking-widest uppercase rounded-lg shadow-xl shadow-navy/20 w-full sm:w-auto"
+                    >
+                    Get Early Access
+                    <ArrowRight className="ml-3 w-4 h-4" />
+                    </Button>
+                </div>
               </form>
-              <p className="text-base text-purple-500 font-light">
-                Join the waitlist • No credit card required • Launch in Q1 2026
-              </p>
+              <div className="flex items-center justify-center gap-6">
+                <p className="text-[10px] text-[#888] font-bold tracking-[0.2em] uppercase">
+                    JOIN THE WAITLIST · NO CREDIT CARD · LAUNCH 2026
+                </p>
+              </div>
             </div>
           ) : (
-            <div className="max-w-2xl mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-10 md:p-12 border border-white/20 shadow-2xl">
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <span className="text-4xl">🎉</span>
-              </div>
-              <h3 className="text-3xl font-bold mb-3">You're on the list!</h3>
-              <p className="text-lg text-purple-100 font-light">
-                We'll notify you as soon as we launch. Get ready to grow your business!
+            <div className="max-w-lg mx-auto border border-[#e5e5e5] bg-white p-10 md:p-14 shadow-2xl">
+              <div className="text-5xl mb-8">🚀</div>
+              <h3 className="text-3xl font-bold mb-4 text-[#1a1a1a] font-[family-name:var(--font-barlow)] tracking-tight uppercase">You&apos;re on the list</h3>
+              <p className="text-base text-[#555] leading-relaxed">
+                We&apos;ll notify you as soon as we launch. Get ready to grow your business into something incredible!
               </p>
             </div>
           )}
 
           {/* Trust Indicators */}
-          <div className="mt-20 pt-16 border-t border-white/20">
-            <div className="grid md:grid-cols-3 gap-10 text-center">
-              <div>
-                <div className="text-3xl font-bold mb-3">Free to Start</div>
-                <div className="text-purple-500 text-base font-light">No upfront costs or hidden fees</div>
+          <div className="trust-indicators mt-24 pt-16 border-t border-[#e5e5e5]">
+            <div className="grid md:grid-cols-3 gap-12 text-center">
+              <div className="trust-item group">
+                <div className="text-2xl font-bold mb-3 text-[#1a1a1a] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#0F2854] transition-colors duration-500 uppercase">Free to start</div>
+                <div className="text-xs text-[#888] font-bold tracking-widest uppercase leading-loose">No upfront costs or hidden fees</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-3">5-Min Setup</div>
-                <div className="text-purple-500 text-base font-light">From signup to first product</div>
+              <div className="trust-item md:border-x md:border-[#e5e5e5] group">
+                <div className="text-2xl font-bold mb-3 text-[#1a1a1a] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#0F2854] transition-colors duration-500 uppercase">5-min setup</div>
+                <div className="text-xs text-[#888] font-bold tracking-widest uppercase leading-loose">From signup to first product</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-3">24/7 Support</div>
-                <div className="text-purple-500 text-base font-light">We're here to help you succeed</div>
+              <div className="trust-item group">
+                <div className="text-2xl font-bold mb-3 text-[#1a1a1a] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#0F2854] transition-colors duration-500 uppercase">24/7 support</div>
+                <div className="text-xs text-[#888] font-bold tracking-widest uppercase leading-loose">We&apos;re here to help you succeed</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Decorative Gradient Orbs */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-400 rounded-full blur-3xl opacity-20"></div>
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-400 rounded-full blur-3xl opacity-20"></div>
     </section>
   );
 }

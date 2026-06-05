@@ -1,4 +1,4 @@
-import { Store, Mail, MapPin, Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 export function Footer() {
   const footerLinks = {
@@ -11,7 +11,7 @@ export function Footer() {
     company: [
       { label: 'About Us', href: '#' },
       { label: 'Contact', href: '#' },
-        { label: 'Seller Guide', href: '#' },
+      { label: 'Seller Guide', href: '#' },
     ],
     legal: [
       { label: 'Privacy Policy', href: '#' },
@@ -23,47 +23,43 @@ export function Footer() {
 
   const socialLinks = [
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' }
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="container mx-auto px-4 lg:px-6 py-16 lg:py-20">
+    <footer className="bg-[#111111] text-[#999]">
+      <div className="container mx-auto px-4 lg:px-8 py-16 lg:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 bg-linear-to-br from-purple-500 via-purple-600 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/20">
-                <Store className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Nearli</span>
+            <div className="mb-6">
+              <span className="text-xl font-bold tracking-tight text-white font-[family-name:var(--font-barlow)]">
+                NEARLI
+              </span>
             </div>
-            <p className="text-base text-gray-400 leading-relaxed mb-8">
-              Empowering small businesses and solo entrepreneurs to reach customers beyond their immediate network through social discovery and e-commerce.
+            <p className="text-sm text-[#777] leading-relaxed mb-8 max-w-xs">
+              Empowering small businesses and solo entrepreneurs to reach customers beyond their immediate network.
             </p>
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-purple-500" />
-                <a href="mailto:oyedejienoch@gmail.com">oyedejienoch@gmail.com</a>
+                <Mail className="w-4 h-4 text-[#555]" />
+                <a href="mailto:oyedejienoch@gmail.com" className="text-[#777] hover:text-white transition-colors">
+                  oyedejienoch@gmail.com
+                </a>
               </div>
-              {/* <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-purple-500" />
-                <span>Lagos, Nigeria & Nairobi, Kenya</span>
-              </div> */}
             </div>
           </div>
 
           {/* Links Columns */}
           <div>
-            <h3 className="text-white font-semibold mb-5 text-base">Product</h3>
+            <h3 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">Product</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
                   <a 
                     href={link.href} 
-                    className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
+                    className="text-sm text-[#777] hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -73,13 +69,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-5 text-base">Company</h3>
+            <h3 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <a 
                     href={link.href} 
-                    className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
+                    className="text-sm text-[#777] hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -89,13 +85,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-5 text-base">Legal</h3>
+            <h3 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">Legal</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <a 
                     href={link.href} 
-                    className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
+                    className="text-sm text-[#777] hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -106,9 +102,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-10 border-t border-gray-800">
+        <div className="pt-10 border-t border-[#2a2a2a]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-sm text-gray-400">
+            <p className="text-xs text-[#555]">
               © 2026 Nearli. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
@@ -117,9 +113,9 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-11 h-11 rounded-full bg-gray-800 hover:bg-linear-to-br hover:from-purple-600 hover:to-blue-600 flex items-center justify-center transition-all shadow-lg hover:shadow-purple-500/20"
+                  className="w-10 h-10 rounded-full border border-[#333] hover:border-[#555] flex items-center justify-center transition-colors text-[#777] hover:text-white"
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>

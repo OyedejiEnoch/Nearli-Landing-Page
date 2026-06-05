@@ -3,95 +3,133 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Store, Palette, ShoppingBag, Briefcase } from 'lucide-react';
 import { useRef } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const users = [
   {
-    icon: Store,
+    number: "01",
     title: "Solo Entrepreneurs",
     description: "Running your business alone? Get a professional storefront without hiring developers or designers.",
     examples: ["Home bakers", "Beauty product sellers", "Clothing resellers"]
   },
   {
-    icon: Palette,
+    number: "02",
     title: "Creators & Makers",
     description: "Turn your craft into income. Showcase handmade products to customers who value unique, authentic items.",
     examples: ["Jewelry makers", "Artists", "Handcraft artisans"]
   },
   {
-    icon: ShoppingBag,
+    number: "03",
     title: "Small Retail Businesses",
     description: "Expand beyond your physical location. Reach customers who can't visit your shop in person.",
     examples: ["Boutiques", "Local shops", "Pop-up vendors"]
   },
   {
-    icon: Briefcase,
+    number: "04",
     title: "Informal Vendors",
     description: "Transitioning online? Start with a simple store and upgrade as you grow. No complicated setup.",
     examples: ["Market traders", "Street vendors", "Side hustlers"]
   }
 ];
-export function TargetUsers() {
 
+export function TargetUsers() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const targetUsersRef = useRef<(HTMLDivElement | null)[]>([])
   
-      const targetUsersRef = useRef<(HTMLDivElement | null)[]>([])
-  
-      useGSAP(()=>{
-  
-      const tl =gsap.timeline({
+    useGSAP(() => {
+      const tl = gsap.timeline({
         scrollTrigger:{
-          trigger:'#targetUsers',
-          start:'top 35%',
+          trigger: containerRef.current,
+          start:'top 65%',
         }
-      })
+      });
   
-        .to(targetUsersRef.current, { //animating 
-          y: 0,
-          delay:0.2,
-          opacity: 1,
-          duration: 1.2,
-          stagger: 0.22,
-          ease: "back.out",
-          
-        }, '-=0.2');
-  
-    },[])
+      tl.from(".target-heading .word-reveal", {
+        yPercent: 100,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power4.out"
+      });
+
+      tl.from(".target-desc", {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        ease: "power2.out"
+      }, "-=0.4");
+
+      tl.from(targetUsersRef.current, {
+        y: 40,
+        opacity: 0,
+        duration: 1.2,
+        stagger: 0.15,
+        ease: "expo.out",
+      }, "-=0.2");
+
+      // Success Story Parallax
+      gsap.from(".success-img", {
+        yPercent: 15,
+        scale: 1.1,
+        scrollTrigger: {
+            trigger: ".success-container",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1
+        }
+      });
+    }, { scope: containerRef });
 
   return (
-    <section id='targetUsers' className="py-16 md:py-24 lg:py-32 bg-linear-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4 lg:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
-          <div className="inline-block px-6 py-3 bg-linear-to-r from-purple-100 to-blue-100 rounded-full text-purple-700 text-sm font-semibold mb-6 shadow-sm">
-            Who It's For
+    <section ref={containerRef} id='targetUsers' className="py-20 md:py-28 lg:py-36 bg-[#F8F7F4] overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
+          <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#0F2854] mb-6">
+            Who It&apos;s For
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900 mb-6">
-            Built for Every Type of Entrepreneur
+          <h2 className="target-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#1a1a1a] mb-6 tracking-tight">
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block">BUILT</span>
+            </div>
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block">FOR</span>
+            </div>
+            <div className="overflow-hidden inline-block mr-4">
+              <span className="word-reveal inline-block text-[#0F2854]">EVERY</span>
+            </div>
+            <br />
+            <div className="overflow-hidden inline-block">
+              <span className="word-reveal inline-block">ENTREPRENEUR.</span>
+            </div>
           </h2>
-          <p className="text-sm md:text-lg lg:text-xl text-gray-600">
-            Whether you're just starting or ready to scale, we're here to help you grow
+          <p className="target-desc text-base md:text-lg text-[#555] max-w-lg mx-auto leading-relaxed">
+            Whether you&apos;re just starting or ready to scale, we&apos;re here to help you grow.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px max-w-7xl mx-auto bg-[#e5e5e5] border border-[#e5e5e5]">
           {users.map((user, index) => (
             <div 
               key={index}
               ref={(el) => { targetUsersRef.current[index] = el }}
-              className="bg-white translate-y-25 opacity-0 rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-2xl hover:shadow-purple-500/10 transition-all border border-gray-200"
+              className="bg-white p-8 lg:p-10 group hover:bg-[#F2F1EE] transition-colors duration-500"
             >
-              <div className="w-16 h-16 bg-linear-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20">
-                <user.icon className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              <span className="text-5xl font-bold text-[#e8e8e8] font-[family-name:var(--font-barlow)] block mb-6 group-hover:text-[#0F2854] transition-colors duration-500">
+                {user.number}
+              </span>
+              <div className="section-divider mb-5 group-hover:w-full transition-all duration-700"></div>
+              <h3 className="text-lg font-semibold text-[#1a1a1a] mb-3">
                 {user.title}
               </h3>
-              <p className="text-base text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm text-[#555] mb-6 leading-relaxed">
                 {user.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {user.examples.map((example, i) => (
                   <span 
                     key={i}
-                    className="px-4 py-2 bg-linear-to-r from-purple-50 to-blue-50 text-[#0F2854] text-sm rounded-full font-medium border border-purple-100"
+                    className="px-3 py-1.5 border border-[#e5e5e5] text-[#777] text-[10px] rounded-full font-bold uppercase tracking-wider group-hover:bg-[#0F2854] group-hover:text-white group-hover:border-[#0F2854] transition-all duration-500"
                   >
                     {example}
                   </span>
@@ -102,29 +140,30 @@ export function TargetUsers() {
         </div>
 
         {/* Success Story */}
-        <div className="mt-24 max-w-6xl mx-auto">
-          <div className="bg-linear-to-br from-purple-600 via-[#0F2854] to-[#0F2854] rounded-3xl p-8 md:p-12 lg:p-16 text-white shadow-2xl shadow-purple-500/20">
+        <div className="success-container mt-24 max-w-6xl mx-auto">
+          <div className="bg-[#0F2854] p-10 md:p-14 lg:p-16 text-white overflow-hidden">
             <div className="grid lg:grid-cols-3 gap-10 lg:gap-12 items-center">
               <div className="lg:col-span-2">
-                <div className="text-sm font-bold text-purple-200 mb-4 uppercase tracking-wider">SUCCESS STORY</div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                  "I believe i can grow from 20 sales a month to 200+"
+                <div className="text-[10px] font-bold text-[#8ba8d4] mb-8 uppercase tracking-[0.3em]">Success Story</div>
+                <h3 className="text-3xl md:text-5xl font-bold mb-8 leading-tight font-[family-name:var(--font-barlow)] tracking-tight uppercase">
+                  &ldquo;I believe I can grow from 20 sales a month to 200+&rdquo;
                 </h3>
-                <p className="text-lg md:text-xl text-purple-50 leading-relaxed mb-8 font-light">
-                  "At my business, I am only selling to people who already know me. Having a solution such as this, i believe customers from across the city can find me every day through the discovery feed."
+                <p className="text-base md:text-xl text-[#b0c4e0] leading-relaxed mb-10 font-light">
+                  &ldquo;At my business, I am only selling to people who already know me. Having a solution such as this, I believe customers from across the city can find me every day through the discovery feed.&rdquo;
                 </p>
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-px bg-[#8ba8d4]"></div>
                   <div>
-                    <div className="font-semibold text-lg">Joke M.</div>
-                    <div className="text-base text-purple-100">Cake vendor, Lagos</div>
+                    <div className="font-bold text-base tracking-widest uppercase">Joke M.</div>
+                    <div className="text-xs text-[#8ba8d4] font-medium tracking-widest uppercase">Cake vendor, Lagos</div>
                   </div>
                 </div>
               </div>
-              <div className="hidden lg:block">
+              <div className="hidden lg:block relative overflow-hidden h-[400px]">
                 <img 
-                  src="https://images.unsplash.com/photo-1655720357761-f18ea9e5e7e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwZW50cmVwcmVuZXVyJTIwc21hbGwlMjBidXNpbmVzc3xlbnwxfHx8fDE3Njc3MzA3MzN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1655720357761-f18ea9e5e7e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                   alt="Entrepreneur"
-                  className="rounded-3xl shadow-2xl border-4 border-white/20"
+                  className="success-img absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                 />
               </div>
             </div>
