@@ -10,8 +10,8 @@ export function Footer() {
     ],
     company: [
       { label: 'About Us', href: '/about' },
-      { label: 'Contact', href: 'mailto:oyedejienoch@gmail.com' },
-      { label: 'Seller Guide', href: '#' },
+      { label: 'Contact', href: 'mailto:hello@nearli.com' },
+      { label: 'Seller Guide', href: '/seller-guide' },
     ],
     legal: [
       { label: 'Privacy Policy', href: '/legal/privacy-policy' },
