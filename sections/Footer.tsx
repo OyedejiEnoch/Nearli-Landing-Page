@@ -9,15 +9,15 @@ export function Footer() {
       { label: 'FAQ', href: '#' }
     ],
     company: [
-      { label: 'About Us', href: '#' },
-      { label: 'Contact', href: '#' },
+      { label: 'About Us', href: '/about' },
+      { label: 'Contact', href: 'mailto:oyedejienoch@gmail.com' },
       { label: 'Seller Guide', href: '#' },
     ],
     legal: [
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms of Service', href: '#' },
-      { label: 'Cookie Policy', href: '#' },
-      { label: 'Refund Policy', href: '#' }
+      { label: 'Privacy Policy', href: '/legal/privacy-policy' },
+      { label: 'Terms of Service', href: '/legal/terms' },
+      { label: 'Cookie Policy', href: '/legal/cookie-policy' },
+      { label: 'Refund Policy', href: '/legal/refunds' }
     ]
   };
 
@@ -28,7 +28,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#111111] text-[#999]">
+    <footer className="bg-[#000000] text-[#999]">
       <div className="container mx-auto px-4 lg:px-8 py-16 lg:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-12 mb-16">
           {/* Brand Column */}
@@ -38,13 +38,13 @@ export function Footer() {
                 NEARLI
               </span>
             </div>
-            <p className="text-sm text-[#777] leading-relaxed mb-8 max-w-xs">
+            <p className="text-sm text-[#e3e3e6] leading-relaxed mb-8 max-w-xs">
               Empowering small businesses and solo entrepreneurs to reach customers beyond their immediate network.
             </p>
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#555]" />
-                <a href="mailto:oyedejienoch@gmail.com" className="text-[#777] hover:text-white transition-colors">
+                <Mail className="w-4 h-4 text-[#e3e3e6]" />
+                <a href="mailto:oyedejienoch@gmail.com" className="text-[#e3e3e6] hover:text-white transition-colors">
                   oyedejienoch@gmail.com
                 </a>
               </div>
@@ -53,13 +53,13 @@ export function Footer() {
 
           {/* Links Columns */}
           <div>
-            <h3 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">Product</h3>
+            <h3 className="text-white font-semibold mb-5 text-md tracking-widest uppercase">Product</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
                   <a 
                     href={link.href} 
-                    className="text-sm text-[#777] hover:text-white transition-colors"
+                    className="text-sm text-[#e3e3e6] hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -69,13 +69,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">Company</h3>
+            <h3 className="text-white font-semibold mb-5 text-md tracking-widest uppercase">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <a 
                     href={link.href} 
-                    className="text-sm text-[#777] hover:text-white transition-colors"
+                    className="text-sm text-[#e3e3e6] hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -85,13 +85,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-5 text-xs tracking-widest uppercase">Legal</h3>
+            <h3 className="text-white font-semibold mb-5 text-md tracking-widest uppercase">Legal</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <a 
                     href={link.href} 
-                    className="text-sm text-[#777] hover:text-white transition-colors"
+                    className="text-sm text-[#e3e3e6] hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -102,9 +102,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-10 border-t border-[#2a2a2a]">
+        <div className="pt-10 border-t border-[#e3e3e6]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-xs text-[#555]">
+            <p className="text-xs text-[#e3e3e6]">
               © 2026 Nearli. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
@@ -113,7 +113,7 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full border border-[#333] hover:border-[#555] flex items-center justify-center transition-colors text-[#777] hover:text-white"
+                  className="w-10 h-10 rounded-full border border-[#333] hover:border-[#6B6B8A] flex items-center justify-center transition-colors text-[#e3e3e6] hover:text-white"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>

@@ -94,7 +94,7 @@ export function HowItWorks() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id="how-it-works" className="py-20 md:py-28 lg:py-36 bg-[#F8F7F4] overflow-hidden">
+    <section ref={containerRef} id="how-it-works" className="py-20 md:py-28 lg:py-36 bg-[#FDFAF6] overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
           <Tagline text='How It Works' />
@@ -103,7 +103,7 @@ export function HowItWorks() {
               <span className="word-reveal inline-block">FROM</span>
             </div>
             <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block text-[#0F2854]">SETUP</span>
+              <span className="word-reveal inline-block text-[#120E2E]">SETUP</span>
             </div>
             <br />
             <div className="overflow-hidden inline-block mr-4">
@@ -113,21 +113,21 @@ export function HowItWorks() {
               <span className="word-reveal inline-block">SALES.</span>
             </div>
           </h2>
-          <p className="how-desc text-base md:text-lg text-[#555] max-w-lg mx-auto leading-relaxed">
+          <p className="how-desc text-base md:text-lg text-[#6B6B8A] max-w-lg mx-auto leading-relaxed">
             Start selling today with the easiest platform built for entrepreneurs like you.
           </p>
         </div>
 
         {/* Steps — horizontal row layout inspired by thegarage.ng */}
-        <div className="max-w-6xl mx-auto border-t border-[#e5e5e5]">
+        <div className="max-w-6xl mx-auto border-t border-[#C5BFDA]">
           {steps.map((step, index) => (
             <div 
               key={index}
               ref={(el) => { rowsRef.current[index] = el }}
-              className="step-row grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-14 border-b border-[#e5e5e5] items-start hover:bg-white/50 transition-colors duration-500"
+              className="step-row grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-14 border-b border-[#C5BFDA] items-start hover:bg-white/50 transition-colors duration-500"
             >
               <div className="md:col-span-2">
-                <span className="text-5xl md:text-6xl font-bold text-[#e0e0e0] font-[family-name:var(--font-barlow)] leading-none transition-colors duration-500 hover:text-[#0F2854]">
+                <span className="text-5xl md:text-6xl font-bold text-[#C5BFDA] font-[family-name:var(--font-barlow)] leading-none transition-colors duration-500 hover:text-[#120E2E]">
                   {step.number}
                 </span>
               </div>
@@ -137,7 +137,7 @@ export function HowItWorks() {
                 </h3>
               </div>
               <div className="md:col-span-6">
-                <p className="text-base text-[#555] leading-relaxed">
+                <p className="text-base text-[#6B6B8A] leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -149,11 +149,11 @@ export function HowItWorks() {
         <div className="mt-16 text-center">
           <div className="inline-flex flex-col items-center">
             <div className="magnetic-btn inline-block">
-                <button className="bg-[#0F2854] hover:bg-[#0a1c3a] text-white px-10 py-5 rounded-lg font-semibold transition-colors text-xs tracking-widest uppercase shadow-lg shadow-navy/10">
+                <button className="bg-[#120E2E] hover:bg-[#0a0820] text-white px-10 py-5 rounded-lg font-semibold transition-colors text-xs tracking-widest uppercase shadow-lg shadow-navy/10">
                 Get Started Free
                 </button>
             </div>
-            <span className="text-[10px] text-[#888] font-bold tracking-[0.2em] uppercase mt-6">NO CREDIT CARD REQUIRED</span>
+            <span className="text-[10px] text-[#6B6B8A] font-bold tracking-[0.2em] uppercase mt-6">NO CREDIT CARD REQUIRED</span>
           </div>
         </div>
       </div>

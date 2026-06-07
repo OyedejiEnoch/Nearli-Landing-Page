@@ -91,7 +91,7 @@ export function Problem() {
               <span className="word-reveal inline-block">REALITY</span>
             </div>
             <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block text-[#0F2854]">FOR</span>
+              <span className="word-reveal inline-block text-[#120E2E]">FOR</span>
             </div>
             <br />
             <div className="overflow-hidden inline-block mr-4">
@@ -101,27 +101,27 @@ export function Problem() {
               <span className="word-reveal inline-block">BUSINESSES.</span>
             </div>
           </h2>
-          <p className="problem-desc text-base md:text-lg text-[#555] max-w-2xl mx-auto leading-relaxed">
+          <p className="problem-desc text-base md:text-lg text-[#6B6B8A] max-w-2xl mx-auto leading-relaxed">
             You have amazing products. But your customers are limited to your contacts 
             and people who already know you.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px max-w-7xl mx-auto bg-[#e5e5e5] border border-[#e5e5e5]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px max-w-7xl mx-auto bg-[#C5BFDA] border border-[#C5BFDA]">
           {problems.map((problem, index) => (
             <div 
               key={index}
               ref={(el) => { cardsRef.current[index] = el }}
-              className="bg-white p-8 lg:p-10 hover:bg-[#F8F7F4] transition-colors duration-500 group"
+              className="bg-white p-8 lg:p-10 hover:bg-[#FDFAF6] transition-colors duration-500 group"
             >
-              <span className="text-5xl font-bold text-[#e8e8e8] font-[family-name:var(--font-barlow)] block mb-6 group-hover:text-[#0F2854] transition-colors duration-500">
+              <span className="text-5xl font-bold text-[#e8e8e8] font-[family-name:var(--font-barlow)] block mb-6 group-hover:text-[#120E2E] transition-colors duration-500">
                 {problem.number}
               </span>
               <div className="section-divider mb-5 group-hover:w-full transition-all duration-700 ease-in-out"></div>
               <h3 className="text-lg font-semibold text-[#1a1a1a] mb-3">
                 {problem.title}
               </h3>
-              <p className="text-sm text-[#555] leading-relaxed">
+              <p className="text-sm text-[#6B6B8A] leading-relaxed">
                 {problem.description}
               </p>
             </div>
@@ -129,16 +129,16 @@ export function Problem() {
         </div>
 
         {/* Testimonial Quote */}
-        <div className="testimonial-reveal mt-20 max-w-4xl mx-auto border-t border-[#e5e5e5] pt-12">
+        <div className="testimonial-reveal mt-20 max-w-4xl mx-auto border-t border-[#C5BFDA] pt-12">
           <p className="text-xl md:text-2xl text-[#1a1a1a] mb-8 leading-relaxed font-light italic">
             &ldquo;I was spending hours on Instagram and WhatsApp just to reach a few customers. 
             I needed something better, something that could help me grow.&rdquo;
           </p>
           <div className="flex items-center gap-4">
-            <Image src="/assets/amaka.jpg" alt="Amara K." width={48} height={48} className='w-12 h-12 object-cover rounded-full border-2 border-[#F8F7F4]' />
+            <Image src="/assets/amaka.jpg" alt="Amara K." width={48} height={48} className='w-12 h-12 object-cover rounded-full border-2 border-[#FDFAF6]' />
             <div>
               <div className="font-semibold text-[#1a1a1a] text-sm tracking-wide uppercase">Amara K.</div>
-              <div className="text-xs text-[#888] font-medium tracking-wider uppercase">Jewelry Maker, Lagos</div>
+              <div className="text-xs text-[#6B6B8A] font-medium tracking-wider uppercase">Jewelry Maker, Lagos</div>
             </div>
           </div>
         </div>

@@ -68,7 +68,7 @@ export function Testimonials() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id="testimonials" className="py-20 md:py-28 lg:py-36 bg-[#F8F7F4] overflow-hidden">
+    <section ref={containerRef} id="testimonials" className="py-20 md:py-28 lg:py-36 bg-[#FDFAF6] overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
           <Tagline text="Early Voices" />
@@ -77,7 +77,7 @@ export function Testimonials() {
               <span className="word-reveal inline-block">REAL</span>
             </div>
             <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block text-[#0F2854]">SELLERS,</span>
+              <span className="word-reveal inline-block text-[#120E2E]">SELLERS,</span>
             </div>
             <br />
             <div className="overflow-hidden inline-block mr-4">
@@ -87,20 +87,20 @@ export function Testimonials() {
               <span className="word-reveal inline-block">STORIES.</span>
             </div>
           </h2>
-          <p className="testimonials-desc text-base md:text-lg text-[#555] max-w-lg mx-auto leading-relaxed">
+          <p className="testimonials-desc text-base md:text-lg text-[#6B6B8A] max-w-lg mx-auto leading-relaxed">
             We talked to entrepreneurs across Lagos. Here&apos;s what they told us.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px max-w-7xl mx-auto bg-[#e5e5e5] border border-[#e5e5e5]">
+        <div className="grid md:grid-cols-3 gap-px max-w-7xl mx-auto bg-[#C5BFDA] border border-[#C5BFDA]">
           {testimonials.map((t, index) => (
             <div
               key={index}
               ref={(el) => { cardsRef.current[index] = el; }}
-              className="bg-white p-8 lg:p-10 group hover:bg-[#F8F7F4] transition-colors duration-500 flex flex-col"
+              className="bg-white p-8 lg:p-10 group hover:bg-[#FDFAF6] transition-colors duration-500 flex flex-col"
             >
               {/* Quote mark */}
-              <div className="text-5xl font-bold text-[#e8e8e8] font-[family-name:var(--font-barlow)] leading-none mb-6 group-hover:text-[#0F2854] transition-colors duration-500 select-none">
+              <div className="text-5xl font-bold text-[#e8e8e8] font-[family-name:var(--font-barlow)] leading-none mb-6 group-hover:text-[#120E2E] transition-colors duration-500 select-none">
                 &ldquo;
               </div>
 
@@ -111,12 +111,12 @@ export function Testimonials() {
               </p>
 
               <div className="flex items-center gap-4 mt-8 pt-6 border-t border-[#f0f0f0]">
-                <div className="w-10 h-10 rounded-full bg-[#0F2854] flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#120E2E] flex items-center justify-center shrink-0">
                   <span className="text-white text-xs font-bold tracking-wider">{t.initials}</span>
                 </div>
                 <div>
                   <div className="font-semibold text-[#1a1a1a] text-sm tracking-wide uppercase">{t.name}</div>
-                  <div className="text-[10px] text-[#888] font-bold tracking-widest uppercase">{t.role} · {t.location}</div>
+                  <div className="text-[10px] text-[#6B6B8A] font-bold tracking-widest uppercase">{t.role} · {t.location}</div>
                 </div>
               </div>
             </div>

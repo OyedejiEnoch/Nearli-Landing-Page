@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Barlow_Condensed, Syne } from "next/font/google";
+import { Inter, Barlow_Condensed, Syne, Fraunces } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,6 +23,14 @@ const syne = Syne({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  display: "swap",
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "900"],
+});
+
 export const metadata: Metadata = {
   title: "Nearli — Discover Local Businesses",
   description: "Empowering small businesses and solo entrepreneurs to reach customers beyond their immediate network",
@@ -36,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${barlowCondensed.variable} ${syne.variable} antialiased`}
+        className={`${inter.variable} ${barlowCondensed.variable} ${syne.variable} ${fraunces.variable} antialiased`}
       >
         {children}
       </body>

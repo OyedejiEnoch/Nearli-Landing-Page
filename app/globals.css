@@ -66,16 +66,21 @@ h1, h2, h3, h4 {
 
 /* ── Premium Color Tokens ── */
 :root {
-  --navy: #0F2854;
-  --navy-light: #1a3a6e;
-  --navy-dark: #0a1c3a;
-  --warm-white: #F8F7F4;
-  --warm-gray: #F2F1EE;
-  --text-primary: #1a1a1a;
-  --text-secondary: #555555;
-  --text-muted: #888888;
-  --border-light: #e5e5e5;
-  --border-subtle: #ebebeb;
+  /* ── Nearli Brand Tokens ── */
+  --navy: #120E2E;
+  --navy-light: #1e1a38;
+  --navy-dark: #0a0820;
+  --warm-white: #FDFAF6;
+  --warm-gray: #F0EBE2;
+  --sand: #F0EBE2;
+  --slate: #6B6B8A;
+  --lavender-tint: #EDE8FF;
+  --lavender-border: #C5BFDA;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B6B8A;
+  --text-muted: #6B6B8A;
+  --border-light: #C5BFDA;
+  --border-subtle: #D4CFEA;
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -163,7 +168,7 @@ h1, h2, h3, h4 {
 
 /* ── Hero dot-grid background ── */
 .hero-grid-bg {
-  background-image: radial-gradient(circle, #c8c8c8 1px, transparent 1px);
+  background-image: radial-gradient(circle, #C5BFDA 1px, transparent 1px);
   background-size: 28px 28px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 100%);

@@ -59,26 +59,26 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
   };
 
   return (
-    <div className="border-b border-[#e5e5e5] group">
+    <div className="border-b border-[#C5BFDA] group">
       <button
         onClick={toggle}
-        className="w-full grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 py-8 md:py-10 items-start text-left hover:bg-[#F8F7F4] transition-colors duration-300 px-4 -mx-4"
+        className="w-full grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 py-8 md:py-10 items-start text-left hover:bg-[#FDFAF6] transition-colors duration-300 px-4 -mx-4"
         aria-expanded={open}
       >
         <div className="md:col-span-1 shrink-0 pt-0.5">
-          <span className="text-3xl font-bold text-[#e0e0e0] font-[family-name:var(--font-barlow)] leading-none group-hover:text-[#0F2854] transition-colors duration-500">
+          <span className="text-3xl font-bold text-[#C5BFDA] font-[family-name:var(--font-barlow)] leading-none group-hover:text-[#120E2E] transition-colors duration-500">
             {String(index + 1).padStart(2, '0')}
           </span>
         </div>
         <div className="md:col-span-9">
-          <h3 className="text-lg md:text-xl font-semibold text-[#1a1a1a] tracking-tight group-hover:text-[#0F2854] transition-colors duration-300">
+          <h3 className="text-lg md:text-xl font-semibold text-[#1a1a1a] tracking-tight group-hover:text-[#120E2E] transition-colors duration-300">
             {question}
           </h3>
         </div>
         <div className="hidden md:flex md:col-span-2 justify-end pt-1">
           {open
-            ? <Minus className="w-4 h-4 text-[#0F2854] shrink-0" />
-            : <Plus className="w-4 h-4 text-[#888] shrink-0 group-hover:text-[#0F2854] transition-colors duration-300" />
+            ? <Minus className="w-4 h-4 text-[#120E2E] shrink-0" />
+            : <Plus className="w-4 h-4 text-[#6B6B8A] shrink-0 group-hover:text-[#120E2E] transition-colors duration-300" />
           }
         </div>
       </button>
@@ -90,7 +90,7 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-10 pb-8 px-4 -mx-4">
           <div className="md:col-span-1" />
           <div className="md:col-span-9">
-            <p className="text-base text-[#555] leading-relaxed">{answer}</p>
+            <p className="text-base text-[#6B6B8A] leading-relaxed">{answer}</p>
           </div>
         </div>
       </div>
@@ -141,26 +141,26 @@ export function Faq() {
               <span className="word-reveal inline-block">GOT</span>
             </div>
             <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block text-[#0F2854]">QUESTIONS?</span>
+              <span className="word-reveal inline-block text-[#120E2E]">QUESTIONS?</span>
             </div>
           </h2>
-          <p className="faq-desc text-base md:text-lg text-[#555] max-w-lg mx-auto leading-relaxed">
+          <p className="faq-desc text-base md:text-lg text-[#6B6B8A] max-w-lg mx-auto leading-relaxed">
             Everything you need to know before joining the waitlist.
           </p>
         </div>
 
-        <div className="faq-list max-w-4xl mx-auto border-t border-[#e5e5e5]">
+        <div className="faq-list max-w-4xl mx-auto border-t border-[#C5BFDA]">
           {faqs.map((faq, index) => (
             <FaqItem key={index} {...faq} index={index} />
           ))}
         </div>
 
         <div className="mt-16 max-w-4xl mx-auto text-center">
-          <p className="text-sm text-[#888]">
+          <p className="text-sm text-[#6B6B8A]">
             Still have questions?{' '}
             <a
               href="mailto:oyedejienoch@gmail.com"
-              className="text-[#0F2854] font-semibold hover:underline transition-colors"
+              className="text-[#120E2E] font-semibold hover:underline transition-colors"
             >
               Email us directly
             </a>

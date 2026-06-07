@@ -101,7 +101,7 @@ export function Features() {
               <span className="word-reveal inline-block">YOU</span>
             </div>
             <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block text-[#0F2854]">NEED</span>
+              <span className="word-reveal inline-block text-[#120E2E]">NEED</span>
             </div>
             <br />
             <div className="overflow-hidden inline-block mr-4">
@@ -111,25 +111,25 @@ export function Features() {
               <span className="word-reveal inline-block">SUCCEED.</span>
             </div>
           </h2>
-          <p className="features-desc text-base md:text-lg text-[#555] max-w-lg mx-auto leading-relaxed">
+          <p className="features-desc text-base md:text-lg text-[#6B6B8A] max-w-lg mx-auto leading-relaxed">
             Powerful tools designed for small businesses, not enterprise complexity.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px max-w-7xl mx-auto bg-[#e5e5e5]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px max-w-7xl mx-auto bg-[#C5BFDA]">
           {features.map((feature, index) => (
             <div 
               key={index}
                ref={(el) => { featuresRef.current[index] = el }}
-              className="bg-white p-8 lg:p-10 group hover:bg-[#F8F7F4] transition-colors duration-500"
+              className="bg-white p-8 lg:p-10 group hover:bg-[#FDFAF6] transition-colors duration-500"
             >
-              <div className="w-12 h-12 bg-[#0F2854] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 ease-elastic shadow-lg shadow-navy/20">
+              <div className="w-12 h-12 bg-[#120E2E] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 ease-elastic shadow-lg shadow-navy/20">
                 <feature.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-[#1a1a1a] mb-3 group-hover:text-[#0F2854] transition-colors duration-500">
+              <h3 className="text-lg font-semibold text-[#1a1a1a] mb-3 group-hover:text-[#120E2E] transition-colors duration-500">
                 {feature.title}
               </h3>
-              <p className="text-sm text-[#555] leading-relaxed">
+              <p className="text-sm text-[#6B6B8A] leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -138,12 +138,12 @@ export function Features() {
 
         {/* Feature Highlight */}
         <div className="highlight-container mt-24 max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center bg-[#F8F7F4] p-10 md:p-14 lg:p-16 border border-[#e5e5e5] overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center bg-[#FDFAF6] p-10 md:p-14 lg:p-16 border border-[#C5BFDA] overflow-hidden">
             <div>
               <h3 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6 leading-tight font-[family-name:var(--font-barlow)] tracking-tight uppercase">
                 Designed for mobile-first users
               </h3>
-              <p className="text-base md:text-lg text-[#555] mb-8 leading-relaxed">
+              <p className="text-base md:text-lg text-[#6B6B8A] mb-8 leading-relaxed">
                 In emerging markets, your phone is your office. We built our platform mobile-first because that&apos;s how you and your customers actually work.
               </p>
               <ul className="space-y-4">
@@ -153,8 +153,8 @@ export function Features() {
                     "Optimized for low data usage"
                 ].map((item, i) => (
                     <li key={i} className="flex items-start gap-4 group">
-                        <span className="text-[#0F2854] font-bold text-sm mt-0.5 group-hover:translate-x-1 transition-transform duration-300">→</span>
-                        <span className="text-[#333] text-base group-hover:text-[#0F2854] transition-colors duration-300">{item}</span>
+                        <span className="text-[#120E2E] font-bold text-sm mt-0.5 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                        <span className="text-[#333] text-base group-hover:text-[#120E2E] transition-colors duration-300">{item}</span>
                     </li>
                 ))}
               </ul>
