@@ -2,12 +2,14 @@
 
 import { Button } from '@/components/ui/button'
 import { ArrowUpRight, Mail } from 'lucide-react'
+import Image from 'next/image'
 import React, { useCallback, useEffect, useState } from 'react'
 
 const navLinks = [
   { label: 'Features', href: '/#features' },
   { label: 'How It Works', href: '/#how-it-works' },
   { label: 'About', href: '/about' },
+  { label: 'Seller Guide', href: '/seller-guide' },
   { label: 'FAQ', href: '/#faq' },
 ]
 
@@ -77,12 +79,7 @@ const Navbar = () => {
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             {/* Logo */}
             <a href="/" className="flex items-center gap-2 group" aria-label="Nearli home">
-              <div className="w-7 h-7 bg-[#120E2E] rounded-md flex items-center justify-center shrink-0 group-hover:bg-[#1e1a38] transition-colors duration-200">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <circle cx="7" cy="7" r="2.5" fill="white" />
-                  <circle cx="7" cy="7" r="5.5" stroke="white" strokeWidth="1.2" opacity="0.5" />
-                </svg>
-              </div>
+             <Image src={"/assets/officalLogo.png"} alt="Logo" width={40} height={40} />
               <span
                 className="text-xl font-bold tracking-tight text-[#120E2E] font-[family-name:var(--font-barlow)]"
                 style={{ letterSpacing: '-0.02em' }}

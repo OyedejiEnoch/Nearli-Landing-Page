@@ -1,3 +1,4 @@
+import { BuyerSection } from "@/sections/BuyerSection";
 import { Cta } from "@/sections/Cta";
 import { Faq } from "@/sections/Faq";
 import { Features } from "@/sections/Features";
@@ -24,6 +25,7 @@ export default function Home() {
       <Problem />
       <HowItWorks />
       <Features />
+      <BuyerSection />
       <Testimonials />
       <Unique />
       <TargetUsers />

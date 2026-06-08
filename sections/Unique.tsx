@@ -87,7 +87,7 @@ export function Unique() {
     <section ref={containerRef} id='unique' className="py-20 md:py-28 lg:py-36 bg-[#0b0b0b] text-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
-          <Tagline text='Why Nearli' />
+          <Tagline text='Why Nearli' className="white" />
           <h2 className="unique-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8 font-bold tracking-tight text-white">
             <div className="overflow-hidden inline-block mr-4">
               <span className="word-reveal inline-block">BUILT</span>
