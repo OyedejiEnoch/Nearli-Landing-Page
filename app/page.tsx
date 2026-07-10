@@ -1,7 +1,9 @@
 import { BuyerSection } from "@/sections/BuyerSection";
+import { Categories } from "@/sections/Categories";
 import { Cta } from "@/sections/Cta";
 import { Faq } from "@/sections/Faq";
 import { Features } from "@/sections/Features";
+import { Mission } from "@/sections/Mission";
 import { Footer } from "@/sections/Footer";
 import Hero from "@/sections/Hero";
 import { HowItWorks } from "@/sections/HowItWorks";
@@ -26,6 +28,8 @@ export default function Home() {
       <HowItWorks />
       <Features />
       <BuyerSection />
+      <Categories />
+      <Mission />
       <Testimonials />
       <Unique />
       <TargetUsers />

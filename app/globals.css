@@ -207,3 +207,18 @@ h1, h2, h3, h4 {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--navy-light);
 }
+
+/* ── Category marquee ── */
+@keyframes nearli-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.nearli-marquee {
+  animation: nearli-marquee 50s linear infinite;
+}
+.nearli-marquee-group:hover .nearli-marquee {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nearli-marquee { animation: none; }
+}
