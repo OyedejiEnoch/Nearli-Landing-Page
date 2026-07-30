@@ -71,20 +71,20 @@ const Navbar = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
           scrolled
-            ? 'bg-white/90 backdrop-blur-md border-b border-[#C5BFDA] shadow-sm'
-            : 'bg-[#FDFAF6]/80 backdrop-blur-sm border-b border-transparent'
+            ? 'bg-white/90 backdrop-blur-md border-b border-[#E2E6F0] shadow-sm'
+            : 'bg-white/80 backdrop-blur-sm border-b border-transparent'
         }`}
       >
         <nav className="w-full px-4 lg:px-8 py-4">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-2 group" aria-label="Nearli home">
+            <a href="/" className="flex items-center gap-2 group" aria-label="Ahiver home">
              <Image src={"/assets/officalLogo.png"} alt="Logo" width={40} height={40} />
               <span
-                className="text-xl font-bold tracking-tight text-[#120E2E] font-[family-name:var(--font-barlow)]"
+                className="text-xl font-bold tracking-tight text-[#0D1020] font-[family-name:var(--font-barlow)]"
                 style={{ letterSpacing: '-0.02em' }}
               >
-                NEARLI
+                AHIVER
               </span>
             </a>
 
@@ -94,7 +94,7 @@ const Navbar = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-[#6B6B8A] hover:text-[#120E2E] transition-colors font-medium"
+                  className="text-sm text-[#5C6490] hover:text-[#0D1020] transition-colors font-medium"
                 >
                   {link.label}
                 </a>
@@ -102,7 +102,7 @@ const Navbar = () => {
               <Button
                 onClick={scrollToCta}
                 size="sm"
-                className="px-6 py-5 bg-[#120E2E] hover:bg-[#0a0820] text-white text-xs font-semibold tracking-wide uppercase rounded-lg transition-colors"
+                className="px-6 py-5 bg-[#0D1020] hover:bg-[#070912] text-white text-xs font-semibold tracking-wide uppercase rounded-lg transition-colors"
               >
                 Join Waitlist
               </Button>
@@ -122,18 +122,18 @@ const Navbar = () => {
                 <span
                   className="absolute left-0 top-0 w-6 h-[2px] rounded-full transition-all duration-300 ease-out"
                   style={{
-                    background: mobileOpen ? '#fff' : '#120E2E',
+                    background: mobileOpen ? '#fff' : '#0D1020',
                     transform: mobileOpen ? 'translateY(7px) rotate(45deg)' : 'none',
                   }}
                 />
                 <span
-                  className="absolute left-0 top-[7px] w-6 h-[2px] bg-[#120E2E] rounded-full transition-all duration-200 ease-out"
+                  className="absolute left-0 top-[7px] w-6 h-[2px] bg-[#0D1020] rounded-full transition-all duration-200 ease-out"
                   style={{ opacity: mobileOpen ? 0 : 1 }}
                 />
                 <span
                   className="absolute left-0 top-[14px] w-6 h-[2px] rounded-full transition-all duration-300 ease-out"
                   style={{
-                    background: mobileOpen ? '#fff' : '#120E2E',
+                    background: mobileOpen ? '#fff' : '#0D1020',
                     transform: mobileOpen ? 'translateY(-7px) rotate(-45deg)' : 'none',
                   }}
                 />
@@ -148,7 +148,7 @@ const Navbar = () => {
       <div
         onClick={closeMenu}
         aria-hidden={!mobileOpen}
-        className={`md:hidden fixed inset-0 z-[110] bg-[#120E2E]/50 backdrop-blur-[2px] transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 z-[110] bg-[#0D1020]/50 backdrop-blur-[2px] transition-opacity duration-300 ${
           mobileOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
       />
@@ -159,7 +159,7 @@ const Navbar = () => {
         role="dialog"
         aria-modal="true"
         aria-label="Main menu"
-        className={`md:hidden fixed top-0 right-0 z-[120] flex h-[100dvh] w-[88%] max-w-sm flex-col bg-[#120E2E] shadow-2xl transition-transform duration-300 ease-out ${
+        className={`md:hidden fixed top-0 right-0 z-[120] flex h-[100dvh] w-[88%] max-w-sm flex-col bg-[#0D1020] shadow-2xl transition-transform duration-300 ease-out ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
@@ -173,7 +173,7 @@ const Navbar = () => {
             className="text-lg font-bold tracking-tight text-white font-[family-name:var(--font-barlow)]"
             style={{ letterSpacing: '-0.02em' }}
           >
-            NEARLI
+            AHIVER
           </span>
           <button
             onClick={closeMenu}
@@ -207,14 +207,14 @@ const Navbar = () => {
                   style={{ touchAction: 'manipulation' }}
                 >
                   <span className="flex items-baseline gap-4">
-                    <span className="text-xs font-bold text-[#C5BFDA] tracking-widest tabular-nums">
+                    <span className="text-xs font-bold text-[#E2E6F0] tracking-widest tabular-nums">
                       0{i + 1}
                     </span>
                     <span className="text-2xl font-semibold text-white tracking-tight font-[family-name:var(--font-barlow)] uppercase">
                       {link.label}
                     </span>
                   </span>
-                  <ArrowUpRight className="w-5 h-5 text-[#C5BFDA] group-active:translate-x-0.5 group-active:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="w-5 h-5 text-[#E2E6F0] group-active:translate-x-0.5 group-active:-translate-y-0.5 transition-transform" />
                 </a>
               </li>
             ))}
@@ -225,7 +225,7 @@ const Navbar = () => {
         <div className="px-6 pt-6 pb-8 border-t border-white/10">
           <Button
             onClick={scrollToCta}
-            className="w-full bg-white hover:bg-[#EDE8FF] text-[#120E2E] text-sm font-bold tracking-widest uppercase rounded-xl py-7 transition-colors shadow-lg"
+            className="w-full bg-white hover:bg-[#E0EBFF] text-[#0D1020] text-sm font-bold tracking-widest uppercase rounded-xl py-7 transition-colors shadow-lg"
             style={{ touchAction: 'manipulation' }}
           >
             Join the Waitlist
@@ -233,14 +233,14 @@ const Navbar = () => {
 
           <a
             href="mailto:oyedejienoch@gmail.com"
-            className="mt-5 flex items-center justify-center gap-2 text-sm text-[#C5BFDA] hover:text-white transition-colors"
+            className="mt-5 flex items-center justify-center gap-2 text-sm text-[#E2E6F0] hover:text-white transition-colors"
           >
             <Mail className="w-4 h-4" />
             oyedejienoch@gmail.com
           </a>
 
           <p className="mt-4 text-center text-[10px] text-white/40 font-bold tracking-[0.2em] uppercase">
-            Launching in Lagos · 2026
+            Launching across Nigeria · 2026
           </p>
         </div>
       </div>

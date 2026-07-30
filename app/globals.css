@@ -66,21 +66,58 @@ h1, h2, h3, h4 {
 
 /* ── Premium Color Tokens ── */
 :root {
-  /* ── Nearli Brand Tokens ── */
-  --navy: #120E2E;
-  --navy-light: #1e1a38;
-  --navy-dark: #0a0820;
-  --warm-white: #FDFAF6;
-  --warm-gray: #F0EBE2;
-  --sand: #F0EBE2;
-  --slate: #6B6B8A;
-  --lavender-tint: #EDE8FF;
-  --lavender-border: #C5BFDA;
-  --text-primary: #1A1A1A;
-  --text-secondary: #6B6B8A;
-  --text-muted: #6B6B8A;
-  --border-light: #C5BFDA;
-  --border-subtle: #D4CFEA;
+  /* ── Nearli Immersive Design Language (matches main app rebrand) ── */
+  /* Ink */
+  --eclipse: #0D1020;          /* primary buttons, headings, active nav */
+  --eclipse-pressed: #070912;
+  --eclipse-hover: #23283f;
+
+  /* Relational accent (Sapphire) */
+  --sapphire: #1E40AF;         /* links, verified, active pills */
+  --sapphire-pressed: #1E3A8A;
+
+  /* Warm accent (Coral) — the ONLY warm color */
+  --coral: #FF5A4D;
+  --coral-on-dark: #FF7A6F;
+
+  /* Status */
+  --emerald: #12A67C;
+  --emerald-tint: #DCF5EE;
+  --amber-notify: #F97316;     /* notifications only (matches app spec) */
+  --amber-tint: #FFF0E6;
+  --star: #F5B400;
+
+  /* Surfaces (cool porcelain family) */
+  --surface: #F6F8FD;          /* page background */
+  --surface-sunken: #EFF2FA;   /* alt sections, cards */
+  --surface-hover: #E6EAF5;
+  --border: #E2E6F0;
+  --border-strong: #CDD4E8;
+
+  /* Chips */
+  --chip-fill: #E0EBFF;
+  --chip-hover: #C7DAFF;
+
+  /* Text */
+  --text-heading: #0D1020;
+  --text-body: #1E2340;
+  --text-secondary: #5C6490;
+  --text-placeholder: #8F97BB;
+
+  /* ── Legacy tokens (kept alive until every section is migrated) ── */
+  --navy: #0D1020;             /* legacy alias → now Eclipse */
+  --navy-light: #23283f;
+  --navy-dark: #070912;
+  --warm-white: #F6F8FD;
+  --warm-gray: #EFF2FA;
+  --sand: #EFF2FA;
+  --slate: #5C6490;
+  --lavender-tint: #E0EBFF;
+  --lavender-border: #E2E6F0;
+  --text-primary: #0D1020;
+  --text-muted: #5C6490;
+  --border-light: #E2E6F0;
+  --border-subtle: #E2E6F0;
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);

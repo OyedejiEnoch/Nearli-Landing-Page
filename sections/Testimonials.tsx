@@ -1,34 +1,35 @@
 "use client"
-import Tagline from '@/components/Tagline';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Image from 'next/image';
 import { useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
-    quote: "I was spending hours on Instagram and WhatsApp just to reach a few customers. I needed something better — something that could help me grow beyond my contacts.",
-    name: "Amara K.",
-    role: "Jewelry Maker",
-    location: "Lagos, Nigeria",
-    initials: "AK",
+    quote:
+      "I was spending hours on Instagram and WhatsApp just to reach a few customers. I needed something better — something that could help me grow beyond my contacts.",
+    name: 'Amara K.',
+    role: 'Jewelry Maker',
+    location: 'Ibadan, Nigeria',
+    initials: 'AK',
   },
   {
-    quote: "Right now I'm only selling to people who already know me. With a solution like this, customers from across the city can find me every single day through the feed.",
-    name: "Joke M.",
-    role: "Cake Vendor",
-    location: "Lagos, Nigeria",
-    initials: "JM",
+    quote:
+      "Right now I'm only selling to people who already know me. With a solution like this, customers from across the city can find me every single day through the feed.",
+    name: 'Joke M.',
+    role: 'Cake Vendor',
+    location: 'Abuja, Nigeria',
+    initials: 'JM',
   },
   {
-    quote: "Managing orders through DMs is a nightmare. I want a real storefront — professional, simple, and one that actually brings people in without me paying for ads.",
-    name: "Tunde A.",
-    role: "Clothing Reseller",
-    location: "Lagos, Nigeria",
-    initials: "TA",
+    quote:
+      'Managing orders through DMs is a nightmare. I want a real storefront — professional, simple, and one that actually brings people in without me paying for ads.',
+    name: 'Tunde A.',
+    role: 'Clothing Reseller',
+    location: 'Kano, Nigeria',
+    initials: 'TA',
   },
 ];
 
@@ -38,85 +39,83 @@ export function Testimonials() {
 
   useGSAP(() => {
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 65%',
-      },
+      scrollTrigger: { trigger: containerRef.current, start: 'top 65%' },
     });
 
-    tl.from('.testimonials-heading .word-reveal', {
-      yPercent: 100,
-      duration: 0.8,
-      stagger: 0.1,
-      ease: 'power4.out',
-    });
-
-    tl.from('.testimonials-desc', {
-      opacity: 0,
-      y: 20,
-      duration: 0.8,
-      ease: 'power2.out',
-    }, '-=0.4');
-
+    tl.from('.tst-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' });
+    tl.from('.tst-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
+    tl.from('.tst-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' }, '-=0.25');
     tl.from(cardsRef.current, {
-      y: 40,
+      y: 30,
       opacity: 0,
-      duration: 1.2,
-      stagger: 0.12,
-      ease: 'expo.out',
-    }, '-=0.2');
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'power3.out',
+    }, '-=0.15');
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id="testimonials" className="py-20 md:py-28 lg:py-36 bg-[#FDFAF6] overflow-hidden">
+    <section
+      ref={containerRef}
+      id="testimonials"
+      className="overflow-hidden bg-[#ffffff] py-24 md:py-36 lg:py-44"
+    >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
-          <Tagline text="Early Voices" />
-          <h2 className="testimonials-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#1a1a1a] mb-6 tracking-tight">
-            <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block">REAL</span>
-            </div>
-            <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block text-[#120E2E]">SELLERS,</span>
-            </div>
-            <br />
-            <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block">REAL</span>
-            </div>
-            <div className="overflow-hidden inline-block">
-              <span className="word-reveal inline-block">STORIES.</span>
-            </div>
+        {/* ── Signature recipe header ── */}
+        <div className="mx-auto mb-16 max-w-3xl text-center lg:mb-20">
+          <div
+            className="tst-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
+            style={{ color: '#FF5A4D' }}
+          >
+            Early voices
+          </div>
+          <h2 className="tst-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
+            Real sellers,{' '}
+            <span
+              className="italic font-normal font-[family-name:var(--font-playfair)]"
+              style={{ color: '#FF5A4D' }}
+            >
+              real stories.
+            </span>
           </h2>
-          <p className="testimonials-desc text-base md:text-lg text-[#6B6B8A] max-w-lg mx-auto leading-relaxed">
-            We talked to entrepreneurs across Lagos. Here&apos;s what they told us.
+          <p className="tst-desc mx-auto mt-6 max-w-lg text-base leading-relaxed text-[#5C6490] md:text-lg">
+            We talked to entrepreneurs across Nigeria. Here&apos;s what they told us.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px max-w-7xl mx-auto bg-[#C5BFDA] border border-[#C5BFDA]">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-3 lg:gap-5">
           {testimonials.map((t, index) => (
             <div
               key={index}
               ref={(el) => { cardsRef.current[index] = el; }}
-              className="bg-white p-8 lg:p-10 group hover:bg-[#FDFAF6] transition-colors duration-500 flex flex-col"
+              className="group flex flex-col rounded-2xl border border-[#E2E6F0] bg-white p-7 transition-colors duration-500 hover:bg-[#F6F8FD] lg:p-8"
             >
-              {/* Quote mark */}
-              <div className="text-5xl font-bold text-[#e8e8e8] font-[family-name:var(--font-barlow)] leading-none mb-6 group-hover:text-[#120E2E] transition-colors duration-500 select-none">
+              <div
+                className="mb-5 text-5xl leading-none text-[#CDD4E8] transition-colors duration-500 group-hover:text-[#FF5A4D] font-[family-name:var(--font-playfair)] italic font-normal"
+              >
                 &ldquo;
               </div>
 
-              <div className="section-divider mb-6 group-hover:w-full transition-all duration-700 ease-in-out" />
+              <div className="mb-5 h-px w-10 bg-[#E2E6F0] transition-all duration-700 group-hover:w-full group-hover:bg-[#0D1020]" />
 
-              <p className="text-base text-[#333] leading-relaxed flex-1 italic font-light">
+              <p className="flex-1 text-base leading-relaxed text-[#1E2340] font-[family-name:var(--font-playfair)] italic font-normal">
                 {t.quote}
               </p>
 
-              <div className="flex items-center gap-4 mt-8 pt-6 border-t border-[#f0f0f0]">
-                <div className="w-10 h-10 rounded-full bg-[#120E2E] flex items-center justify-center shrink-0">
-                  <span className="text-white text-xs font-bold tracking-wider">{t.initials}</span>
+              <div className="mt-8 flex items-center gap-4 border-t border-[#E2E6F0] pt-6">
+                <div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white"
+                  style={{ background: '#0D1020' }}
+                >
+                  <span className="text-xs font-bold tracking-wider">{t.initials}</span>
                 </div>
                 <div>
-                  <div className="font-semibold text-[#1a1a1a] text-sm tracking-wide uppercase">{t.name}</div>
-                  <div className="text-[10px] text-[#6B6B8A] font-bold tracking-widest uppercase">{t.role} · {t.location}</div>
+                  <div className="text-sm font-semibold uppercase tracking-wide text-[#0D1020]">
+                    {t.name}
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#5C6490]">
+                    {t.role} · {t.location}
+                  </div>
                 </div>
               </div>
             </div>

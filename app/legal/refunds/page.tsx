@@ -2,12 +2,12 @@ import LegalLayout, { LegalSection } from "@/components/LegalLayout"
 
 const sections: LegalSection[] = [
   {
-    heading: "Nearli is a marketplace",
+    heading: "Ahiver is a marketplace",
     body: (
       <p>
-        Nearli connects buyers with independent local businesses. Each seller is responsible for
+        Ahiver connects buyers with independent local businesses. Each seller is responsible for
         their own products, pricing, and refund decisions. This policy explains how refunds and
-        returns generally work on Nearli and what to do if something goes wrong.
+        returns generally work on Ahiver and what to do if something goes wrong.
       </p>
     ),
   },
@@ -36,7 +36,7 @@ const sections: LegalSection[] = [
     heading: "How to request a refund",
     body: (
       <p>
-        First, contact the seller directly through Nearli messaging with your order details and
+        First, contact the seller directly through Ahiver messaging with your order details and
         reason. Most issues are resolved quickly this way. If you cannot reach a resolution, contact
         us and we&apos;ll help mediate where possible.
       </p>
@@ -79,7 +79,7 @@ export default function RefundsPage() {
       title="Refund Policy"
       lastUpdated="June 2026"
       currentHref="/legal/refunds"
-      intro="This policy explains how refunds and returns work for purchases made through businesses on Nearli."
+      intro="This policy explains how refunds and returns work for purchases made through businesses on Ahiver."
       sections={sections}
     />
   )

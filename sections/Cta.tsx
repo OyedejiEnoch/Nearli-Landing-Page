@@ -103,10 +103,10 @@ export function Cta() {
   };
 
   return (
-    <section id="cta" ref={containerRef} className="py-20 md:py-28 lg:py-36 bg-[#FDFAF6] overflow-hidden">
+    <section id="cta" ref={containerRef} className="py-24 md:py-36 lg:py-44 bg-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="cta-heading text-4xl md:text-5xl lg:text-6xl xl:text-[5.5rem] font-bold mb-8 leading-[0.95] tracking-tight text-[#1a1a1a]">
+          <h2 className="cta-heading text-4xl md:text-5xl lg:text-6xl xl:text-[5.5rem] font-bold mb-8 leading-[0.95] tracking-tight text-[#0D1020]">
             <div className="overflow-hidden inline-block mr-4">
               <span className="word-reveal inline-block">READY</span>
             </div>
@@ -114,10 +114,10 @@ export function Cta() {
               <span className="word-reveal inline-block">TO</span>
             </div>
             <div className="overflow-hidden inline-block">
-              <span className="word-reveal inline-block text-[#120E2E]">GROW?</span>
+              <span className="word-reveal inline-block text-[#0D1020]">GROW?</span>
             </div>
           </h2>
-          <p className="cta-desc text-base md:text-lg text-[#6B6B8A] mb-14 max-w-xl mx-auto leading-relaxed">
+          <p className="cta-desc text-base md:text-lg text-[#5C6490] mb-14 max-w-xl mx-auto leading-relaxed">
             Join thousands of entrepreneurs who are already reaching new customers every day.
           </p>
 
@@ -125,14 +125,14 @@ export function Cta() {
             <div className="max-w-xl mx-auto">
               <form onSubmit={handleSubmit} className="cta-form flex flex-col sm:flex-row gap-4 mb-10">
                 <div className="flex-1 relative">
-                  <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#bbb]" />
+                  <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#8F97BB]" />
                   <Input
                     type="email"
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full pl-14 pr-6 py-8 text-base bg-white text-[#1a1a1a] border border-[#C5BFDA] rounded-lg focus:ring-1 focus:ring-[#120E2E] focus:border-[#120E2E] shadow-sm"
+                    className="w-full pl-14 pr-6 py-8 text-base bg-white text-[#0D1020] border border-[#E2E6F0] rounded-lg focus:ring-1 focus:ring-[#0D1020] focus:border-[#0D1020] shadow-sm"
                   />
                 </div>
                 <div ref={btnRef} className="magnetic-btn shrink-0">
@@ -140,7 +140,7 @@ export function Cta() {
                     type="submit"
                     size="lg"
                     disabled={!agreed}
-                    className="bg-[#120E2E] hover:bg-[#0a0820] text-white px-10 py-8 whitespace-nowrap transition-all text-sm font-bold tracking-widest uppercase rounded-lg shadow-xl shadow-navy/20 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-[#0D1020] hover:bg-[#070912] text-white px-10 py-8 whitespace-nowrap transition-all text-sm font-bold tracking-widest uppercase rounded-lg shadow-xl shadow-navy/20 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                     Get Early Access
                     <ArrowRight className="ml-3 w-4 h-4" />
@@ -155,15 +155,15 @@ export function Cta() {
                   checked={agreed}
                   onChange={(e) => setAgreed(e.target.checked)}
                   required
-                  className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#120E2E]"
+                  className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#0D1020]"
                 />
-                <span className="max-w-sm text-sm leading-relaxed text-[#6B6B8A]">
+                <span className="max-w-sm text-sm leading-relaxed text-[#5C6490]">
                   I agree to the{' '}
-                  <Link href="/legal/terms" className="font-medium text-[#120E2E] underline">
+                  <Link href="/legal/terms" className="font-medium text-[#0D1020] underline">
                     Terms of Service
                   </Link>{' '}
                   and{' '}
-                  <Link href="/legal/privacy-policy" className="font-medium text-[#120E2E] underline">
+                  <Link href="/legal/privacy-policy" className="font-medium text-[#0D1020] underline">
                     Privacy Policy
                   </Link>
                   .
@@ -171,35 +171,35 @@ export function Cta() {
               </label>
 
               <div className="flex items-center justify-center gap-6">
-                <p className="text-[10px] text-[#6B6B8A] font-bold tracking-[0.2em] uppercase">
+                <p className="text-[10px] text-[#5C6490] font-bold tracking-[0.2em] uppercase">
                     JOIN THE WAITLIST · NO CREDIT CARD · LAUNCH 2026
                 </p>
               </div>
             </div>
           ) : (
-            <div className="max-w-lg mx-auto border border-[#C5BFDA] bg-white p-10 md:p-14 shadow-2xl">
+            <div className="max-w-lg mx-auto border border-[#E2E6F0] bg-white p-10 md:p-14 shadow-2xl">
               <div className="text-5xl mb-8">🚀</div>
-              <h3 className="text-3xl font-bold mb-4 text-[#1a1a1a] font-[family-name:var(--font-barlow)] tracking-tight uppercase">You&apos;re on the list</h3>
-              <p className="text-base text-[#6B6B8A] leading-relaxed">
+              <h3 className="text-3xl font-bold mb-4 text-[#0D1020] font-[family-name:var(--font-barlow)] tracking-tight uppercase">You&apos;re on the list</h3>
+              <p className="text-base text-[#5C6490] leading-relaxed">
                 We&apos;ll notify you as soon as we launch. Get ready to grow your business into something incredible!
               </p>
             </div>
           )}
 
           {/* Trust Indicators */}
-          <div className="trust-indicators mt-24 pt-16 border-t border-[#C5BFDA]">
+          <div className="trust-indicators mt-24 pt-16 border-t border-[#E2E6F0]">
             <div className="grid md:grid-cols-3 gap-12 text-center">
               <div className="trust-item group">
-                <div className="text-2xl font-bold mb-3 text-[#1a1a1a] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#120E2E] transition-colors duration-500 uppercase">Free to start</div>
-                <div className="text-xs text-[#6B6B8A] font-bold tracking-widest uppercase leading-loose">No upfront costs or hidden fees</div>
+                <div className="text-2xl font-bold mb-3 text-[#0D1020] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#0D1020] transition-colors duration-500 uppercase">Free to start</div>
+                <div className="text-xs text-[#5C6490] font-bold tracking-widest uppercase leading-loose">No upfront costs or hidden fees</div>
               </div>
-              <div className="trust-item md:border-x md:border-[#C5BFDA] group">
-                <div className="text-2xl font-bold mb-3 text-[#1a1a1a] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#120E2E] transition-colors duration-500 uppercase">5-min setup</div>
-                <div className="text-xs text-[#6B6B8A] font-bold tracking-widest uppercase leading-loose">From signup to first product</div>
+              <div className="trust-item md:border-x md:border-[#E2E6F0] group">
+                <div className="text-2xl font-bold mb-3 text-[#0D1020] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#0D1020] transition-colors duration-500 uppercase">5-min setup</div>
+                <div className="text-xs text-[#5C6490] font-bold tracking-widest uppercase leading-loose">From signup to first product</div>
               </div>
               <div className="trust-item group">
-                <div className="text-2xl font-bold mb-3 text-[#1a1a1a] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#120E2E] transition-colors duration-500 uppercase">24/7 support</div>
-                <div className="text-xs text-[#6B6B8A] font-bold tracking-widest uppercase leading-loose">We&apos;re here to help you succeed</div>
+                <div className="text-2xl font-bold mb-3 text-[#0D1020] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#0D1020] transition-colors duration-500 uppercase">24/7 support</div>
+                <div className="text-xs text-[#5C6490] font-bold tracking-widest uppercase leading-loose">We&apos;re here to help you succeed</div>
               </div>
             </div>
           </div>

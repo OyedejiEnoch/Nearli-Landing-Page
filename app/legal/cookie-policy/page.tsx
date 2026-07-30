@@ -32,8 +32,8 @@ const sections: LegalSection[] = [
     heading: "Types of Cookies We Use",
     body: (
       <>
-        <p className="font-semibold text-[#1a1a1a]">2.1 Strictly necessary cookies</p>
-        <p>These are essential for Nearli to work. Without them, key features won&apos;t function.</p>
+        <p className="font-semibold text-[#0D1020]">2.1 Strictly necessary cookies</p>
+        <p>These are essential for Ahiver to work. Without them, key features won&apos;t function.</p>
         <p>Examples:</p>
         <ul>
           <li>Authentication cookies that keep you logged in</li>
@@ -43,7 +43,7 @@ const sections: LegalSection[] = [
         </ul>
         <p>You cannot disable these — if you do, the platform won&apos;t work properly.</p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">2.2 Functional cookies</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">2.2 Functional cookies</p>
         <p>These remember your preferences and improve your experience.</p>
         <p>Examples:</p>
         <ul>
@@ -54,8 +54,8 @@ const sections: LegalSection[] = [
         </ul>
         <p>You can disable these but parts of the app may feel less personalized.</p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">2.3 Analytics cookies</p>
-        <p>These help us understand how people use Nearli so we can improve it.</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">2.3 Analytics cookies</p>
+        <p>These help us understand how people use Ahiver so we can improve it.</p>
         <p>Examples:</p>
         <ul>
           <li>Counting visitors and tracking which pages are most visited</li>
@@ -65,9 +65,9 @@ const sections: LegalSection[] = [
         </ul>
         <p>We use these in aggregate — they don&apos;t identify you personally to us.</p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">2.4 Marketing and advertising cookies</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">2.4 Marketing and advertising cookies</p>
         <p>
-          At present, Nearli does not use marketing or advertising cookies. If this changes in the
+          At present, Ahiver does not use marketing or advertising cookies. If this changes in the
           future, we will update this policy and ask for your consent where required.
         </p>
       </>
@@ -77,7 +77,7 @@ const sections: LegalSection[] = [
     heading: "Third-Party Cookies",
     body: (
       <>
-        <p>Some cookies are set by services we use to operate Nearli:</p>
+        <p>Some cookies are set by services we use to operate Ahiver:</p>
         <ul>
           <li>
             <strong>Hosting and infrastructure</strong> (Railway, Vercel) — for security and
@@ -141,7 +141,7 @@ const sections: LegalSection[] = [
       <>
         <p>You can control cookies in several ways:</p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">6.1 Browser settings</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">6.1 Browser settings</p>
         <p>Most browsers let you:</p>
         <ul>
           <li>View what cookies are stored</li>
@@ -157,21 +157,21 @@ const sections: LegalSection[] = [
           <li>Edge: edge://settings/privacy</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">6.2 Mobile device settings</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">6.2 Mobile device settings</p>
         <p>You can reset advertising identifiers and limit ad tracking in your device settings:</p>
         <ul>
           <li>iOS: Settings → Privacy → Tracking</li>
           <li>Android: Settings → Privacy → Ads</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">6.3 In-app controls</p>
-        <p>Within Nearli, you can:</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">6.3 In-app controls</p>
+        <p>Within Ahiver, you can:</p>
         <ul>
           <li>Manage your notification preferences in Settings</li>
           <li>Clear your local data through Account → Privacy</li>
           <li>Log out to clear session cookies</li>
         </ul>
-        <p>Note: blocking strictly necessary cookies will prevent Nearli from working properly.</p>
+        <p>Note: blocking strictly necessary cookies will prevent Ahiver from working properly.</p>
       </>
     ),
   },
@@ -191,9 +191,9 @@ const sections: LegalSection[] = [
       <>
         <p>If you have questions about how we use cookies, contact us at:</p>
         <p>
-          <strong>Nearli Technologies</strong>
+          <strong>Ahiver Technologies</strong>
           <br />
-          Email: <a href="mailto:privacy@nearli.com">privacy@nearli.com</a>
+          Email: <a href="mailto:privacy@ahiver.com">privacy@ahiver.com</a>
           <br />
           Address: [Your registered business address]
         </p>
@@ -210,8 +210,8 @@ export default function CookiePolicyPage() {
       currentHref="/legal/cookie-policy"
       intro={
         <>
-          This Cookie Policy explains how Nearli uses cookies and similar technologies on our website
-          and app. It works alongside our Privacy Policy. By using Nearli, you agree to our use of
+          This Cookie Policy explains how Ahiver uses cookies and similar technologies on our website
+          and app. It works alongside our Privacy Policy. By using Ahiver, you agree to our use of
           cookies as described here. You can control cookies through your browser settings at any
           time.
         </>
