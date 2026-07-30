@@ -46,14 +46,14 @@ export function Trust() {
         yPercent: 100,
         duration: 0.8,
         stagger: 0.1,
-        ease: "power4.out"
+        ease: 'power3.out'
       });
 
       tl.from(".trust-desc", {
         opacity: 0,
         y: 20,
         duration: 0.8,
-        ease: "power2.out"
+        ease: 'power3.out'
       }, "-=0.4");
 
       tl.from(trustRef.current, {
@@ -61,7 +61,7 @@ export function Trust() {
         x: -20,
         duration: 1,
         stagger: 0.15,
-        ease: "expo.out",
+        ease: 'power3.out',
       }, "-=0.2");
 
       // Stats Reveal
@@ -70,7 +70,7 @@ export function Trust() {
           y: 40,
           duration: 1.2,
           stagger: 0.2,
-          ease: "expo.out",
+          ease: 'power3.out',
           scrollTrigger: {
               trigger: ".stats-container",
               start: "top 85%"
@@ -101,7 +101,7 @@ export function Trust() {
     }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id='trust' className="py-24 md:py-36 lg:py-44 bg-white overflow-hidden">
+    <section ref={containerRef} id='trust' className="py-24 md:py-28 lg:py-36 bg-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-20 lg:mb-28">
           <h2 className="trust-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#0D1020] mb-6 font-bold tracking-tight">

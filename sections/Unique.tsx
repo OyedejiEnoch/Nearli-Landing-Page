@@ -51,14 +51,14 @@ export function Unique() {
         yPercent: 100,
         duration: 0.8,
         stagger: 0.1,
-        ease: "power4.out"
+        ease: 'power3.out'
       });
 
       tl.from(".unique-desc", {
         opacity: 0,
         y: 20,
         duration: 0.8,
-        ease: "power2.out"
+        ease: 'power3.out'
       }, "-=0.4");
 
       tl.from(uniqueRef.current, {
@@ -66,7 +66,7 @@ export function Unique() {
         opacity: 0,
         duration: 1.2,
         stagger: 0.15,
-        ease: "expo.out",
+        ease: 'power3.out',
       }, "-=0.2");
 
       // Grid cards scale interaction
@@ -84,7 +84,7 @@ export function Unique() {
     }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id='unique' className="py-24 md:py-36 lg:py-44 bg-[#0D1020] text-white overflow-hidden">
+    <section ref={containerRef} id='unique' className="py-24 md:py-28 lg:py-36 bg-[#0D1020] text-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-20 lg:mb-28">
           <Tagline text='Why Ahiver' className="white" />

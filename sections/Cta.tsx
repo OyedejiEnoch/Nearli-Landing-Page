@@ -26,21 +26,21 @@ export function Cta() {
       yPercent: 100,
       duration: 0.8,
       stagger: 0.1,
-      ease: "power4.out"
+      ease: 'power3.out'
     });
 
     tl.from(".cta-desc", {
       opacity: 0,
       y: 20,
       duration: 0.8,
-      ease: "power2.out"
+      ease: 'power3.out'
     }, "-=0.4");
 
     tl.from(".cta-form", {
         opacity: 0,
         y: 40,
         duration: 1.2,
-        ease: "expo.out"
+        ease: 'power3.out'
     }, "-=0.2");
 
     tl.from(".trust-item", {
@@ -61,7 +61,7 @@ export function Cta() {
         const rect = btnRef.current.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        gsap.to(btnRef.current, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: "power2.out" });
+        gsap.to(btnRef.current, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: 'power3.out' });
     };
 
     const resetMagnetic = () => {
@@ -103,7 +103,7 @@ export function Cta() {
   };
 
   return (
-    <section id="cta" ref={containerRef} className="py-24 md:py-36 lg:py-44 bg-white overflow-hidden">
+    <section id="cta" ref={containerRef} className="py-24 md:py-28 lg:py-30 bg-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="cta-heading text-4xl md:text-5xl lg:text-6xl xl:text-[5.5rem] font-bold mb-8 leading-[0.95] tracking-tight text-[#0D1020]">

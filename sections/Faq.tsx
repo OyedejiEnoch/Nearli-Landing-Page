@@ -45,7 +45,7 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
       gsap.fromTo(
         contentRef.current,
         { height: 0, opacity: 0 },
-        { height: 'auto', opacity: 1, duration: 0.4, ease: 'power2.out' }
+        { height: 'auto', opacity: 1, duration: 0.4, ease: 'power3.out' }
       );
     } else {
       gsap.to(contentRef.current, {
@@ -113,21 +113,21 @@ export function Faq() {
       yPercent: 100,
       duration: 0.8,
       stagger: 0.1,
-      ease: 'power4.out',
+      ease: 'power3.out',
     });
 
     tl.from('.faq-desc', {
       opacity: 0,
       y: 20,
       duration: 0.8,
-      ease: 'power2.out',
+      ease: 'power3.out',
     }, '-=0.4');
 
     tl.from('.faq-list', {
       opacity: 0,
       y: 30,
       duration: 1,
-      ease: 'expo.out',
+      ease: 'power3.out',
     }, '-=0.4');
   }, { scope: containerRef });
 

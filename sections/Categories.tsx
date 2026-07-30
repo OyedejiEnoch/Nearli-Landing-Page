@@ -44,15 +44,15 @@ export function Categories() {
     });
 
     tl.from('.cat-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' });
-    tl.from('.cat-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' }, '-=0.25');
-    tl.from('.cat-marquee', { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' }, '-=0.2');
+    tl.from('.cat-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
+    tl.from('.cat-marquee', { opacity: 0, y: 20, duration: 0.5, ease: 'power3.out' }, '-=0.2');
   }, { scope: containerRef });
 
   return (
     <section
       ref={containerRef}
       id="categories"
-      className="overflow-hidden bg-white py-24 md:py-36 lg:py-44"
+      className="overflow-hidden bg-white py-24 md:py-28 lg:py-30"
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center lg:mb-16">
@@ -60,7 +60,7 @@ export function Categories() {
             className="mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
             style={{ color: '#FF5A4D' }}
           >
-            Explore
+            05 — Explore
           </div>
           <h2 className="cat-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
             Every category, just{' '}

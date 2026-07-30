@@ -39,7 +39,7 @@ export function PhoneMockup() {
         y: 80,
         rotateY: 8,
         duration: 1.4,
-        ease: 'power4.out',
+        ease: 'power3.out',
         delay: 0.3,
       });
 
@@ -48,7 +48,7 @@ export function PhoneMockup() {
         x: (i) => (i === 0 ? -30 : 30),
         duration: 0.8,
         stagger: 0.2,
-        ease: 'power2.out',
+        ease: 'power3.out',
         delay: 1,
       });
 

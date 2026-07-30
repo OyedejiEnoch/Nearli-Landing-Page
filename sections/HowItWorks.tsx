@@ -43,9 +43,9 @@ export function HowItWorks() {
       scrollTrigger: { trigger: containerRef.current, start: 'top 65%' },
     });
 
-    tl.from('.how-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' });
+    tl.from('.how-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
     tl.from('.how-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
-    tl.from('.how-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' }, '-=0.25');
+    tl.from('.how-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
 
     tl.from(rowsRef.current, {
       opacity: 0,
@@ -55,14 +55,14 @@ export function HowItWorks() {
       ease: 'power3.out',
     }, '-=0.15');
 
-    tl.from('.how-cta', { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' }, '-=0.1');
+    tl.from('.how-cta', { opacity: 0, y: 20, duration: 0.5, ease: 'power3.out' }, '-=0.1');
   }, { scope: containerRef });
 
   return (
     <section
       ref={containerRef}
       id="how-it-works"
-      className="overflow-hidden bg-white py-24 md:py-36 lg:py-44"
+      className="overflow-hidden bg-white py-24 md:py-28 lg:py-30"
     >
       <div className="container mx-auto px-4 lg:px-8">
         {/* ── Signature recipe header ── */}
@@ -71,7 +71,7 @@ export function HowItWorks() {
             className="how-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
             style={{ color: '#FF5A4D' }}
           >
-            How it works
+            02 — How it works
           </div>
           <h2 className="how-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
             Make it{' '}

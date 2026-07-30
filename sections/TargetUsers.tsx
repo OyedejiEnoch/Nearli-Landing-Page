@@ -42,9 +42,9 @@ export function TargetUsers() {
       scrollTrigger: { trigger: containerRef.current, start: 'top 65%' },
     });
 
-    tl.from('.tgt-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' });
+    tl.from('.tgt-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
     tl.from('.tgt-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
-    tl.from('.tgt-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' }, '-=0.25');
+    tl.from('.tgt-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
     tl.from(cardsRef.current, {
       y: 30,
       opacity: 0,
@@ -53,14 +53,14 @@ export function TargetUsers() {
       ease: 'power3.out',
     }, '-=0.15');
 
-    tl.from('.tgt-success', { opacity: 0, y: 30, duration: 0.6, ease: 'power2.out' }, '-=0.1');
+    tl.from('.tgt-success', { opacity: 0, y: 30, duration: 0.6, ease: 'power3.out' }, '-=0.1');
   }, { scope: containerRef });
 
   return (
     <section
       ref={containerRef}
       id="targetUsers"
-      className="overflow-hidden bg-[#ffffff] py-24 md:py-36 lg:py-44"
+      className="overflow-hidden bg-[#ffffff] py-24 md:py-28 lg:py-36"
     >
       <div className="container mx-auto px-4 lg:px-8">
         {/* ── Signature recipe header ── */}
@@ -69,7 +69,7 @@ export function TargetUsers() {
             className="tgt-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
             style={{ color: '#FF5A4D' }}
           >
-            Who it&apos;s for
+            08 — Who it&apos;s for
           </div>
           <h2 className="tgt-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
             Built for every{' '}

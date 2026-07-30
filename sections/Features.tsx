@@ -49,9 +49,9 @@ export function Features() {
       scrollTrigger: { trigger: containerRef.current, start: 'top 65%' },
     });
 
-    tl.from('.features-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' });
+    tl.from('.features-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
     tl.from('.features-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
-    tl.from('.features-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' }, '-=0.25');
+    tl.from('.features-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
     tl.from(featuresRef.current, {
       y: 30,
       opacity: 0,
@@ -64,7 +64,7 @@ export function Features() {
       opacity: 0,
       y: 30,
       duration: 0.6,
-      ease: 'power2.out',
+      ease: 'power3.out',
       scrollTrigger: { trigger: '.features-highlight', start: 'top 80%' },
     });
   }, { scope: containerRef });
@@ -73,7 +73,7 @@ export function Features() {
     <section
       ref={containerRef}
       id="features"
-      className="overflow-hidden bg-[#ffffff] py-24 md:py-36 lg:py-44"
+      className="overflow-hidden bg-[#ffffff] py-24 md:py-28 lg:py-30"
     >
       <div className="container mx-auto px-4 lg:px-8">
         {/* ── Signature recipe header ── */}
@@ -82,7 +82,7 @@ export function Features() {
             className="features-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
             style={{ color: '#FF5A4D' }}
           >
-            Features
+            03 — Features
           </div>
           <h2 className="features-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
             Everything you need to be{' '}

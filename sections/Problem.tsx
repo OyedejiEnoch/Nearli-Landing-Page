@@ -39,9 +39,9 @@ export function Problem() {
       scrollTrigger: { trigger: containerRef.current, start: 'top 70%' },
     });
 
-    tl.from('.problem-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' });
+    tl.from('.problem-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
     tl.from('.problem-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
-    tl.from('.problem-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' }, '-=0.25');
+    tl.from('.problem-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
     tl.from(cardsRef.current, {
       y: 30,
       opacity: 0,
@@ -49,14 +49,14 @@ export function Problem() {
       stagger: 0.08,
       ease: 'power3.out',
     }, '-=0.2');
-    tl.from('.problem-quote', { opacity: 0, y: 20, duration: 0.6, ease: 'power2.out' }, '-=0.1');
+    tl.from('.problem-quote', { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out' }, '-=0.1');
   }, { scope: containerRef });
 
   return (
     <section
       ref={containerRef}
       id="problem"
-      className="overflow-hidden bg-[#ffffff] py-24 md:py-36 lg:py-44"
+      className="overflow-hidden bg-[#ffffff] py-24 md:py-28 lg:py-36"
     >
       <div className="container mx-auto px-4 lg:px-8">
         {/* ── Signature recipe header ── */}
@@ -65,7 +65,7 @@ export function Problem() {
             className="problem-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
             style={{ color: '#FF5A4D' }}
           >
-            The problem
+            01 — The problem
           </div>
           <h2 className="problem-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
             The reality for{' '}

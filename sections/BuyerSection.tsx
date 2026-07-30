@@ -124,9 +124,9 @@ export function BuyerSection() {
       scrollTrigger: { trigger: containerRef.current, start: 'top 65%' },
     });
 
-    tl.from('.buyer-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' });
+    tl.from('.buyer-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
     tl.from('.buyer-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
-    tl.from('.buyer-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' }, '-=0.25');
+    tl.from('.buyer-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
     tl.from('.buyer-map', { opacity: 0, y: 30, scale: 0.97, duration: 0.7, ease: 'power3.out' }, '-=0.2');
     tl.from(stepsRef.current, { opacity: 0, x: 20, duration: 0.5, stagger: 0.1, ease: 'power3.out' }, '-=0.4');
   }, { scope: containerRef });
@@ -135,7 +135,7 @@ export function BuyerSection() {
     <section
       ref={containerRef}
       id="for-buyers"
-      className="overflow-hidden bg-white py-24 md:py-36 lg:py-44"
+      className="overflow-hidden bg-white py-24 md:py-28 lg:py-30"
     >
       <div className="container mx-auto px-4 lg:px-8">
         {/* ── Signature recipe header ── */}
@@ -144,7 +144,7 @@ export function BuyerSection() {
             className="buyer-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
             style={{ color: '#FF5A4D' }}
           >
-            For buyers
+            04 — For buyers
           </div>
           <h2 className="buyer-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
             Everything{' '}

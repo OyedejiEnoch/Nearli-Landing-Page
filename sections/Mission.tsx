@@ -15,10 +15,10 @@ export function Mission() {
       scrollTrigger: { trigger: containerRef.current, start: 'top 70%' },
     });
 
-    tl.from('.mission-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' });
+    tl.from('.mission-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
     tl.from('.mission-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
-    tl.from('.mission-body', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' }, '-=0.25');
-    tl.from('.mission-cta', { opacity: 0, y: 12, duration: 0.4, ease: 'power2.out' }, '-=0.25');
+    tl.from('.mission-body', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
+    tl.from('.mission-cta', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
     tl.from('.mission-visual', { opacity: 0, scale: 0.97, y: 20, duration: 0.6, ease: 'power3.out' }, '-=0.4');
     tl.from('.mission-float', {
       opacity: 0,
@@ -34,9 +34,9 @@ export function Mission() {
     <section
       ref={containerRef}
       id="mission"
-      className="overflow-hidden bg-white py-24 md:py-36 lg:py-44"
+      className="overflow-hidden bg-white py-24 md:py-28 lg:py-28"
     >
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left — copy */}
           <div>
@@ -44,7 +44,7 @@ export function Mission() {
               className="mission-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
               style={{ color: '#FF5A4D' }}
             >
-              Our mission
+              06 — Our mission
             </div>
             <h2 className="mission-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
               Stores around the{' '}
