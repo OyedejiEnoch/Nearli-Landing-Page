@@ -23,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 type Callout = { type: "tip" | "note" | "important"; text: string }
 
-const whatIsNearli = [
+const whatIsAhiver = [
   {
     icon: Store,
     title: "Get discovered",
@@ -49,7 +49,7 @@ const steps: {
 }[] = [
   {
     title: "Create your account",
-    desc: "Open Nearli and tap 'Create Account'. Enter your name, email, and a password. Choose your state, then enable location so the app knows what businesses are near you.",
+    desc: "Open Ahiver and tap 'Create Account'. Enter your name, email, and a password. Choose your state, then enable location so the app knows what businesses are near you.",
     todo: ["Fill in name, email, password", "Select your state", "Enable location access"],
     callout: {
       type: "tip",
@@ -85,7 +85,7 @@ const steps: {
   },
   {
     title: "Open your profile and tap 'Become a Seller'",
-    desc: "Tap the Profile icon at the bottom right. On your profile page you'll see a button — 'Become a Seller'. Tap it. This starts setting up your business on Nearli.",
+    desc: "Tap the Profile icon at the bottom right. On your profile page you'll see a button — 'Become a Seller'. Tap it. This starts setting up your business on Ahiver.",
     todo: ["Tap the profile icon — bottom right", "Tap the 'Become a Seller' button"],
     callout: {
       type: "important",
@@ -158,7 +158,7 @@ const growthTips = [
   {
     n: "4",
     title: "Share your store link",
-    body: "Drop your Nearli store link on WhatsApp Status and Instagram bio. Bring your existing customers in — they'll follow you here.",
+    body: "Drop your Ahiver store link on WhatsApp Status and Instagram bio. Bring your existing customers in — they'll follow you here.",
   },
 ]
 
@@ -169,16 +169,16 @@ const calloutStyles: Record<
   tip: {
     label: "Tip",
     icon: Lightbulb,
-    wrap: "bg-[#F3EEFC] border-l-4 border-[#120E2E]",
-    iconColor: "text-[#120E2E]",
-    label_color: "text-[#120E2E]",
+    wrap: "bg-[#E0EBFF] border-l-4 border-[#0D1020]",
+    iconColor: "text-[#0D1020]",
+    label_color: "text-[#0D1020]",
   },
   note: {
     label: "Note",
     icon: Info,
-    wrap: "bg-[#F0EBE2] border-l-4 border-[#6B6B8A]",
-    iconColor: "text-[#6B6B8A]",
-    label_color: "text-[#6B6B8A]",
+    wrap: "bg-[#F0EBE2] border-l-4 border-[#5C6490]",
+    iconColor: "text-[#5C6490]",
+    label_color: "text-[#5C6490]",
   },
   important: {
     label: "Important",
@@ -200,7 +200,7 @@ function CalloutBox({ callout }: { callout: Callout }) {
           {s.label}
         </span>
       </div>
-      <p className="text-sm leading-relaxed text-[#555]">{callout.text}</p>
+      <p className="text-sm leading-relaxed text-[#5C6490]">{callout.text}</p>
     </div>
   )
 }
@@ -224,25 +224,19 @@ export default function SellerGuidePage() {
   )
 
   return (
-    <div ref={root} className="bg-[#FDFAF6]">
+    <div ref={root} className="bg-white">
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-[#120E2E] pt-32 md:pt-40 lg:pt-44 pb-20 md:pb-28">
-        {/* soft glows */}
-        <div
-          className="pointer-events-none absolute right-[-8%] top-[-10%] h-[420px] w-[420px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(158,94,240,0.35), transparent 70%)" }}
-          aria-hidden="true"
-        />
+      <section className="relative overflow-hidden bg-[#0D1020] pt-32 md:pt-40 lg:pt-44 pb-20 md:pb-28">
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
-          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#C5BFDA]">
+          <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#E2E6F0]">
             The Official Seller Guide
           </span>
           <h1 className="reveal-up mt-6 max-w-3xl font-[family-name:var(--font-fraunces)] text-5xl leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Set up your store on Nearli.
+            Set up your store on Ahiver.
           </h1>
-          <div className="mt-5 h-1 w-20 rounded-full bg-[#9E5EF0]" />
+          <div className="mt-5 h-1 w-20 rounded-full bg-[#1E40AF]" />
           <p className="reveal-up mt-8 max-w-xl text-lg leading-relaxed text-[#b6b2c4]">
             Get discovered by customers near you — in 10 simple steps. This guide walks you through
             every screen, from signing up to your first product post.
@@ -262,7 +256,7 @@ export default function SellerGuidePage() {
                 <div className="font-[family-name:var(--font-fraunces)] text-3xl font-bold text-white sm:text-4xl">
                   {s.big}
                 </div>
-                <div className="mt-2 text-[10px] font-bold uppercase tracking-widest text-[#C5BFDA]">
+                <div className="mt-2 text-[10px] font-bold uppercase tracking-widest text-[#E2E6F0]">
                   {s.small}
                 </div>
               </div>
@@ -271,29 +265,29 @@ export default function SellerGuidePage() {
         </div>
       </section>
 
-      {/* ── What is Nearli ── */}
-      <section className="border-b border-[#C5BFDA] py-20 md:py-28">
+      {/* ── What is Ahiver ── */}
+      <section className="border-b border-[#E2E6F0] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <span className="reveal-up block text-[11px] font-bold uppercase tracking-[0.25em] text-[#6B6B8A]">
-            → What is Nearli
+          <span className="reveal-up block text-[11px] font-bold uppercase tracking-[0.25em] text-[#5C6490]">
+            → What is Ahiver
           </span>
-          <h2 className="reveal-up mt-6 max-w-2xl font-[family-name:var(--font-fraunces)] text-4xl leading-[1.05] tracking-tight text-[#1a1a1a] sm:text-5xl">
+          <h2 className="reveal-up mt-6 max-w-2xl font-[family-name:var(--font-fraunces)] text-4xl leading-[1.05] tracking-tight text-[#0D1020] sm:text-5xl">
             Your business, found by the customers near you.
           </h2>
-          <p className="reveal-up mt-6 max-w-2xl text-lg leading-relaxed text-[#6B6B8A]">
-            Nearli is a location-based marketplace built for Nigerian business owners. People near you
+          <p className="reveal-up mt-6 max-w-2xl text-lg leading-relaxed text-[#5C6490]">
+            Ahiver is a location-based marketplace built for Nigerian business owners. People near you
             scroll a live feed of local businesses, find what you sell, and message you directly. No
             ads. No algorithm burying you. Just visibility to people in your city.
           </p>
 
-          <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[#C5BFDA] bg-[#C5BFDA] md:grid-cols-3">
-            {whatIsNearli.map(({ icon: Icon, title, body }) => (
+          <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[#E2E6F0] bg-[#E2E6F0] md:grid-cols-3">
+            {whatIsAhiver.map(({ icon: Icon, title, body }) => (
               <div key={title} className="reveal-up bg-white p-8">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#120E2E]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0D1020]">
                   <Icon className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="mt-5 text-lg font-semibold text-[#1a1a1a]">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#6B6B8A]">{body}</p>
+                <h3 className="mt-5 text-lg font-semibold text-[#0D1020]">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#5C6490]">{body}</p>
               </div>
             ))}
           </div>
@@ -304,10 +298,10 @@ export default function SellerGuidePage() {
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
           <div className="mb-16">
-            <span className="reveal-up block text-[11px] font-bold uppercase tracking-[0.25em] text-[#6B6B8A]">
+            <span className="reveal-up block text-[11px] font-bold uppercase tracking-[0.25em] text-[#5C6490]">
               → The walkthrough
             </span>
-            <h2 className="reveal-up mt-6 font-[family-name:var(--font-fraunces)] text-4xl leading-[1.05] tracking-tight text-[#1a1a1a] sm:text-5xl">
+            <h2 className="reveal-up mt-6 font-[family-name:var(--font-fraunces)] text-4xl leading-[1.05] tracking-tight text-[#0D1020] sm:text-5xl">
               From sign-up to your first post.
             </h2>
           </div>
@@ -315,7 +309,7 @@ export default function SellerGuidePage() {
           <div className="relative">
             {/* vertical line */}
             <div
-              className="absolute left-6 top-3 bottom-3 w-px bg-[#C5BFDA] md:left-8"
+              className="absolute left-6 top-3 bottom-3 w-px bg-[#E2E6F0] md:left-8"
               aria-hidden="true"
             />
 
@@ -323,32 +317,32 @@ export default function SellerGuidePage() {
               {steps.map((step, i) => (
                 <li key={i} className="reveal-up relative pl-20 md:pl-24">
                   {/* number node */}
-                  <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#120E2E] shadow-lg md:h-16 md:w-16">
+                  <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0D1020] shadow-lg md:h-16 md:w-16">
                     <span className="font-[family-name:var(--font-fraunces)] text-lg font-bold text-white md:text-2xl">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
 
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#6B6B8A]">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#5C6490]">
                     Step {i + 1} of 10
                   </div>
-                  <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-2xl leading-tight tracking-tight text-[#1a1a1a] md:text-3xl">
+                  <h3 className="mt-2 font-[family-name:var(--font-fraunces)] text-2xl leading-tight tracking-tight text-[#0D1020] md:text-3xl">
                     {step.title}
                   </h3>
-                  <p className="mt-4 text-base leading-relaxed text-[#555]">{step.desc}</p>
+                  <p className="mt-4 text-base leading-relaxed text-[#5C6490]">{step.desc}</p>
 
                   {/* what you'll do */}
                   <div className="mt-6">
-                    <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#6B6B8A]">
+                    <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#5C6490]">
                       What you&apos;ll do
                     </div>
                     <ul className="flex flex-wrap gap-2.5">
                       {step.todo.map((t) => (
                         <li
                           key={t}
-                          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-[#1a1a1a] shadow-sm ring-1 ring-[#C5BFDA]/60"
+                          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-[#0D1020] shadow-sm ring-1 ring-[#E2E6F0]/60"
                         >
-                          <CheckCircle2 className="h-4 w-4 shrink-0 text-[#9E5EF0]" />
+                          <CheckCircle2 className="h-4 w-4 shrink-0 text-[#1E40AF]" />
                           {t}
                         </li>
                       ))}
@@ -366,9 +360,9 @@ export default function SellerGuidePage() {
       {/* ── You're live ── */}
       <section className="py-10 md:py-16">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="reveal-up overflow-hidden rounded-3xl bg-[#120E2E] p-8 md:p-12">
+          <div className="reveal-up overflow-hidden rounded-3xl bg-[#0D1020] p-8 md:p-12">
             <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#9E5EF0]">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#1E40AF]">
                 <Check className="h-7 w-7 text-white" strokeWidth={3} />
               </div>
               <div>
@@ -384,7 +378,7 @@ export default function SellerGuidePage() {
               {["Profile set", "Store created", "Product listed", "First post live"].map((t) => (
                 <span
                   key={t}
-                  className="rounded-full bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#C5BFDA] ring-1 ring-white/10"
+                  className="rounded-full bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#E2E6F0] ring-1 ring-white/10"
                 >
                   {t}
                 </span>
@@ -397,10 +391,10 @@ export default function SellerGuidePage() {
       {/* ── Grow faster tips ── */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <span className="reveal-up block text-[11px] font-bold uppercase tracking-[0.25em] text-[#6B6B8A]">
+          <span className="reveal-up block text-[11px] font-bold uppercase tracking-[0.25em] text-[#5C6490]">
             → Grow faster
           </span>
-          <h2 className="reveal-up mt-6 max-w-2xl font-[family-name:var(--font-fraunces)] text-4xl leading-[1.05] tracking-tight text-[#1a1a1a] sm:text-5xl">
+          <h2 className="reveal-up mt-6 max-w-2xl font-[family-name:var(--font-fraunces)] text-4xl leading-[1.05] tracking-tight text-[#0D1020] sm:text-5xl">
             4 tips to get your first customer this week.
           </h2>
 
@@ -408,15 +402,15 @@ export default function SellerGuidePage() {
             {growthTips.map((tip) => (
               <div
                 key={tip.n}
-                className="reveal-up rounded-2xl border border-[#C5BFDA] bg-white p-7 md:p-8"
+                className="reveal-up rounded-2xl border border-[#E2E6F0] bg-white p-7 md:p-8"
               >
                 <div className="flex items-center gap-4">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F3EEFC] font-[family-name:var(--font-fraunces)] text-lg font-bold text-[#9E5EF0]">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E0EBFF] font-[family-name:var(--font-fraunces)] text-lg font-bold text-[#1E40AF]">
                     {tip.n}
                   </span>
-                  <h3 className="text-lg font-semibold text-[#1a1a1a]">{tip.title}</h3>
+                  <h3 className="text-lg font-semibold text-[#0D1020]">{tip.title}</h3>
                 </div>
-                <p className="mt-4 text-base leading-relaxed text-[#6B6B8A]">{tip.body}</p>
+                <p className="mt-4 text-base leading-relaxed text-[#5C6490]">{tip.body}</p>
               </div>
             ))}
           </div>
@@ -426,25 +420,25 @@ export default function SellerGuidePage() {
       {/* ── CTA ── */}
       <section className="bg-[#F0EBE2] py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
-          <h2 className="reveal-up font-[family-name:var(--font-fraunces)] text-4xl leading-[1.05] tracking-tight text-[#1a1a1a] sm:text-5xl">
+          <h2 className="reveal-up font-[family-name:var(--font-fraunces)] text-4xl leading-[1.05] tracking-tight text-[#0D1020] sm:text-5xl">
             Ready to set up your store?
           </h2>
-          <p className="reveal-up mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#6B6B8A]">
-            Join the waitlist and be one of the first businesses live on Nearli when we launch.
+          <p className="reveal-up mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#5C6490]">
+            Join the waitlist and be one of the first businesses live on Ahiver when we launch.
           </p>
           <div className="reveal-up mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Link
               href="/#cta"
-              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#120E2E] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-2xl transition-colors hover:bg-[#0a0820]"
+              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#0D1020] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-2xl transition-colors hover:bg-[#070912]"
             >
               Join the waitlist
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <a
-              href="mailto:hello@nearli.com"
-              className="text-sm font-semibold uppercase tracking-wide text-[#120E2E] transition-colors hover:underline"
+              href="mailto:hello@ahiver.com"
+              className="text-sm font-semibold uppercase tracking-wide text-[#0D1020] transition-colors hover:underline"
             >
-              Need help? hello@nearli.com
+              Need help? hello@ahiver.com
             </a>
           </div>
         </div>

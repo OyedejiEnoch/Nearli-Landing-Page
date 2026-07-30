@@ -10,7 +10,7 @@ export function Footer() {
     ],
     company: [
       { label: 'About Us', href: '/about' },
-      { label: 'Contact', href: 'mailto:hello@nearli.com' },
+      { label: 'Contact', href: 'mailto:hello@ahiver.com' },
       { label: 'Seller Guide', href: '/seller-guide' },
     ],
     legal: [
@@ -28,14 +28,14 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#000000] text-[#999]">
+    <footer className="bg-[#000000] text-[#8F97BB]">
       <div className="container mx-auto px-4 lg:px-8 py-16 lg:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="mb-6">
               <span className="text-xl font-bold tracking-tight text-white font-[family-name:var(--font-barlow)]">
-                NEARLI
+                AHIVER
               </span>
             </div>
             <p className="text-sm text-[#e3e3e6] leading-relaxed mb-8 max-w-xs">
@@ -105,7 +105,7 @@ export function Footer() {
         <div className="pt-10 border-t border-[#e3e3e6]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-xs text-[#e3e3e6]">
-              © 2026 Nearli. All rights reserved.
+              © 2026 Ahiver. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
@@ -113,7 +113,7 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full border border-[#333] hover:border-[#6B6B8A] flex items-center justify-center transition-colors text-[#e3e3e6] hover:text-white"
+                  className="w-10 h-10 rounded-full border border-[#1E2340] hover:border-[#5C6490] flex items-center justify-center transition-colors text-[#e3e3e6] hover:text-white"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>

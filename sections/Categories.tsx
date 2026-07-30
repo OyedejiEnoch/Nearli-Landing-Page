@@ -1,5 +1,4 @@
 "use client"
-import Tagline from '@/components/Tagline';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -23,7 +22,7 @@ const categories = [
 function CategoryCard({ name, image }: { name: string; image: string }) {
   return (
     <div className="w-[200px] shrink-0 sm:w-[250px]">
-      <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-[#F0EBE2]">
+      <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-[#EFF2FA]">
         <img
           src={image}
           alt={name}
@@ -31,7 +30,7 @@ function CategoryCard({ name, image }: { name: string; image: string }) {
           className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-110"
         />
       </div>
-      <div className="mt-4 text-center text-base font-semibold text-[#1a1a1a]">{name}</div>
+      <div className="mt-4 text-center text-base font-semibold text-[#0D1020]">{name}</div>
     </div>
   );
 }
@@ -44,42 +43,35 @@ export function Categories() {
       scrollTrigger: { trigger: containerRef.current, start: 'top 75%' },
     });
 
-    tl.from('.cat-heading .word-reveal', {
-      yPercent: 100,
-      duration: 0.8,
-      stagger: 0.1,
-      ease: 'power4.out',
-    });
-
-    tl.from('.cat-desc', { opacity: 0, y: 20, duration: 0.8, ease: 'power2.out' }, '-=0.4');
-    tl.from('.cat-marquee', { opacity: 0, y: 30, duration: 1, ease: 'power2.out' }, '-=0.3');
+    tl.from('.cat-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' });
+    tl.from('.cat-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
+    tl.from('.cat-marquee', { opacity: 0, y: 20, duration: 0.5, ease: 'power3.out' }, '-=0.2');
   }, { scope: containerRef });
 
   return (
     <section
       ref={containerRef}
       id="categories"
-      className="overflow-hidden bg-[#FDFAF6] py-20 md:py-28 lg:py-32"
+      className="overflow-hidden bg-white py-24 md:py-28 lg:py-30"
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center lg:mb-16">
-          <Tagline text="Explore" />
-          <h2 className="cat-heading mb-6 text-4xl font-bold tracking-tight text-[#1a1a1a] md:text-5xl lg:text-6xl xl:text-7xl">
-            <div className="mr-4 inline-block overflow-hidden">
-              <span className="word-reveal inline-block">EVERY</span>
-            </div>
-            <div className="mr-4 inline-block overflow-hidden">
-              <span className="word-reveal inline-block text-[#120E2E]">CATEGORY</span>
-            </div>
-            <br />
-            <div className="mr-4 inline-block overflow-hidden">
-              <span className="word-reveal inline-block">NEAR</span>
-            </div>
-            <div className="inline-block overflow-hidden">
-              <span className="word-reveal inline-block">YOU.</span>
-            </div>
+          <div
+            className="mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
+            style={{ color: '#FF5A4D' }}
+          >
+            05 — Explore
+          </div>
+          <h2 className="cat-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
+            Every category, just{' '}
+            <span
+              className="italic font-normal font-[family-name:var(--font-playfair)]"
+              style={{ color: '#FF5A4D' }}
+            >
+              nearby.
+            </span>
           </h2>
-          <p className="cat-desc mx-auto max-w-xl text-base leading-relaxed text-[#6B6B8A] md:text-lg">
+          <p className="cat-desc mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#5C6490] md:text-lg">
             From fabrics to food to gadgets — whatever you&apos;re looking for, there&apos;s a
             business near you that sells it.
           </p>
@@ -88,10 +80,6 @@ export function Categories() {
 
       {/* Marquee — full bleed */}
       <div className="cat-marquee nearli-marquee-group relative">
-        {/* edge fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#FDFAF6] to-transparent md:w-32" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#FDFAF6] to-transparent md:w-32" />
-
         <div className="flex w-max">
           {/* track (duplicated for a seamless loop) */}
           <div className="nearli-marquee flex w-max gap-4 pr-4 sm:gap-6 sm:pr-6">

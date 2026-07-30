@@ -46,14 +46,14 @@ export function Trust() {
         yPercent: 100,
         duration: 0.8,
         stagger: 0.1,
-        ease: "power4.out"
+        ease: 'power3.out'
       });
 
       tl.from(".trust-desc", {
         opacity: 0,
         y: 20,
         duration: 0.8,
-        ease: "power2.out"
+        ease: 'power3.out'
       }, "-=0.4");
 
       tl.from(trustRef.current, {
@@ -61,7 +61,7 @@ export function Trust() {
         x: -20,
         duration: 1,
         stagger: 0.15,
-        ease: "expo.out",
+        ease: 'power3.out',
       }, "-=0.2");
 
       // Stats Reveal
@@ -70,7 +70,7 @@ export function Trust() {
           y: 40,
           duration: 1.2,
           stagger: 0.2,
-          ease: "expo.out",
+          ease: 'power3.out',
           scrollTrigger: {
               trigger: ".stats-container",
               start: "top 85%"
@@ -101,10 +101,10 @@ export function Trust() {
     }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id='trust' className="py-20 md:py-28 lg:py-36 bg-white overflow-hidden">
+    <section ref={containerRef} id='trust' className="py-24 md:py-28 lg:py-36 bg-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
-          <h2 className="trust-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#1a1a1a] mb-6 font-bold tracking-tight">
+        <div className="max-w-3xl mx-auto text-center mb-20 lg:mb-28">
+          <h2 className="trust-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#0D1020] mb-6 font-bold tracking-tight">
             <div className="overflow-hidden inline-block mr-4">
               <span className="word-reveal inline-block">MAKE</span>
             </div>
@@ -112,7 +112,7 @@ export function Trust() {
               <span className="word-reveal inline-block">EVERY</span>
             </div>
             <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block text-[#120E2E]">SMALL</span>
+              <span className="word-reveal inline-block text-[#0D1020]">SMALL</span>
             </div>
             <br />
             <div className="overflow-hidden inline-block mr-4">
@@ -122,29 +122,29 @@ export function Trust() {
               <span className="word-reveal inline-block">VISIBLE.</span>
             </div>
           </h2>
-          <p className="trust-desc text-base md:text-lg text-[#6B6B8A] max-w-lg mx-auto leading-relaxed">
+          <p className="trust-desc text-base md:text-lg text-[#5C6490] max-w-lg mx-auto leading-relaxed">
             We believe that talent and hard work are everywhere, but opportunity isn&apos;t. We&apos;re changing that.
           </p>
         </div>
 
         {/* Values — editorial row layout */}
-        <div className="max-w-6xl mx-auto border-t border-[#C5BFDA] mb-24">
+        <div className="max-w-6xl mx-auto border-t border-[#E2E6F0] mb-24">
           {values.map((value, index) => (
             <div 
               key={index}
               ref={(el) => { trustRef.current[index] = el }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-6 py-8 md:py-10 border-b border-[#C5BFDA] items-start hover:bg-[#FDFAF6] transition-colors duration-500 group"
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 py-8 md:py-10 border-b border-[#E2E6F0] items-start hover:bg-white transition-colors duration-500 group"
             >
               <div className="md:col-span-1">
-                <value.icon className="w-5 h-5 text-[#120E2E] group-hover:scale-125 transition-transform duration-500" />
+                <value.icon className="w-5 h-5 text-[#0D1020] group-hover:scale-125 transition-transform duration-500" />
               </div>
               <div className="md:col-span-3">
-                <h3 className="text-lg font-semibold text-[#1a1a1a] tracking-tight">
+                <h3 className="text-lg font-semibold text-[#0D1020] tracking-tight">
                   {value.title}
                 </h3>
               </div>
               <div className="md:col-span-8">
-                <p className="text-base text-[#6B6B8A] leading-relaxed">
+                <p className="text-base text-[#5C6490] leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -153,12 +153,12 @@ export function Trust() {
         </div>
 
         {/* Stats Section */}
-        <div className="stats-container max-w-6xl mx-auto bg-[#120E2E] p-10 md:p-14 lg:p-16 text-white rounded-sm shadow-2xl">
+        <div className="stats-container max-w-6xl mx-auto bg-[#0D1020] p-10 md:p-14 lg:p-16 text-white rounded-sm shadow-2xl">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-barlow)] tracking-tight uppercase">
               GROWING TOGETHER
             </h3>
-            <p className="text-[#6B6B8A] text-base tracking-widest font-bold uppercase">
+            <p className="text-[#5C6490] text-base tracking-widest font-bold uppercase">
               Real impact · Real businesses · Real growth
             </p>
           </div>
@@ -168,23 +168,23 @@ export function Trust() {
               <div className="stat-number text-5xl md:text-7xl font-bold text-white mb-6 font-[family-name:var(--font-barlow)]" data-target="92" data-suffix="%">
                 0%
               </div>
-              <div className="text-[#6B6B8A] text-[10px] font-bold tracking-widest uppercase leading-loose">
+              <div className="text-[#5C6490] text-[10px] font-bold tracking-widest uppercase leading-loose">
                Possibility of sellers getting<br/>their first sale within 7 days
               </div>
             </div>
-            <div className="stat-box text-center border-x border-[#1e1a38]">
+            <div className="stat-box text-center border-x border-[#23283f]">
               <div className="stat-number text-5xl md:text-7xl font-bold text-white mb-6 font-[family-name:var(--font-barlow)]" data-target="3.5" data-suffix="x">
                 0x
               </div>
-              <div className="text-[#6B6B8A] text-[10px] font-bold tracking-widest uppercase leading-loose">
-                Average increase in monthly<br/>sales after joining Nearli
+              <div className="text-[#5C6490] text-[10px] font-bold tracking-widest uppercase leading-loose">
+                Average increase in monthly<br/>sales after joining Ahiver
               </div>
             </div>
             <div className="stat-box text-center">
               <div className="stat-number text-5xl md:text-7xl font-bold text-white mb-6 font-[family-name:var(--font-barlow)]" data-target="24" data-suffix="/7">
                 0/7
               </div>
-              <div className="text-[#6B6B8A] text-[10px] font-bold tracking-widest uppercase leading-loose">
+              <div className="text-[#5C6490] text-[10px] font-bold tracking-widest uppercase leading-loose">
                 Your store works for you<br/>continuously, even offline
               </div>
             </div>
@@ -193,26 +193,26 @@ export function Trust() {
 
         {/* Future Vision */}
         <div className="mt-24 max-w-5xl mx-auto group">
-          <div className="border border-[#C5BFDA] p-10 md:p-12 lg:p-14 hover:border-[#120E2E] transition-colors duration-700">
+          <div className="border border-[#E2E6F0] p-10 md:p-12 lg:p-14 hover:border-[#0D1020] transition-colors duration-700">
             <div className="mb-10 text-center md:text-left">
-              <h3 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4 font-[family-name:var(--font-barlow)] tracking-tight uppercase">
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0D1020] mb-4 font-[family-name:var(--font-barlow)] tracking-tight uppercase">
                 What&apos;s next
               </h3>
-              <p className="text-base text-[#6B6B8A] font-medium">
+              <p className="text-base text-[#5C6490] font-medium">
                 We&apos;re constantly evolving to serve you better.
               </p>
             </div>
-            <div className="border-t border-[#C5BFDA]">
-              <ul className="divide-y divide-[#C5BFDA]">
+            <div className="border-t border-[#E2E6F0]">
+              <ul className="divide-y divide-[#E2E6F0]">
                 {[
                     "AI-powered product recommendations to match customers with your products",
                     "Smart pricing insights based on similar products and local demand",
                     "Automated inventory management and restocking reminders",
                     "Multi-language support to reach customers across borders"
                 ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-5 py-6 group/item hover:bg-[#FDFAF6] transition-colors duration-300 px-4 -mx-4">
-                        <span className="text-[#120E2E] font-bold text-sm mt-0.5 group-hover/item:translate-x-1 transition-transform duration-300">→</span>
-                        <span className="text-[#333] text-base group-hover/item:text-[#120E2E] transition-colors duration-300">{item}</span>
+                    <li key={i} className="flex items-start gap-5 py-6 group/item hover:bg-white transition-colors duration-300 px-4 -mx-4">
+                        <span className="text-[#0D1020] font-bold text-sm mt-0.5 group-hover/item:translate-x-1 transition-transform duration-300">→</span>
+                        <span className="text-[#1E2340] text-base group-hover/item:text-[#0D1020] transition-colors duration-300">{item}</span>
                     </li>
                 ))}
               </ul>

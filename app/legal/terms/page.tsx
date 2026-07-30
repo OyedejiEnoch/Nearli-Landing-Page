@@ -2,17 +2,17 @@ import LegalLayout, { LegalSection } from "@/components/LegalLayout"
 
 const sections: LegalSection[] = [
   {
-    heading: "Who Can Use Nearli",
+    heading: "Who Can Use Ahiver",
     body: (
       <>
-        <p>To use Nearli, you must be:</p>
+        <p>To use Ahiver, you must be:</p>
         <ul>
           <li>At least 18 years old</li>
           <li>Able to enter into a binding contract under Nigerian law</li>
           <li>Not prohibited from using the Service under any applicable laws</li>
         </ul>
         <p>
-          If you&apos;re using Nearli on behalf of a business, you confirm that you have authority to
+          If you&apos;re using Ahiver on behalf of a business, you confirm that you have authority to
           bind that business to these Terms.
         </p>
       </>
@@ -22,7 +22,7 @@ const sections: LegalSection[] = [
     heading: "Your Account",
     body: (
       <>
-        <p>When you create an account on Nearli, you agree to:</p>
+        <p>When you create an account on Ahiver, you agree to:</p>
         <ul>
           <li>Provide accurate, current, and complete information</li>
           <li>Keep your account information up to date</li>
@@ -42,11 +42,11 @@ const sections: LegalSection[] = [
     ),
   },
   {
-    heading: "What Nearli Is",
+    heading: "What Ahiver Is",
     body: (
       <>
         <p>
-          Nearli is a location-based marketplace and discovery platform that connects buyers with
+          Ahiver is a location-based marketplace and discovery platform that connects buyers with
           local businesses in Nigerian cities. We provide the platform and tools — but we are not a
           party to transactions between buyers and sellers.
         </p>
@@ -75,9 +75,9 @@ const sections: LegalSection[] = [
     heading: "Seller Terms",
     body: (
       <>
-        <p>If you sign up as a seller on Nearli, you agree to:</p>
+        <p>If you sign up as a seller on Ahiver, you agree to:</p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">4.1 List honestly</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">4.1 List honestly</p>
         <ul>
           <li>Only list products and services that you have the lawful right to sell</li>
           <li>Provide accurate descriptions, photos, prices, and availability</li>
@@ -85,7 +85,7 @@ const sections: LegalSection[] = [
           <li>Not list counterfeit, stolen, or illegal items</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">4.2 Honor your commitments</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">4.2 Honor your commitments</p>
         <ul>
           <li>Honor the prices you advertise</li>
           <li>Respond to buyer messages in good faith</li>
@@ -93,7 +93,7 @@ const sections: LegalSection[] = [
           <li>Handle complaints, refunds, and returns professionally</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">4.3 Prohibited products and services</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">4.3 Prohibited products and services</p>
         <p>You may not list:</p>
         <ul>
           <li>Illegal goods or services under Nigerian law</li>
@@ -110,7 +110,7 @@ const sections: LegalSection[] = [
         </ul>
         <p>We may remove listings that violate these rules and suspend repeat offenders.</p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">4.4 Comply with the law</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">4.4 Comply with the law</p>
         <ul>
           <li>Pay all applicable taxes on your sales</li>
           <li>Comply with Nigerian consumer protection laws</li>
@@ -118,7 +118,7 @@ const sections: LegalSection[] = [
           <li>Comply with all applicable safety and quality standards</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">4.5 Subscription plans (when applicable)</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">4.5 Subscription plans (when applicable)</p>
         <p>If you choose a paid subscription:</p>
         <ul>
           <li>You agree to pay the subscription fees stated in the app</li>
@@ -133,7 +133,7 @@ const sections: LegalSection[] = [
     heading: "Buyer Terms",
     body: (
       <>
-        <p>If you use Nearli as a buyer, you agree to:</p>
+        <p>If you use Ahiver as a buyer, you agree to:</p>
         <ul>
           <li>Provide honest information when contacting sellers</li>
           <li>Engage with sellers in good faith</li>
@@ -144,7 +144,7 @@ const sections: LegalSection[] = [
         <p>You understand that:</p>
         <ul>
           <li>
-            Nearli is not responsible for the quality, safety, or legality of products listed by
+            Ahiver is not responsible for the quality, safety, or legality of products listed by
             sellers
           </li>
           <li>
@@ -185,11 +185,11 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          You retain ownership of the content you post on Nearli — your photos, descriptions,
+          You retain ownership of the content you post on Ahiver — your photos, descriptions,
           messages, posts, and reviews.
         </p>
         <p>
-          By posting content, you grant Nearli a worldwide, non-exclusive, royalty-free license to
+          By posting content, you grant Ahiver a worldwide, non-exclusive, royalty-free license to
           use, display, reproduce, and distribute that content for the purpose of operating and
           promoting the Service.
         </p>
@@ -212,14 +212,14 @@ const sections: LegalSection[] = [
       <>
         <p>You may not:</p>
         <ul>
-          <li>Use Nearli for any illegal purpose</li>
+          <li>Use Ahiver for any illegal purpose</li>
           <li>Attempt to gain unauthorized access to other accounts or our systems</li>
-          <li>Use bots, scrapers, or automated tools to access Nearli without our written permission</li>
+          <li>Use bots, scrapers, or automated tools to access Ahiver without our written permission</li>
           <li>Reverse engineer, decompile, or copy our software</li>
           <li>Impersonate other people or businesses</li>
           <li>Send spam, phishing messages, or malware</li>
           <li>Interfere with other users&apos; use of the platform</li>
-          <li>Use Nearli to harass, threaten, or harm others</li>
+          <li>Use Ahiver to harass, threaten, or harm others</li>
           <li>Circumvent any technical limits we put in place</li>
         </ul>
         <p>
@@ -234,14 +234,14 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          The Nearli platform — including the brand name, logo, designs, code, and all features — is
-          owned by Nearli Technologies and protected by intellectual property laws.
+          The Ahiver platform — including the brand name, logo, designs, code, and all features — is
+          owned by Ahiver Technologies and protected by intellectual property laws.
         </p>
         <p>You may not:</p>
         <ul>
           <li>Copy, modify, or redistribute any part of the platform without our written permission</li>
           <li>
-            Use the Nearli name, logo, or brand in any way that suggests affiliation or endorsement
+            Use the Ahiver name, logo, or brand in any way that suggests affiliation or endorsement
             without permission
           </li>
           <li>Build a competing product based on our platform</li>
@@ -254,7 +254,7 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          Nearli is provided on an &ldquo;as is&rdquo; and &ldquo;as available&rdquo; basis. We make
+          Ahiver is provided on an &ldquo;as is&rdquo; and &ldquo;as available&rdquo; basis. We make
           no warranties, express or implied, including:
         </p>
         <ul>
@@ -272,7 +272,7 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          To the maximum extent permitted by law, Nearli Technologies and its team will not be liable
+          To the maximum extent permitted by law, Ahiver Technologies and its team will not be liable
           for:
         </p>
         <ul>
@@ -281,7 +281,7 @@ const sections: LegalSection[] = [
           <li>Disputes between buyers and sellers</li>
           <li>Acts or omissions of third-party service providers (including payment processors)</li>
           <li>
-            Damages exceeding the amount you paid to Nearli in the 3 months before the event giving
+            Damages exceeding the amount you paid to Ahiver in the 3 months before the event giving
             rise to liability — or ₦10,000, whichever is greater
           </li>
         </ul>
@@ -297,7 +297,7 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          You agree to defend and hold harmless Nearli Technologies from any claims, damages, or
+          You agree to defend and hold harmless Ahiver Technologies from any claims, damages, or
           expenses (including legal fees) arising from:
         </p>
         <ul>
@@ -313,7 +313,7 @@ const sections: LegalSection[] = [
     heading: "Termination",
     body: (
       <>
-        <p>You can stop using Nearli or delete your account at any time.</p>
+        <p>You can stop using Ahiver or delete your account at any time.</p>
         <p>We may suspend or terminate your account if:</p>
         <ul>
           <li>You violate these Terms</li>
@@ -343,7 +343,7 @@ const sections: LegalSection[] = [
           email.
         </p>
         <p>
-          Your continued use of Nearli after changes take effect means you accept the updated Terms.
+          Your continued use of Ahiver after changes take effect means you accept the updated Terms.
           If you don&apos;t agree, stop using the Service.
         </p>
       </>
@@ -356,7 +356,7 @@ const sections: LegalSection[] = [
         <p>These Terms are governed by the laws of the Federal Republic of Nigeria.</p>
         <p>
           If you have a dispute with us, we ask that you first contact us at{" "}
-          <a href="mailto:hello@nearli.com">hello@nearli.com</a> so we can try to resolve it
+          <a href="mailto:hello@ahiver.com">hello@ahiver.com</a> so we can try to resolve it
           directly. Most disputes can be resolved this way.
         </p>
         <p>
@@ -372,11 +372,11 @@ const sections: LegalSection[] = [
       <>
         <p>If you have any questions about these Terms, contact us at:</p>
         <p>
-          <strong>Nearli Technologies</strong>
+          <strong>Ahiver Technologies</strong>
           <br />
-          Email: <a href="mailto:hello@nearli.com">hello@nearli.com</a>
+          Email: <a href="mailto:hello@ahiver.com">hello@ahiver.com</a>
           <br />
-          Support: <a href="mailto:support@nearli.com">support@nearli.com</a>
+          Support: <a href="mailto:support@ahiver.com">support@ahiver.com</a>
           <br />
           Address: [Your registered business address]
         </p>
@@ -393,10 +393,10 @@ export default function TermsPage() {
       currentHref="/legal/terms"
       intro={
         <>
-          Welcome to Nearli. These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the
-          Nearli platform, including our website, mobile app, and related services (collectively, the
-          &ldquo;Service&rdquo;). By creating an account or using Nearli, you agree to these Terms. If
-          you don&apos;t agree, please don&apos;t use the Service. Nearli is operated by Nearli
+          Welcome to Ahiver. These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the
+          Ahiver platform, including our website, mobile app, and related services (collectively, the
+          &ldquo;Service&rdquo;). By creating an account or using Ahiver, you agree to these Terms. If
+          you don&apos;t agree, please don&apos;t use the Service. Ahiver is operated by Ahiver
           Technologies, a company registered in Nigeria.
         </>
       }

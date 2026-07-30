@@ -21,7 +21,16 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
 export default function Home() {
   return (
-    <ReactLenis root>
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.08,
+        duration: 1.2,
+        smoothWheel: true,
+        wheelMultiplier: 0.9,
+        touchMultiplier: 1.5,
+      }}
+    >
       <Navbar />
       <Hero />
       <Problem />

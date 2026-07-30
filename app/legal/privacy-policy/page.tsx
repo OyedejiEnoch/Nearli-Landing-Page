@@ -5,10 +5,10 @@ const sections: LegalSection[] = [
     heading: "Information We Collect",
     body: (
       <>
-        <p>We collect different types of information depending on how you use Nearli.</p>
+        <p>We collect different types of information depending on how you use Ahiver.</p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">1.1 Information you provide directly</p>
-        <p>When you sign up and use Nearli, we collect:</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">1.1 Information you provide directly</p>
+        <p>When you sign up and use Ahiver, we collect:</p>
         <ul>
           <li>Your full name</li>
           <li>Email address</li>
@@ -28,8 +28,8 @@ const sections: LegalSection[] = [
           <li>Product photos, descriptions, prices, and inventory</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">1.2 Information collected automatically</p>
-        <p>When you use Nearli, we automatically collect:</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">1.2 Information collected automatically</p>
+        <p>When you use Ahiver, we automatically collect:</p>
         <ul>
           <li>Your approximate location (with your permission) — used to show you businesses near you</li>
           <li>Device information (device model, operating system, browser type, screen size)</li>
@@ -38,7 +38,7 @@ const sections: LegalSection[] = [
           <li>Cookies and similar technologies (see our Cookie Policy)</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">1.3 Information from other sources</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">1.3 Information from other sources</p>
         <p>
           If you sign up using a third-party service (for example, Google), we receive basic profile
           information from that service — usually your name, email, and profile photo.
@@ -52,7 +52,7 @@ const sections: LegalSection[] = [
       <>
         <p>We use your information to:</p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">Provide the Service:</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">Provide the Service:</p>
         <ul>
           <li>Show you businesses near your location</li>
           <li>Power the discovery feed, search, and recommendations</li>
@@ -61,28 +61,28 @@ const sections: LegalSection[] = [
           <li>Display your store and products to nearby buyers</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">Improve the Service:</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">Improve the Service:</p>
         <ul>
-          <li>Understand how people use Nearli so we can make it better</li>
+          <li>Understand how people use Ahiver so we can make it better</li>
           <li>Fix bugs and improve performance</li>
           <li>Develop new features</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">Communicate with you:</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">Communicate with you:</p>
         <ul>
           <li>Send transactional emails (account verification, password resets, important account updates)</li>
           <li>Send notifications you&apos;ve opted into (new messages, store activity, board replies)</li>
           <li>Respond to your support requests</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">Keep Nearli safe:</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">Keep Ahiver safe:</p>
         <ul>
           <li>Detect and prevent fraud, spam, and abuse</li>
           <li>Enforce our Terms of Service</li>
           <li>Protect users, sellers, and the platform</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">Comply with legal obligations:</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">Comply with legal obligations:</p>
         <ul>
           <li>Respond to lawful requests from authorities</li>
           <li>Comply with applicable Nigerian and international laws</li>
@@ -98,7 +98,7 @@ const sections: LegalSection[] = [
       <>
         <p>We share information only in the following situations:</p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">3.1 With other Nearli users</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">3.1 With other Ahiver users</p>
         <ul>
           <li>
             Your profile information (name, photo, bio) is visible to other users when you interact
@@ -111,8 +111,8 @@ const sections: LegalSection[] = [
           <li>Messages you send to other users are visible to them</li>
         </ul>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">3.2 With service providers</p>
-        <p>We use trusted third-party providers to operate Nearli, including:</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">3.2 With service providers</p>
+        <p>We use trusted third-party providers to operate Ahiver, including:</p>
         <ul>
           <li>Hosting providers (Railway, Vercel, MongoDB Atlas)</li>
           <li>Image storage (ImageKit)</li>
@@ -126,16 +126,16 @@ const sections: LegalSection[] = [
           obligated to protect it.
         </p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">3.3 Legal disclosures</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">3.3 Legal disclosures</p>
         <p>
           We may disclose your information if required by Nigerian law, court order, or government
           authority — or if we believe disclosure is necessary to protect our rights, your safety, or
           the safety of others.
         </p>
 
-        <p className="!mt-6 font-semibold text-[#1a1a1a]">3.4 Business transfers</p>
+        <p className="!mt-6 font-semibold text-[#0D1020]">3.4 Business transfers</p>
         <p>
-          If Nearli is involved in a merger, acquisition, or sale of assets, your information may be
+          If Ahiver is involved in a merger, acquisition, or sale of assets, your information may be
           transferred as part of that transaction. We will notify you before your information becomes
           subject to a different privacy policy.
         </p>
@@ -147,13 +147,13 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          Nearli is a location-based service. We need your location to show you businesses near you.
+          Ahiver is a location-based service. We need your location to show you businesses near you.
           Here&apos;s how we handle it:
         </p>
         <ul>
           <li>
             We request your location permission through your device. You can decline and still use
-            Nearli — we&apos;ll default to showing businesses in Lagos or another city of your choice.
+            Ahiver — we&apos;ll default to showing businesses in a city of your choice.
           </li>
           <li>We store your approximate location (latitude and longitude), not your exact home address.</li>
           <li>
@@ -187,7 +187,7 @@ const sections: LegalSection[] = [
         </ul>
         <p>
           To delete your account, go to Settings → Account → Delete Account in the app, or email{" "}
-          <a href="mailto:privacy@nearli.com">privacy@nearli.com</a>.
+          <a href="mailto:privacy@ahiver.com">privacy@ahiver.com</a>.
         </p>
       </>
     ),
@@ -217,7 +217,7 @@ const sections: LegalSection[] = [
         </ul>
         <p>
           To exercise any of these rights, email{" "}
-          <a href="mailto:privacy@nearli.com">privacy@nearli.com</a>. We&apos;ll respond within 30
+          <a href="mailto:privacy@ahiver.com">privacy@ahiver.com</a>. We&apos;ll respond within 30
           days.
         </p>
       </>
@@ -249,9 +249,9 @@ const sections: LegalSection[] = [
     heading: "Children's Privacy",
     body: (
       <p>
-        Nearli is not intended for users under 18 years old. We do not knowingly collect personal
+        Ahiver is not intended for users under 18 years old. We do not knowingly collect personal
         information from children. If you believe a child has provided us with information, please
-        email <a href="mailto:privacy@nearli.com">privacy@nearli.com</a> and we will delete it
+        email <a href="mailto:privacy@ahiver.com">privacy@ahiver.com</a> and we will delete it
         promptly.
       </p>
     ),
@@ -270,7 +270,7 @@ const sections: LegalSection[] = [
     heading: "Third-Party Links",
     body: (
       <p>
-        Nearli may contain links to other websites or services (for example, when a seller links to
+        Ahiver may contain links to other websites or services (for example, when a seller links to
         their Instagram or WhatsApp). We are not responsible for the privacy practices of those third
         parties. Please review their privacy policies before sharing information with them.
       </p>
@@ -285,7 +285,7 @@ const sections: LegalSection[] = [
           &ldquo;Last updated&rdquo; date at the top and, for significant changes, notify you through
           the app or by email.
         </p>
-        <p>Your continued use of Nearli after changes take effect means you accept the updated policy.</p>
+        <p>Your continued use of Ahiver after changes take effect means you accept the updated policy.</p>
       </>
     ),
   },
@@ -298,11 +298,11 @@ const sections: LegalSection[] = [
           at:
         </p>
         <p>
-          <strong>Nearli Technologies</strong>
+          <strong>Ahiver Technologies</strong>
           <br />
-          Email: <a href="mailto:privacy@nearli.com">privacy@nearli.com</a>
+          Email: <a href="mailto:privacy@ahiver.com">privacy@ahiver.com</a>
           <br />
-          Support: <a href="mailto:hello@nearli.com">hello@nearli.com</a>
+          Support: <a href="mailto:hello@ahiver.com">hello@ahiver.com</a>
           <br />
           Address: [Your registered business address]
         </p>
@@ -323,12 +323,12 @@ export default function PrivacyPolicyPage() {
       currentHref="/legal/privacy-policy"
       intro={
         <>
-          This Privacy Policy explains how Nearli (&ldquo;we&rdquo;, &ldquo;us&rdquo;,
+          This Privacy Policy explains how Ahiver (&ldquo;we&rdquo;, &ldquo;us&rdquo;,
           &ldquo;our&rdquo;) collects, uses, shares, and protects your information when you use our
           platform — whether through our website, mobile app, or any related service (collectively,
-          the &ldquo;Service&rdquo;). Nearli is operated by Nearli Technologies, a company registered
+          the &ldquo;Service&rdquo;). Ahiver is operated by Ahiver Technologies, a company registered
           in Nigeria. We comply with the Nigeria Data Protection Act 2023 (NDPA) and other applicable
-          data protection laws. By using Nearli, you agree to the practices described here. If you do
+          data protection laws. By using Ahiver, you agree to the practices described here. If you do
           not agree, please do not use the Service.
         </>
       }

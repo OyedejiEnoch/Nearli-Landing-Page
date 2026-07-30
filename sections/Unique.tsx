@@ -51,14 +51,14 @@ export function Unique() {
         yPercent: 100,
         duration: 0.8,
         stagger: 0.1,
-        ease: "power4.out"
+        ease: 'power3.out'
       });
 
       tl.from(".unique-desc", {
         opacity: 0,
         y: 20,
         duration: 0.8,
-        ease: "power2.out"
+        ease: 'power3.out'
       }, "-=0.4");
 
       tl.from(uniqueRef.current, {
@@ -66,7 +66,7 @@ export function Unique() {
         opacity: 0,
         duration: 1.2,
         stagger: 0.15,
-        ease: "expo.out",
+        ease: 'power3.out',
       }, "-=0.2");
 
       // Grid cards scale interaction
@@ -84,10 +84,10 @@ export function Unique() {
     }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id='unique' className="py-20 md:py-28 lg:py-36 bg-[#0b0b0b] text-white overflow-hidden">
+    <section ref={containerRef} id='unique' className="py-24 md:py-28 lg:py-36 bg-[#0D1020] text-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
-          <Tagline text='Why Nearli' className="white" />
+        <div className="max-w-3xl mx-auto text-center mb-20 lg:mb-28">
+          <Tagline text='Why Ahiver' className="white" />
           <h2 className="unique-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8 font-bold tracking-tight text-white">
             <div className="overflow-hidden inline-block mr-4">
               <span className="word-reveal inline-block">BUILT</span>
@@ -103,24 +103,24 @@ export function Unique() {
               <span className="word-reveal inline-block">BUSINESSES.</span>
             </div>
           </h2>
-          <p className="unique-desc text-base md:text-lg text-[#999] max-w-lg mx-auto leading-relaxed">
+          <p className="unique-desc text-base md:text-lg text-[#8F97BB] max-w-lg mx-auto leading-relaxed">
             We&apos;re not another marketplace that favors big sellers. We level the playing field.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px max-w-6xl mx-auto bg-[#272729] mb-20">
+        <div className="grid md:grid-cols-2 gap-px max-w-6xl mx-auto bg-[#262B44] mb-20">
           {differences.map((diff, index) => (
             <div 
               key={index}
               ref={(el) => { uniqueRef.current[index] = el }}
-              className="bg-[#222223] p-8 lg:p-10 group hover:bg-[#1a1a1a] transition-colors duration-500"
+              className="bg-[#171B2E] p-8 lg:p-10 group hover:bg-[#0D1020] transition-colors duration-500"
             >
-              <h3 className="text-xl font-semibold mb-6 text-white group-hover:text-[#EDE8FF] transition-colors duration-500">{diff.title}</h3>
+              <h3 className="text-xl font-semibold mb-6 text-white group-hover:text-[#E0EBFF] transition-colors duration-500">{diff.title}</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <span className="text-[#6B6B8A] text-sm shrink-0 mt-0.5 group-hover:text-red-900 transition-colors duration-500">✕</span>
-                  <p className="text-[#6B6B8A] text-sm leading-relaxed">{diff.traditional}</p>
+                  <span className="text-[#5C6490] text-sm shrink-0 mt-0.5 group-hover:text-red-900 transition-colors duration-500">✕</span>
+                  <p className="text-[#5C6490] text-sm leading-relaxed">{diff.traditional}</p>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="text-white text-sm shrink-0 mt-0.5 group-hover:text-emerald-500 transition-colors duration-500">✓</span>
@@ -132,18 +132,18 @@ export function Unique() {
         </div>
 
         {/* Comparison Cards */}
-        <div className="comparison-grid grid md:grid-cols-3 gap-px max-w-5xl mx-auto bg-[#1e1a38]">
-          <div className="comparison-box text-center p-10 bg-[#222223] hover:bg-[#111] transition-colors duration-500">
+        <div className="comparison-grid grid md:grid-cols-3 gap-px max-w-5xl mx-auto bg-[#23283f]">
+          <div className="comparison-box text-center p-10 bg-[#171B2E] hover:bg-[#111] transition-colors duration-500">
             <div className="text-[10px] text-[#ffffff] mb-4 font-bold tracking-[0.2em] uppercase">Traditional</div>
-            <div className="text-lg font-semibold text-[#6B6B8A]">Big sellers win</div>
+            <div className="text-lg font-semibold text-[#5C6490]">Big sellers win</div>
           </div>
-          <div className="comparison-box text-center p-12 bg-[#222223] shadow-2xl z-10 scale-105 rounded-sm">
-            <div className="text-[10px] text-[#ffffff] mb-4 font-bold tracking-[0.2em] uppercase">Nearli</div>
+          <div className="comparison-box text-center p-12 bg-[#171B2E] shadow-2xl z-10 scale-105 rounded-sm">
+            <div className="text-[10px] text-[#ffffff] mb-4 font-bold tracking-[0.2em] uppercase">Ahiver</div>
             <div className="text-2xl font-bold text-white leading-tight uppercase font-[family-name:var(--font-barlow)]">Everyone gets a chance</div>
           </div>
-          <div className="comparison-box text-center p-10 bg-[#222223] hover:bg-[#111] transition-colors duration-500">
+          <div className="comparison-box text-center p-10 bg-[#171B2E] hover:bg-[#111] transition-colors duration-500">
             <div className="text-[10px] text-[#ffffff] mb-4 font-bold tracking-[0.2em] uppercase">Social Media</div>
-            <div className="text-lg font-semibold text-[#6B6B8A]">Only active friends see</div>
+            <div className="text-lg font-semibold text-[#5C6490]">Only active friends see</div>
           </div>
         </div>
       </div>

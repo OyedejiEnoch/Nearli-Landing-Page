@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Barlow_Condensed, Syne, Fraunces } from "next/font/google";
+import { Inter, Bricolage_Grotesque, Playfair_Display, Barlow_Condensed, Syne, Fraunces } from "next/font/google";
 import "./globals.css";
 
+// ── Ahiver Immersive Design Language (matches main app) ──
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -9,6 +10,22 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  display: "swap",
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+// ── Legacy fonts (still referenced by unmigrated sections; remove after full sweep) ──
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow",
   subsets: ["latin"],
@@ -32,8 +49,8 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Nearli — Discover Local Businesses",
-  description: "Empowering small businesses and solo entrepreneurs to reach customers beyond their immediate network",
+  title: "Ahiver — A place for your neighbourhood",
+  description: "Discover the shops, kitchens and makers right around you — and reach them in a tap.",
 };
 
 export default function RootLayout({
@@ -44,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${barlowCondensed.variable} ${syne.variable} ${fraunces.variable} antialiased`}
+        className={`${inter.variable} ${bricolage.variable} ${playfair.variable} ${barlowCondensed.variable} ${syne.variable} ${fraunces.variable} antialiased`}
       >
         {children}
       </body>

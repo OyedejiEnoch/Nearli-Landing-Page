@@ -38,7 +38,7 @@ const Hero = () => {
     const rect = btnRef.current.getBoundingClientRect()
     const x = e.clientX - rect.left - rect.width / 2
     const y = e.clientY - rect.top - rect.height / 2
-    gsap.to(btnRef.current, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: "power2.out" })
+    gsap.to(btnRef.current, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: 'power3.out' })
   }
 
   const resetMagnetic = () => {
@@ -55,13 +55,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#FDFAF6] pt-[72px]">
-      {/* warm tint behind image (right) */}
-      <div
-        className="pointer-events-none absolute right-0 top-0 hidden h-full w-1/2 lg:block"
-        style={{ background: "linear-gradient(180deg, rgba(255,90,77,0.06), rgba(255,90,77,0.02))" }}
-        aria-hidden="true"
-      />
+    <section className="relative w-full overflow-hidden bg-white pt-[72px]">
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:pb-20 lg:pt-20">
         {/* ── Left: copy ── */}
@@ -72,7 +66,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#C5BFDA] bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#120E2E] shadow-sm">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#E2E6F0] bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#0D1020] shadow-sm">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
               Now accepting early access
             </span>
@@ -85,7 +79,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
           >
-            <span className="block text-[#1a1a1a]">Your city.</span>
+            <span className="block text-[#0D1020]">Your city.</span>
             <span className="block" style={{ color: ACCENT }}>
               Your market.
             </span>
@@ -93,7 +87,7 @@ const Hero = () => {
 
           {/* Location line */}
           <motion.div
-            className="mt-6 flex items-center gap-2 text-sm font-medium text-[#6B6B8A]"
+            className="mt-6 flex items-center gap-2 text-sm font-medium text-[#5C6490]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -104,12 +98,12 @@ const Hero = () => {
 
           {/* Subtext */}
           <motion.p
-            className="mt-6 max-w-md text-base leading-relaxed text-[#6B6B8A] md:text-lg"
+            className="mt-6 max-w-md text-base leading-relaxed text-[#5C6490] md:text-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.35 }}
           >
-            Nearli is a local discovery feed for the businesses around you. Find shops, artisans and
+            Ahiver is a local discovery feed for the businesses around you. Find shops, artisans and
             vendors nearby — and get found, without paying for ads.
           </motion.p>
 
@@ -123,13 +117,13 @@ const Hero = () => {
             {stats.map((s, i) => (
               <div key={s.label} className="flex items-stretch gap-6 sm:gap-8">
                 <div>
-                  <div className="text-3xl font-bold tracking-tight text-[#1a1a1a] sm:text-4xl">
+                  <div className="text-3xl font-bold tracking-tight text-[#0D1020] sm:text-4xl">
                     {s.value}
                     {s.mark && <span style={{ color: ACCENT }}>{s.mark}</span>}
                   </div>
-                  <div className="mt-1 text-xs font-medium text-[#6B6B8A]">{s.label}</div>
+                  <div className="mt-1 text-xs font-medium text-[#5C6490]">{s.label}</div>
                 </div>
-                {i < stats.length - 1 && <div className="w-px bg-[#C5BFDA]" />}
+                {i < stats.length - 1 && <div className="w-px bg-[#E2E6F0]" />}
               </div>
             ))}
           </motion.div>
@@ -151,7 +145,7 @@ const Hero = () => {
                 onClick={scrollToCta}
                 size="lg"
                 style={{ touchAction: "manipulation" }}
-                className="group w-full rounded-full bg-[#120E2E] px-8 py-6 text-xs font-semibold uppercase tracking-wide text-white shadow-xl transition-colors hover:bg-[#0a0820] sm:w-auto"
+                className="group w-full rounded-full bg-[#0D1020] px-8 py-6 text-xs font-semibold uppercase tracking-wide text-white shadow-xl transition-colors hover:bg-[#070912] sm:w-auto"
               >
                 Join the waitlist
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -160,7 +154,7 @@ const Hero = () => {
             <button
               onClick={scrollToHowItWorks}
               style={{ touchAction: "manipulation" }}
-              className="group inline-flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#1a1a1a] transition-colors hover:text-[#120E2E]"
+              className="group inline-flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#0D1020] transition-colors hover:text-[#0D1020]"
             >
               See how it works
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -181,12 +175,12 @@ const Hero = () => {
               <img
                 key={src}
                 src={src}
-                alt="Discover local businesses near you on Nearli"
+                alt="Discover local businesses near you on Ahiver"
                 className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out"
                 style={{ opacity: i === activeImage ? 1 : 0 }}
               />
             ))}
-            {/* <div className="absolute inset-0 bg-gradient-to-t from-[#120E2E]/25 to-transparent" /> */}
+            {/* <div className="absolute inset-0 bg-gradient-to-t from-[#0D1020]/25 to-transparent" /> */}
 
             {/* Slide indicators */}
             <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2">
@@ -216,11 +210,11 @@ const Hero = () => {
               <Clock className="h-5 w-5 text-emerald-600" />
             </div>
             <div>
-              <div className="flex items-center gap-1.5 text-sm font-bold text-[#1a1a1a]">
+              <div className="flex items-center gap-1.5 text-sm font-bold text-[#0D1020]">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 Open now
               </div>
-              <div className="text-[11px] text-[#6B6B8A]">Closes 7:00 PM</div>
+              <div className="text-[11px] text-[#5C6490]">Closes 7:00 PM</div>
             </div>
           </motion.div>
 
@@ -233,9 +227,9 @@ const Hero = () => {
           >
             <div className="flex items-center gap-2">
               <Store className="h-3.5 w-3.5" style={{ color: ACCENT }} />
-              <span className="text-sm font-bold text-[#1a1a1a]">Mama Kemi&apos;s Kitchen</span>
+              <span className="text-sm font-bold text-[#0D1020]">Mama Kemi&apos;s Kitchen</span>
             </div>
-            <div className="mt-0.5 text-[11px] text-[#6B6B8A]">0.8km away · Jollof, ready now</div>
+            <div className="mt-0.5 text-[11px] text-[#5C6490]">0.8km away · Jollof, ready now</div>
             <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-600">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
               Open now
