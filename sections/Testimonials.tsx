@@ -39,7 +39,7 @@ export function Testimonials() {
 
   useGSAP(() => {
     const tl = gsap.timeline({
-      scrollTrigger: { trigger: containerRef.current, start: 'top 65%' },
+      scrollTrigger: { trigger: containerRef.current, start: 'top 85%' },
     });
 
     tl.from('.tst-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
@@ -58,7 +58,7 @@ export function Testimonials() {
     <section
       ref={containerRef}
       id="testimonials"
-      className="overflow-hidden bg-[#ffffff] py-24 md:py-28 lg:py-36"
+      className="overflow-hidden bg-[#ffffff] py-24 md:py-28 lg:py-28"
     >
       <div className="container mx-auto px-4 lg:px-8">
         {/* ── Signature recipe header ── */}

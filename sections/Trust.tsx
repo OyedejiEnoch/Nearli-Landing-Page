@@ -38,7 +38,7 @@ export function Trust() {
       const tl = gsap.timeline({
         scrollTrigger:{
           trigger: containerRef.current,
-          start:'top 65%',
+          start: 'top 85%',
         }
       });
     
@@ -101,7 +101,7 @@ export function Trust() {
     }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id='trust' className="py-24 md:py-28 lg:py-36 bg-white overflow-hidden">
+    <section ref={containerRef} id='trust' className="py-24 md:py-28 lg:py-28 bg-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-20 lg:mb-28">
           <h2 className="trust-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#0D1020] mb-6 font-bold tracking-tight">

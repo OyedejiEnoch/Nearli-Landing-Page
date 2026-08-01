@@ -43,7 +43,7 @@ export function Unique() {
       const tl = gsap.timeline({
         scrollTrigger:{
           trigger: containerRef.current,
-          start:'top 65%',
+          start: 'top 85%',
         }
       });
 
@@ -84,7 +84,7 @@ export function Unique() {
     }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id='unique' className="py-24 md:py-28 lg:py-36 bg-[#0D1020] text-white overflow-hidden">
+    <section ref={containerRef} id='unique' className="py-24 md:py-28 lg:py-28 bg-[#0D1020] text-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-20 lg:mb-28">
           <Tagline text='Why Ahiver' className="white" />

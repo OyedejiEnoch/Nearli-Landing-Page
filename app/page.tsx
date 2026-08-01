@@ -14,10 +14,7 @@ import { Testimonials } from "@/sections/Testimonials";
 import { Trust } from "@/sections/Trust";
 import { Unique } from "@/sections/Unique";
 import ReactLenis from "lenis/react";
-import { ScrollSmoother, ScrollTrigger } from 'gsap/all'
-import gsap from "gsap";
-
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+import { LenisGsapBridge } from "@/components/LenisGsapBridge";
 
 export default function Home() {
   return (
@@ -31,6 +28,7 @@ export default function Home() {
         touchMultiplier: 1.5,
       }}
     >
+      <LenisGsapBridge />
       <Navbar />
       <Hero />
       <Problem />

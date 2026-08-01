@@ -121,7 +121,7 @@ export function BuyerSection() {
 
   useGSAP(() => {
     const tl = gsap.timeline({
-      scrollTrigger: { trigger: containerRef.current, start: 'top 65%' },
+      scrollTrigger: { trigger: containerRef.current, start: 'top 85%' },
     });
 
     tl.from('.buyer-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
@@ -135,7 +135,7 @@ export function BuyerSection() {
     <section
       ref={containerRef}
       id="for-buyers"
-      className="overflow-hidden bg-white py-24 md:py-28 lg:py-30"
+      className="overflow-hidden bg-white py-24 md:py-28 lg:py-28"
     >
       <div className="container mx-auto px-4 lg:px-8">
         {/* ── Signature recipe header ── */}

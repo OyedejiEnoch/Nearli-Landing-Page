@@ -40,7 +40,7 @@ export function HowItWorks() {
 
   useGSAP(() => {
     const tl = gsap.timeline({
-      scrollTrigger: { trigger: containerRef.current, start: 'top 65%' },
+      scrollTrigger: { trigger: containerRef.current, start: 'top 85%' },
     });
 
     tl.from('.how-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
@@ -62,7 +62,7 @@ export function HowItWorks() {
     <section
       ref={containerRef}
       id="how-it-works"
-      className="overflow-hidden bg-white py-24 md:py-28 lg:py-30"
+      className="overflow-hidden bg-white py-24 md:py-28 lg:py-28"
     >
       <div className="container mx-auto px-4 lg:px-8">
         {/* ── Signature recipe header ── */}

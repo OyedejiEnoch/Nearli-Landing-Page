@@ -15,14 +15,18 @@ export function Cta() {
 
   useGSAP(() => {
     const tl = gsap.timeline({
-      scrollTrigger: { trigger: containerRef.current, start: 'top 70%' },
+      scrollTrigger: { trigger: containerRef.current, start: 'top 85%' },
     });
 
     tl.from('.cta-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
     tl.from('.cta-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
     tl.from('.cta-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
     tl.from('.cta-actions', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.25');
-    tl.from('.trust-item', {
+
+    // Trust strip animates independently when scrolled into view (own trigger,
+    // NOT nested inside the timeline — nesting scrollTrigger inside tl.from
+    // sets opacity:0 immediately and often never plays).
+    gsap.from('.trust-item', {
       opacity: 0,
       y: 20,
       duration: 0.5,

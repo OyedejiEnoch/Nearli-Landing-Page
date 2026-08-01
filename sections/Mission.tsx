@@ -12,7 +12,7 @@ export function Mission() {
 
   useGSAP(() => {
     const tl = gsap.timeline({
-      scrollTrigger: { trigger: containerRef.current, start: 'top 70%' },
+      scrollTrigger: { trigger: containerRef.current, start: 'top 85%' },
     });
 
     tl.from('.mission-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
