@@ -424,14 +424,14 @@ export default function SellerGuidePage() {
             Ready to set up your store?
           </h2>
           <p className="reveal-up mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#5C6490]">
-            Join the waitlist and be one of the first businesses live on Ahiver when we launch.
+            Ahiver is live. Create your store in minutes and start getting discovered today.
           </p>
           <div className="reveal-up mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Link
-              href="/#cta"
+              href="https://app.ahiver.com/"
               className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#0D1020] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-2xl transition-colors hover:bg-[#070912]"
             >
-              Join the waitlist
+              Get started
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <a

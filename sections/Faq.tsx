@@ -14,11 +14,11 @@ const faqs = [
     answer: "Yes. Creating a store and listing products on Ahiver is completely free. We believe every small business deserves a fair shot at visibility without upfront costs or ad budgets."
   },
   {
-    question: "When does Ahiver launch?",
-    answer: "We're targeting a 2026 launch across Nigeria. Join the waitlist to be among the first sellers on the platform and get early access before we open to the public."
+    question: "Is Ahiver live yet?",
+    answer: "Yes — Ahiver is live and available across Nigeria. Just create your account and start selling; setup takes about 5 minutes."
   },
   {
-    question: "What cities will be available at launch?",
+    question: "What cities is Ahiver available in?",
     answer: "Ahiver is built for the whole of Nigeria — from Lagos and Abuja to Kano, Port Harcourt, Ibadan and everywhere in between. Wherever you are, buyers nearby can find you. International markets are on the roadmap."
   },
   {
@@ -131,8 +131,23 @@ export function Faq() {
     }, '-=0.4');
   }, { scope: containerRef });
 
+  // ── FAQPage JSON-LD for Google rich results ──
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
   return (
     <section ref={containerRef} id="faq" className="py-24 md:py-36 lg:py-44 bg-white overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-20 lg:mb-28">
           <Tagline text="FAQ" />
@@ -145,7 +160,7 @@ export function Faq() {
             </div>
           </h2>
           <p className="faq-desc text-base md:text-lg text-[#5C6490] max-w-lg mx-auto leading-relaxed">
-            Everything you need to know before joining the waitlist.
+            Everything you need to know before getting started.
           </p>
         </div>
 

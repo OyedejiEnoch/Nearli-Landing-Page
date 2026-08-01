@@ -1,206 +1,126 @@
 "use client";
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { ArrowRight, Mail } from 'lucide-react';
-import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const APP_URL = 'https://app.ahiver.com/';
 
 export function Cta() {
-  const [email, setEmail] = useState('');
-  const [agreed, setAgreed] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const btnRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 70%',
-      }
+      scrollTrigger: { trigger: containerRef.current, start: 'top 70%' },
     });
 
-    tl.from(".cta-heading .word-reveal", {
-      yPercent: 100,
-      duration: 0.8,
-      stagger: 0.1,
-      ease: 'power3.out'
-    });
-
-    tl.from(".cta-desc", {
+    tl.from('.cta-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
+    tl.from('.cta-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
+    tl.from('.cta-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
+    tl.from('.cta-actions', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.25');
+    tl.from('.trust-item', {
       opacity: 0,
       y: 20,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, "-=0.4");
-
-    tl.from(".cta-form", {
-        opacity: 0,
-        y: 40,
-        duration: 1.2,
-        ease: 'power3.out'
-    }, "-=0.2");
-
-    tl.from(".trust-item", {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-            trigger: ".trust-indicators",
-            start: "top 90%"
-        }
+      duration: 0.5,
+      stagger: 0.12,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '.trust-indicators', start: 'top 90%' },
     });
 
-    // Magnetic Button Logic
-    const handleMagnetic = (e: React.MouseEvent) => {
-        if (!btnRef.current) return;
-        const rect = btnRef.current.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        gsap.to(btnRef.current, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: 'power3.out' });
+    // Magnetic primary button
+    const el = btnRef.current;
+    if (!el) return;
+    const handleMove = (e: MouseEvent) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      gsap.to(el, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: 'power3.out' });
     };
-
-    const resetMagnetic = () => {
-        if (!btnRef.current) return;
-        gsap.to(btnRef.current, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.3)" });
+    const handleLeave = () => gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.3)' });
+    el.addEventListener('mousemove', handleMove);
+    el.addEventListener('mouseleave', handleLeave);
+    return () => {
+      el.removeEventListener('mousemove', handleMove);
+      el.removeEventListener('mouseleave', handleLeave);
     };
-
-    if (btnRef.current) {
-        btnRef.current.addEventListener("mousemove", handleMagnetic as any);
-        btnRef.current.addEventListener("mouseleave", resetMagnetic);
-    }
-
   }, { scope: containerRef });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email && agreed) {
-      setSubmitted(true);
-      
-      try {
-        // TODO: Replace with your actual Google Form action URL
-        const formUrl = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
-        
-        const formData = new FormData();
-        // TODO: Replace 'entry.XXXXXX' with the actual entry ID from your form
-        formData.append("entry.XXXXXX", email);
-
-        await fetch(formUrl, {
-          method: "POST",
-          mode: "no-cors",
-          body: formData
-        });
-        
-        console.log('Email submitted to Google Forms (no-cors mode):', email);
-      } catch (error) {
-        console.error("Error submitting to Google Forms:", error);
-      }
-    }
-  };
-
   return (
-    <section id="cta" ref={containerRef} className="py-24 md:py-28 lg:py-30 bg-white overflow-hidden">
+    <section
+      id="cta"
+      ref={containerRef}
+      className="overflow-hidden bg-white py-24 md:py-28 lg:py-32"
+    >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="cta-heading text-4xl md:text-5xl lg:text-6xl xl:text-[5.5rem] font-bold mb-8 leading-[0.95] tracking-tight text-[#0D1020]">
-            <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block">READY</span>
-            </div>
-            <div className="overflow-hidden inline-block mr-4">
-              <span className="word-reveal inline-block">TO</span>
-            </div>
-            <div className="overflow-hidden inline-block">
-              <span className="word-reveal inline-block text-[#0D1020]">GROW?</span>
-            </div>
+        <div className="mx-auto max-w-4xl text-center">
+          <div
+            className="cta-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
+            style={{ color: '#FF5A4D' }}
+          >
+            Ahiver is live
+          </div>
+
+          <h2 className="cta-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl xl:text-7xl font-black font-[family-name:var(--font-bricolage)]">
+            Ready to be{' '}
+            <span
+              className="italic font-normal font-[family-name:var(--font-playfair)]"
+              style={{ color: '#FF5A4D' }}
+            >
+              discovered?
+            </span>
           </h2>
-          <p className="cta-desc text-base md:text-lg text-[#5C6490] mb-14 max-w-xl mx-auto leading-relaxed">
-            Join thousands of entrepreneurs who are already reaching new customers every day.
+
+          <p className="cta-desc mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#5C6490] md:text-lg">
+            Set up your store in minutes and start reaching customers near you — free to start, no ads
+            required.
           </p>
 
-          {!submitted ? (
-            <div className="max-w-xl mx-auto">
-              <form onSubmit={handleSubmit} className="cta-form flex flex-col sm:flex-row gap-4 mb-10">
-                <div className="flex-1 relative">
-                  <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#8F97BB]" />
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="w-full pl-14 pr-6 py-8 text-base bg-white text-[#0D1020] border border-[#E2E6F0] rounded-lg focus:ring-1 focus:ring-[#0D1020] focus:border-[#0D1020] shadow-sm"
-                  />
-                </div>
-                <div ref={btnRef} className="magnetic-btn shrink-0">
-                    <Button
-                    type="submit"
-                    size="lg"
-                    disabled={!agreed}
-                    className="bg-[#0D1020] hover:bg-[#070912] text-white px-10 py-8 whitespace-nowrap transition-all text-sm font-bold tracking-widest uppercase rounded-lg shadow-xl shadow-navy/20 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                    Get Early Access
-                    <ArrowRight className="ml-3 w-4 h-4" />
-                    </Button>
-                </div>
-              </form>
-
-              {/* Agreement checkbox */}
-              <label className="mb-8 flex cursor-pointer items-start justify-center gap-3 text-left">
-                <input
-                  type="checkbox"
-                  checked={agreed}
-                  onChange={(e) => setAgreed(e.target.checked)}
-                  required
-                  className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#0D1020]"
-                />
-                <span className="max-w-sm text-sm leading-relaxed text-[#5C6490]">
-                  I agree to the{' '}
-                  <Link href="/legal/terms" className="font-medium text-[#0D1020] underline">
-                    Terms of Service
-                  </Link>{' '}
-                  and{' '}
-                  <Link href="/legal/privacy-policy" className="font-medium text-[#0D1020] underline">
-                    Privacy Policy
-                  </Link>
-                  .
-                </span>
-              </label>
-
-              <div className="flex items-center justify-center gap-6">
-                <p className="text-[10px] text-[#5C6490] font-bold tracking-[0.2em] uppercase">
-                    JOIN THE WAITLIST · NO CREDIT CARD · LAUNCH 2026
-                </p>
-              </div>
+          {/* Actions */}
+          <div className="cta-actions mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div ref={btnRef} className="magnetic-btn w-full sm:w-auto">
+              <a
+                href={APP_URL}
+                style={{ touchAction: 'manipulation' }}
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0D1020] px-10 py-5 text-sm font-bold uppercase tracking-widest text-white shadow-xl transition-colors hover:bg-[#070912] sm:w-auto"
+              >
+                Get started
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </a>
             </div>
-          ) : (
-            <div className="max-w-lg mx-auto border border-[#E2E6F0] bg-white p-10 md:p-14 shadow-2xl">
-              <div className="text-5xl mb-8">🚀</div>
-              <h3 className="text-3xl font-bold mb-4 text-[#0D1020] font-[family-name:var(--font-barlow)] tracking-tight uppercase">You&apos;re on the list</h3>
-              <p className="text-base text-[#5C6490] leading-relaxed">
-                We&apos;ll notify you as soon as we launch. Get ready to grow your business into something incredible!
-              </p>
-            </div>
-          )}
+            <a
+              href="/seller-guide"
+              style={{ touchAction: 'manipulation' }}
+              className="group inline-flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#0D1020] transition-colors hover:text-[#0D1020]"
+            >
+              Read the seller guide
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
 
-          {/* Trust Indicators */}
-          <div className="trust-indicators mt-24 pt-16 border-t border-[#E2E6F0]">
-            <div className="grid md:grid-cols-3 gap-12 text-center">
-              <div className="trust-item group">
-                <div className="text-2xl font-bold mb-3 text-[#0D1020] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#0D1020] transition-colors duration-500 uppercase">Free to start</div>
-                <div className="text-xs text-[#5C6490] font-bold tracking-widest uppercase leading-loose">No upfront costs or hidden fees</div>
-              </div>
-              <div className="trust-item md:border-x md:border-[#E2E6F0] group">
-                <div className="text-2xl font-bold mb-3 text-[#0D1020] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#0D1020] transition-colors duration-500 uppercase">5-min setup</div>
-                <div className="text-xs text-[#5C6490] font-bold tracking-widest uppercase leading-loose">From signup to first product</div>
-              </div>
-              <div className="trust-item group">
-                <div className="text-2xl font-bold mb-3 text-[#0D1020] font-[family-name:var(--font-barlow)] tracking-tight group-hover:text-[#0D1020] transition-colors duration-500 uppercase">24/7 support</div>
-                <div className="text-xs text-[#5C6490] font-bold tracking-widest uppercase leading-loose">We&apos;re here to help you succeed</div>
-              </div>
+          {/* Trust strip */}
+          <div className="trust-indicators mt-24 border-t border-[#E2E6F0] pt-16">
+            <div className="grid gap-12 text-center md:grid-cols-3">
+              {[
+                { big: 'Free to start', small: 'No upfront costs or hidden fees' },
+                { big: '5-min setup', small: 'From signup to first product' },
+                { big: 'Nationwide', small: 'Available across Nigeria' },
+              ].map((item, i) => (
+                <div
+                  key={item.big}
+                  className={`trust-item ${i === 1 ? 'md:border-x md:border-[#E2E6F0]' : ''}`}
+                >
+                  <div className="mb-3 text-2xl font-black uppercase tracking-tight text-[#0D1020] font-[family-name:var(--font-bricolage)]">
+                    {item.big}
+                  </div>
+                  <div className="text-xs font-bold uppercase leading-loose tracking-widest text-[#5C6490]">
+                    {item.small}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

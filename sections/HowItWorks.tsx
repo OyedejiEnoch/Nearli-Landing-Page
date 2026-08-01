@@ -146,7 +146,7 @@ export function HowItWorks() {
         {/* ── CTA ── */}
         <div className="how-cta mt-12 flex flex-col items-center">
           <a
-            href="#cta"
+            href="https://app.ahiver.com/"
             className="group inline-flex items-center gap-2 rounded-full bg-[#0D1020] px-10 py-4 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#23283f]"
             style={{ touchAction: 'manipulation' }}
           >

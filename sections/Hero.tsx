@@ -46,8 +46,8 @@ const Hero = () => {
     gsap.to(btnRef.current, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.3)" })
   }
 
-  const scrollToCta = () => {
-    document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" })
+  const goToApp = () => {
+    window.location.href = "https://app.ahiver.com/"
   }
 
   const scrollToHowItWorks = () => {
@@ -68,7 +68,7 @@ const Hero = () => {
           >
             <span className="inline-flex items-center gap-2 rounded-full border border-[#E2E6F0] bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#0D1020] shadow-sm">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
-              Now accepting early access
+              Now live across Nigeria
             </span>
           </motion.div>
 
@@ -93,7 +93,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <MapPin className="h-4 w-4" style={{ color: ACCENT }} />
-            Launching Now · 2026
+            Available nationwide
           </motion.div>
 
           {/* Subtext */}
@@ -142,12 +142,12 @@ const Hero = () => {
               className="magnetic-btn"
             >
               <Button
-                onClick={scrollToCta}
+                onClick={goToApp}
                 size="lg"
                 style={{ touchAction: "manipulation" }}
                 className="group w-full rounded-full bg-[#0D1020] px-8 py-6 text-xs font-semibold uppercase tracking-wide text-white shadow-xl transition-colors hover:bg-[#070912] sm:w-auto"
               >
-                Join the waitlist
+                Get started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Button>
             </div>

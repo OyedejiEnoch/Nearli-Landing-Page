@@ -19,14 +19,11 @@ const Navbar = () => {
 
   const closeMenu = useCallback(() => setMobileOpen(false), [])
 
-  const scrollToCta = () => {
+  const APP_URL = 'https://app.ahiver.com/'
+
+  const goToApp = () => {
     closeMenu()
-    const cta = document.getElementById('cta')
-    if (cta) {
-      cta.scrollIntoView({ behavior: 'smooth' })
-    } else {
-      window.location.href = '/#cta'
-    }
+    window.location.href = APP_URL
   }
 
   const handleLinkClick = (href: string) => {
@@ -100,11 +97,11 @@ const Navbar = () => {
                 </a>
               ))}
               <Button
-                onClick={scrollToCta}
+                onClick={goToApp}
                 size="sm"
                 className="px-6 py-5 bg-[#0D1020] hover:bg-[#070912] text-white text-xs font-semibold tracking-wide uppercase rounded-lg transition-colors"
               >
-                Join Waitlist
+                Get started
               </Button>
             </div>
 
@@ -224,11 +221,11 @@ const Navbar = () => {
         {/* Footer — CTA + contact */}
         <div className="px-6 pt-6 pb-8 border-t border-white/10">
           <Button
-            onClick={scrollToCta}
+            onClick={goToApp}
             className="w-full bg-white hover:bg-[#E0EBFF] text-[#0D1020] text-sm font-bold tracking-widest uppercase rounded-xl py-7 transition-colors shadow-lg"
             style={{ touchAction: 'manipulation' }}
           >
-            Join the Waitlist
+            Get started
           </Button>
 
           <a
