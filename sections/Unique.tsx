@@ -84,7 +84,7 @@ export function Unique() {
     }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id='unique' className="py-24 md:py-28 lg:py-28 bg-[#0D1020] text-white overflow-hidden">
+    <section ref={containerRef} id='unique' className="py-24 md:py-28 lg:py-28 bg-[#111010] text-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-20 lg:mb-28">
           <Tagline text='Why Ahiver' className="white" />
@@ -139,7 +139,7 @@ export function Unique() {
           </div>
           <div className="comparison-box text-center p-12 bg-[#171B2E] shadow-2xl z-10 scale-105 rounded-sm">
             <div className="text-[10px] text-[#ffffff] mb-4 font-bold tracking-[0.2em] uppercase">Ahiver</div>
-            <div className="text-2xl font-bold text-white leading-tight uppercase font-[family-name:var(--font-barlow)]">Everyone gets a chance</div>
+            <div className="text-2xl font-bold text-white leading-tight uppercase font-[family-name:var(--font-bricolage)]">Everyone gets a chance</div>
           </div>
           <div className="comparison-box text-center p-10 bg-[#171B2E] hover:bg-[#111] transition-colors duration-500">
             <div className="text-[10px] text-[#ffffff] mb-4 font-bold tracking-[0.2em] uppercase">Social Media</div>

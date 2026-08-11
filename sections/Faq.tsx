@@ -66,7 +66,7 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
         aria-expanded={open}
       >
         <div className="md:col-span-1 shrink-0 pt-0.5">
-          <span className="text-3xl font-bold text-[#E2E6F0] font-[family-name:var(--font-barlow)] leading-none group-hover:text-[#0D1020] transition-colors duration-500">
+          <span className="text-3xl font-bold text-[#E2E6F0] font-[family-name:var(--font-bricolage)] leading-none group-hover:text-[#0D1020] transition-colors duration-500">
             {String(index + 1).padStart(2, '0')}
           </span>
         </div>

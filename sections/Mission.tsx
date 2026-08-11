@@ -2,7 +2,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Store, MapPin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -10,114 +10,89 @@ gsap.registerPlugin(ScrollTrigger);
 export function Mission() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: { trigger: containerRef.current, start: 'top 85%' },
-    });
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
 
-    tl.from('.mission-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
-    tl.from('.mission-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
-    tl.from('.mission-body', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
-    tl.from('.mission-cta', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
-    tl.from('.mission-visual', { opacity: 0, scale: 0.97, y: 20, duration: 0.6, ease: 'power3.out' }, '-=0.4');
-    tl.from('.mission-float', {
-      opacity: 0,
-      y: 12,
-      scale: 0.94,
-      duration: 0.4,
-      stagger: 0.1,
-      ease: 'power3.out',
-    }, '-=0.3');
-  }, { scope: containerRef });
+      mm.add('(prefers-reduced-motion: no-preference)', () => {
+        const tl = gsap.timeline({
+          scrollTrigger: { trigger: containerRef.current, start: 'top 78%' },
+        });
+
+        tl.from('.mission-rail', { opacity: 0, duration: 0.5, ease: 'power2.out' })
+          .from(
+            '.mission-headline',
+            { clipPath: 'inset(0 0 100% 0)', y: 24, duration: 0.95, ease: 'power3.out' },
+            '-=0.3'
+          )
+          .from('.mission-lead', { opacity: 0, y: 18, duration: 0.55, ease: 'power3.out' }, '-=0.5')
+          .from('.mission-body', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.35')
+          .from('.mission-cta', { opacity: 0, y: 14, duration: 0.45, ease: 'power3.out' }, '-=0.3')
+          .from('.mission-foot', { opacity: 0, y: 12, duration: 0.45, ease: 'power3.out' }, '-=0.3');
+      });
+
+      return () => mm.revert();
+    },
+    { scope: containerRef }
+  );
 
   return (
     <section
       ref={containerRef}
       id="mission"
-      className="overflow-hidden bg-white py-24 md:py-28 lg:py-28"
+      className="overflow-hidden bg-white py-24 md:py-32 lg:py-40"
     >
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left — copy */}
-          <div>
-            <div
-              className="mission-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
-              style={{ color: '#FF5A4D' }}
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        {/* Mobile eyebrow — the vertical rail only shows from lg up. */}
+        <div className="mb-10 text-[11px] font-semibold uppercase tracking-[0.32em] text-[#A1A1AA] lg:hidden">
+          Our Mission · 07
+        </div>
+
+        <div className="grid gap-12 lg:grid-cols-[auto_1fr] lg:gap-20">
+          {/* Vertical label rail */}
+          <div className="mission-rail hidden lg:flex lg:items-start lg:gap-6 lg:pt-4">
+            <span
+              className="text-[11px] font-semibold uppercase tracking-[0.42em] text-[#A1A1AA]"
+              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
             >
-              06 — Our mission
-            </div>
-            <h2 className="mission-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
-              Stores around the{' '}
-              <span
-                className="italic font-normal font-[family-name:var(--font-playfair)]"
-                style={{ color: '#FF5A4D' }}
-              >
-                corner.
-              </span>
+              Our Mission&nbsp;&nbsp;·&nbsp;&nbsp;07
+            </span>
+            <span className="mt-1 block h-52 w-px bg-[#E7E5E4]" aria-hidden="true" />
+          </div>
+
+          {/* Statement + supporting column */}
+          <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-start lg:gap-20">
+            <h2
+              className="mission-headline max-w-4xl font-normal leading-[0.98] tracking-[-0.01em] text-[#0D1020]"
+              style={{
+                fontFamily: 'var(--font-playfair), "Playfair Display", Georgia, serif',
+                fontSize: 'clamp(2.75rem, 7vw, 6.75rem)',
+                clipPath: 'inset(0 0 0 0)',
+              }}
+            >
+              Stores around the corner.
             </h2>
-            <p className="mission-body mt-8 max-w-md text-base leading-relaxed text-[#5C6490] md:text-lg">
-              Nigeria is full of incredible businesses — most of them invisible online. Ahiver puts
-              them on the map: a single feed where the shops, makers and vendors around you finally
-              get found.
-            </p>
-            <div className="mission-cta mt-10">
+
+            <div className="lg:pt-3">
+              <p className="mission-lead max-w-md text-xl leading-[1.45] text-[#0D1020] md:text-[1.6rem] md:leading-[1.4]">
+                Nigeria is full of incredible businesses — most of them invisible online.
+              </p>
+              <p className="mission-body mt-8 max-w-md text-base leading-relaxed text-[#52525B]">
+                Ahiver puts them on the map: a single feed where the shops, makers and vendors around
+                you finally get found.
+              </p>
+
               <a
                 href="#how-it-works"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#0D1020] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#23283f]"
+                className="mission-cta group mt-9 inline-flex items-center gap-2 border-b border-[#0D1020] pb-1 text-sm font-semibold uppercase tracking-[0.18em] text-[#0D1020] transition-opacity hover:opacity-60"
               >
                 Explore how it works
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
-            </div>
-            <p className="mission-body mt-8 text-sm text-[#8F97BB]">
-              Built in Nigeria — for every city, every street, every business.
-            </p>
-          </div>
 
-          {/* Right — image + floating cards */}
-          <div className="mission-visual relative">
-            <div className="relative overflow-hidden rounded-[2rem] border border-[#E2E6F0] shadow-[0_40px_80px_-30px_rgba(13,16,32,0.25)]">
-              <img
-                src="/assets/mission.jpg"
-                alt="Shopping local on Ahiver"
-                className="h-[440px] w-full object-cover md:h-[520px]"
-              />
-
-              {/* Nearby pill (glass) */}
-              <div className="mission-float absolute left-1/2 top-8 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white backdrop-blur-md">
-                <span className="h-2 w-2 rounded-full" style={{ background: '#FF5A4D' }} />
-                <span className="text-xs font-bold uppercase tracking-widest">Near you</span>
-              </div>
-            </div>
-
-            {/* Floating card 1 */}
-            <div className="mission-float absolute -left-3 top-16 flex items-center gap-3 rounded-2xl border border-[#E2E6F0] bg-white p-3.5 shadow-[0_20px_50px_rgba(13,16,32,0.12)] md:-left-6">
-              <div
-                className="flex h-10 w-10 items-center justify-center rounded-xl"
-                style={{ background: '#E0EBFF' }}
-              >
-                <Store className="h-5 w-5" style={{ color: '#1E40AF' }} />
-              </div>
-              <div>
-                <div className="text-sm font-bold text-[#0D1020]">Local stores</div>
-                <div className="text-[11px] text-[#5C6490]">on your street</div>
-              </div>
-            </div>
-
-            {/* Floating card 2 */}
-            <div className="mission-float absolute -right-3 bottom-16 rounded-2xl border border-[#E2E6F0] bg-white p-4 shadow-[0_20px_50px_rgba(13,16,32,0.12)] md:-right-6">
-              <div className="flex items-center gap-2">
-                <MapPin className="h-3.5 w-3.5" style={{ color: '#FF5A4D' }} />
-                <span className="text-sm font-bold text-[#0D1020]">Amaka&apos;s Fabrics</span>
-              </div>
-              <div className="mt-0.5 text-[11px] text-[#5C6490]">0.3km away</div>
-              <span
-                className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider"
-                style={{ background: '#DCF5EE', color: '#0F8A66' }}
-              >
-                <span className="h-1.5 w-1.5 rounded-full" style={{ background: '#12A67C' }} />
-                Open now
-              </span>
+              <p className="mission-foot mt-10 max-w-xs text-sm leading-relaxed text-[#A1A1AA]">
+                Built in Nigeria — for every city, every street, every business.
+              </p>
             </div>
           </div>
         </div>

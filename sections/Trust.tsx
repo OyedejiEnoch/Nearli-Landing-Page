@@ -155,7 +155,7 @@ export function Trust() {
         {/* Stats Section */}
         <div className="stats-container max-w-6xl mx-auto bg-[#0D1020] p-10 md:p-14 lg:p-16 text-white rounded-sm shadow-2xl">
           <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-barlow)] tracking-tight uppercase">
+            <h3 className="text-3xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-bricolage)] tracking-tight uppercase">
               GROWING TOGETHER
             </h3>
             <p className="text-[#5C6490] text-base tracking-widest font-bold uppercase">
@@ -165,7 +165,7 @@ export function Trust() {
 
           <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
             <div className="stat-box text-center">
-              <div className="stat-number text-5xl md:text-7xl font-bold text-white mb-6 font-[family-name:var(--font-barlow)]" data-target="92" data-suffix="%">
+              <div className="stat-number text-5xl md:text-7xl font-bold text-white mb-6 font-[family-name:var(--font-bricolage)]" data-target="92" data-suffix="%">
                 0%
               </div>
               <div className="text-[#5C6490] text-[10px] font-bold tracking-widest uppercase leading-loose">
@@ -173,7 +173,7 @@ export function Trust() {
               </div>
             </div>
             <div className="stat-box text-center border-x border-[#23283f]">
-              <div className="stat-number text-5xl md:text-7xl font-bold text-white mb-6 font-[family-name:var(--font-barlow)]" data-target="3.5" data-suffix="x">
+              <div className="stat-number text-5xl md:text-7xl font-bold text-white mb-6 font-[family-name:var(--font-bricolage)]" data-target="3.5" data-suffix="x">
                 0x
               </div>
               <div className="text-[#5C6490] text-[10px] font-bold tracking-widest uppercase leading-loose">
@@ -181,7 +181,7 @@ export function Trust() {
               </div>
             </div>
             <div className="stat-box text-center">
-              <div className="stat-number text-5xl md:text-7xl font-bold text-white mb-6 font-[family-name:var(--font-barlow)]" data-target="24" data-suffix="/7">
+              <div className="stat-number text-5xl md:text-7xl font-bold text-white mb-6 font-[family-name:var(--font-bricolage)]" data-target="24" data-suffix="/7">
                 0/7
               </div>
               <div className="text-[#5C6490] text-[10px] font-bold tracking-widest uppercase leading-loose">
@@ -195,7 +195,7 @@ export function Trust() {
         <div className="mt-24 max-w-5xl mx-auto group">
           <div className="border border-[#E2E6F0] p-10 md:p-12 lg:p-14 hover:border-[#0D1020] transition-colors duration-700">
             <div className="mb-10 text-center md:text-left">
-              <h3 className="text-3xl md:text-4xl font-bold text-[#0D1020] mb-4 font-[family-name:var(--font-barlow)] tracking-tight uppercase">
+              <h3 className="text-3xl md:text-4xl font-bold text-[#0D1020] mb-4 font-[family-name:var(--font-bricolage)] tracking-tight uppercase">
                 What&apos;s next
               </h3>
               <p className="text-base text-[#5C6490] font-medium">

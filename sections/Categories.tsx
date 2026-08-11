@@ -58,7 +58,7 @@ export function Categories() {
         <div className="mx-auto mb-14 max-w-3xl text-center lg:mb-16">
           <div
             className="mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
-            style={{ color: '#FF5A4D' }}
+            style={{ color: '#3B82F6' }}
           >
             05 — Explore
           </div>
@@ -66,7 +66,7 @@ export function Categories() {
             Every category, just{' '}
             <span
               className="italic font-normal font-[family-name:var(--font-playfair)]"
-              style={{ color: '#FF5A4D' }}
+              style={{ color: '#3B82F6' }}
             >
               nearby.
             </span>

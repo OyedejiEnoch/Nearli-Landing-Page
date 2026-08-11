@@ -65,15 +65,15 @@ export function Testimonials() {
         <div className="mx-auto mb-16 max-w-3xl text-center lg:mb-20">
           <div
             className="tst-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
-            style={{ color: '#FF5A4D' }}
+            style={{ color: '#3B82F6' }}
           >
-            07 — Early voices
+            08 — Early voices
           </div>
           <h2 className="tst-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
             Real sellers,{' '}
             <span
               className="italic font-normal font-[family-name:var(--font-playfair)]"
-              style={{ color: '#FF5A4D' }}
+              style={{ color: '#3B82F6' }}
             >
               real stories.
             </span>

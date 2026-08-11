@@ -9,12 +9,13 @@ import Hero from "@/sections/Hero";
 import { HowItWorks } from "@/sections/HowItWorks";
 import Navbar from "@/sections/Navbar";
 import { Problem } from "@/sections/Problem";
+import { Showcase } from "@/sections/Showcase";
+import { Spotlight } from "@/sections/Spotlight";
 import { TargetUsers } from "@/sections/TargetUsers";
 import { Testimonials } from "@/sections/Testimonials";
-import { Trust } from "@/sections/Trust";
-import { Unique } from "@/sections/Unique";
 import ReactLenis from "lenis/react";
 import { LenisGsapBridge } from "@/components/LenisGsapBridge";
+import { Trust } from "@/sections/Trust";
 
 export default function Home() {
   return (
@@ -32,15 +33,16 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Problem />
-      <HowItWorks />
+      <Mission />
+      {/* <HowItWorks /> */}
       <Features />
       <BuyerSection />
+      {/* <Spotlight /> */}
       <Categories />
-      <Mission />
+      <Showcase />
       <Testimonials />
-      <Unique />
+      {/* <Trust /> */}
       <TargetUsers />
-      <Trust />
       <Cta />
       <Faq />
       <Footer />

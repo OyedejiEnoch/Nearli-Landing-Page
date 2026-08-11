@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { ArrowUpRight, Mail } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useCallback, useEffect, useState } from 'react'
 
 const navLinks = [
@@ -69,21 +70,27 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
           scrolled
             ? 'bg-white/90 backdrop-blur-md border-b border-[#E2E6F0] shadow-sm'
-            : 'bg-white/80 backdrop-blur-sm border-b border-transparent'
+            : 'bg-transparent border-b border-white/10'
         }`}
       >
         <nav className="w-full px-4 lg:px-8 py-4">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-2 group" aria-label="Ahiver home">
-             <Image src={"/assets/officalLogo.png"} alt="Logo" width={40} height={40} />
+            <Link href="/" className="flex items-center gap-2 group" aria-label="Ahiver home">
+              <Image
+                src={"/assets/officalLogo.png"}
+                alt="Logo"
+                width={40}
+                height={40}
+                className={`transition-[filter] duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
+              />
               <span
-                className="text-xl font-bold tracking-tight text-[#0D1020] font-[family-name:var(--font-barlow)]"
+                className={`text-xl font-bold tracking-tight font-[family-name:var(--font-bricolage)] transition-colors duration-300 ${scrolled ? 'text-[#0D1020]' : 'text-white'}`}
                 style={{ letterSpacing: '-0.02em' }}
               >
                 AHIVER
               </span>
-            </a>
+            </Link>
 
             {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-8">
@@ -91,7 +98,7 @@ const Navbar = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-[#5C6490] hover:text-[#0D1020] transition-colors font-medium"
+                  className={`text-sm transition-colors font-medium ${scrolled ? 'text-[#5C6490] hover:text-[#0D1020]' : 'text-white/75 hover:text-white'}`}
                 >
                   {link.label}
                 </a>
@@ -99,7 +106,7 @@ const Navbar = () => {
               <Button
                 onClick={goToApp}
                 size="sm"
-                className="px-6 py-5 bg-[#0D1020] hover:bg-[#070912] text-white text-xs font-semibold tracking-wide uppercase rounded-lg transition-colors"
+                className={`px-6 py-5 text-xs font-semibold tracking-wide uppercase rounded-lg transition-colors ${scrolled ? 'bg-[#3B82F6] hover:bg-[#2563EB] text-white' : 'bg-white hover:bg-[#F4F6FA] text-[#0D1020]'}`}
               >
                 Get started
               </Button>
@@ -119,18 +126,18 @@ const Navbar = () => {
                 <span
                   className="absolute left-0 top-0 w-6 h-[2px] rounded-full transition-all duration-300 ease-out"
                   style={{
-                    background: mobileOpen ? '#fff' : '#0D1020',
+                    background: mobileOpen ? '#fff' : scrolled ? '#0D1020' : '#fff',
                     transform: mobileOpen ? 'translateY(7px) rotate(45deg)' : 'none',
                   }}
                 />
                 <span
-                  className="absolute left-0 top-[7px] w-6 h-[2px] bg-[#0D1020] rounded-full transition-all duration-200 ease-out"
+                  className={`absolute left-0 top-[7px] w-6 h-[2px] rounded-full transition-all duration-200 ease-out ${scrolled || mobileOpen ? 'bg-[#0D1020]' : 'bg-white'}`}
                   style={{ opacity: mobileOpen ? 0 : 1 }}
                 />
                 <span
                   className="absolute left-0 top-[14px] w-6 h-[2px] rounded-full transition-all duration-300 ease-out"
                   style={{
-                    background: mobileOpen ? '#fff' : '#0D1020',
+                    background: mobileOpen ? '#fff' : scrolled ? '#0D1020' : '#fff',
                     transform: mobileOpen ? 'translateY(-7px) rotate(-45deg)' : 'none',
                   }}
                 />
@@ -167,7 +174,7 @@ const Navbar = () => {
         {/* Drawer header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
           <span
-            className="text-lg font-bold tracking-tight text-white font-[family-name:var(--font-barlow)]"
+            className="text-lg font-bold tracking-tight text-white font-[family-name:var(--font-bricolage)]"
             style={{ letterSpacing: '-0.02em' }}
           >
             AHIVER
@@ -207,7 +214,7 @@ const Navbar = () => {
                     <span className="text-xs font-bold text-[#E2E6F0] tracking-widest tabular-nums">
                       0{i + 1}
                     </span>
-                    <span className="text-2xl font-semibold text-white tracking-tight font-[family-name:var(--font-barlow)] uppercase">
+                    <span className="text-2xl font-semibold text-white tracking-tight font-[family-name:var(--font-bricolage)] uppercase">
                       {link.label}
                     </span>
                   </span>
