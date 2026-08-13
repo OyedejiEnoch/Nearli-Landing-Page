@@ -102,10 +102,10 @@ export default function AboutPage() {
 
               <div className="reveal-up mt-12 flex flex-col gap-5 sm:flex-row sm:items-center">
                 <Link
-                  href="/#cta"
+                  href="https://app.ahiver.com/"
                   className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#0D1020] px-8 py-4 text-sm font-semibold uppercase tracking-wide text-white shadow-2xl transition-colors hover:bg-[#070912]"
                 >
-                  Join the waitlist
+                  Get started
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <Link
@@ -268,14 +268,14 @@ export default function AboutPage() {
             Ready to be <span className="italic text-[#E2E6F0]">discovered</span>?
           </h2>
           <p className="reveal-up mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#b6b2c4]">
-            Join the waitlist and be one of the first businesses on Ahiver when we launch.
+            Ahiver is live — set up your store and get discovered by customers near you today.
           </p>
           <div className="reveal-up mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Link
-              href="/#cta"
+              href="https://app.ahiver.com/"
               className="group inline-flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest text-[#0D1020] shadow-lg transition-colors hover:bg-[#E0EBFF]"
             >
-              Join the waitlist
+              Get started
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <Link

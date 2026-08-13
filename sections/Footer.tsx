@@ -34,7 +34,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <span className="text-xl font-bold tracking-tight text-white font-[family-name:var(--font-barlow)]">
+              <span className="text-xl font-bold tracking-tight text-white font-[family-name:var(--font-bricolage)]">
                 AHIVER
               </span>
             </div>

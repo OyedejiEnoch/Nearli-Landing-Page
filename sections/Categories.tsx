@@ -40,7 +40,7 @@ export function Categories() {
 
   useGSAP(() => {
     const tl = gsap.timeline({
-      scrollTrigger: { trigger: containerRef.current, start: 'top 75%' },
+      scrollTrigger: { trigger: containerRef.current, start: 'top 85%' },
     });
 
     tl.from('.cat-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' });
@@ -52,13 +52,13 @@ export function Categories() {
     <section
       ref={containerRef}
       id="categories"
-      className="overflow-hidden bg-white py-24 md:py-28 lg:py-30"
+      className="overflow-hidden bg-white py-24 md:py-28 lg:py-28"
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center lg:mb-16">
           <div
             className="mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
-            style={{ color: '#FF5A4D' }}
+            style={{ color: '#3B82F6' }}
           >
             05 — Explore
           </div>
@@ -66,7 +66,7 @@ export function Categories() {
             Every category, just{' '}
             <span
               className="italic font-normal font-[family-name:var(--font-playfair)]"
-              style={{ color: '#FF5A4D' }}
+              style={{ color: '#3B82F6' }}
             >
               nearby.
             </span>

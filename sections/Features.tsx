@@ -1,7 +1,17 @@
 "use client"
+
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { Heart, MapPin, MessageSquare, BarChart3, Smartphone, UserPlus } from 'lucide-react';
+import {
+  ArrowUpRight,
+  BarChart3,
+  MapPin,
+  MessageCircle,
+  Search,
+  ShieldCheck,
+  Smartphone,
+  Users,
+} from 'lucide-react';
 import { useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -9,162 +19,164 @@ gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
-    icon: Heart,
-    title: 'Social product posts',
-    description: 'Every product you list becomes engaging social content — likes, comments, shares.',
-  },
-  {
-    icon: UserPlus,
-    title: 'Store follows',
-    description: 'Build a real audience. Customers follow you and get notified when you post something new.',
-  },
-  {
+    number: '01',
+    label: 'Discovery',
     icon: MapPin,
-    title: 'Location discovery',
-    description: 'Get found by customers nearby — your feed appears to people around you first.',
+    accent: '#FF5A4D',
+    title: 'Discover any type of business near you.',
+    description: 'Find restaurants, fashion stores, beauty spots, makers, artisans, and everyday services around your location.',
   },
   {
+    number: '02',
+    label: 'Search',
+    icon: Search,
+    accent: '#6D63FF',
+    title: 'Search for a product and see who sells it nearby.',
+    description: 'Type what you need and Ahiver shows the local businesses selling it, so you can compare options close to you.',
+  },
+  {
+    number: '03',
+    label: 'Conversation',
+    icon: MessageCircle,
+    accent: '#12A67C',
+    title: 'Chat before you go.',
+    description: 'Ask about price, size, delivery, pickup, or availability directly from the business before you make a decision.',
+  },
+  {
+    number: '04',
+    label: 'Trust',
+    icon: ShieldCheck,
+    accent: '#FFB547',
+    title: 'Choose with better context.',
+    description: 'Clear storefronts, real ratings, product details, and location cues help buyers shop from businesses they can trust.',
+  },
+  {
+    number: '05',
+    label: 'Visibility',
     icon: BarChart3,
-    title: 'Seller dashboard',
-    description: 'Views, likes, followers, sales — see what resonates and what needs a rethink.',
+    accent: '#8AA7FF',
+    title: 'Show up when nearby buyers are ready.',
+    description: 'Sellers get a simple storefront and feed presence that helps nearby customers discover what they offer.',
   },
   {
-    icon: MessageSquare,
-    title: 'Direct messaging',
-    description: 'Chat with customers in the app. Answer questions, negotiate, close sales.',
-  },
-  {
+    number: '06',
+    label: 'Everyday use',
     icon: Smartphone,
-    title: 'Mobile-first',
-    description: 'Made for the phone in your hand. Fast on slow networks, light on data.',
+    accent: '#D3C8FF',
+    title: 'Built for everyday neighbourhood commerce.',
+    description: 'Fast, focused, and light on data, so buyers can browse quickly and sellers can keep business moving.',
   },
 ];
 
 export function Features() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const featuresRef = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: { trigger: containerRef.current, start: 'top 65%' },
+    const motion = gsap.matchMedia();
+
+    motion.add('(prefers-reduced-motion: no-preference)', () => {
+      const timeline = gsap.timeline({
+        scrollTrigger: { trigger: containerRef.current, start: 'top 78%', once: true },
+      });
+
+      timeline
+        .from('.features-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' })
+        .from('.features-heading', { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out' }, '-=0.2')
+        .from('.features-desc', { opacity: 0, y: 14, duration: 0.45, ease: 'power3.out' }, '-=0.3')
+        .from('.feature-item', { opacity: 0, y: 24, duration: 0.5, stagger: 0.07, ease: 'power3.out' }, '-=0.15')
+        .from('.features-footer', { opacity: 0, y: 18, duration: 0.5, ease: 'power3.out' }, '-=0.2');
     });
 
-    tl.from('.features-eyebrow', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' });
-    tl.from('.features-heading', { opacity: 0, y: 16, duration: 0.5, ease: 'power3.out' }, '-=0.2');
-    tl.from('.features-desc', { opacity: 0, y: 12, duration: 0.4, ease: 'power3.out' }, '-=0.25');
-    tl.from(featuresRef.current, {
-      y: 30,
-      opacity: 0,
-      duration: 0.5,
-      stagger: 0.08,
-      ease: 'power3.out',
-    }, '-=0.15');
-
-    tl.from('.features-highlight', {
-      opacity: 0,
-      y: 30,
-      duration: 0.6,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: '.features-highlight', start: 'top 80%' },
-    });
+    return () => motion.revert();
   }, { scope: containerRef });
 
   return (
     <section
       ref={containerRef}
       id="features"
-      className="overflow-hidden bg-[#ffffff] py-24 md:py-28 lg:py-30"
+      className="overflow-hidden bg-[#000000] text-white"
     >
-      <div className="container mx-auto px-4 lg:px-8">
-        {/* ── Signature recipe header ── */}
-        <div className="mx-auto mb-16 max-w-3xl text-center lg:mb-20">
-          <div
-            className="features-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.4em]"
-            style={{ color: '#FF5A4D' }}
-          >
-            03 — Features
-          </div>
-          <h2 className="features-heading text-4xl leading-[1.02] tracking-tight text-[#0D1020] sm:text-5xl lg:text-6xl font-black font-[family-name:var(--font-bricolage)]">
-            Everything you need to be{' '}
-            <span
-              className="italic font-normal font-[family-name:var(--font-playfair)]"
-              style={{ color: '#FF5A4D' }}
-            >
-              found.
+      <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 md:py-32 lg:px-12 lg:py-36">
+        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+          <div className="features-eyebrow flex items-start gap-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/50">
+            <span className="mt-1.5 h-px w-10 shrink-0 bg-[#FF5A4D]" />
+            <span>
+              <span className="text-[#FF5A4D]">03</span>
+              <span className="mx-2">-</span>
+              The platform
             </span>
-          </h2>
-          <p className="features-desc mx-auto mt-6 max-w-lg text-base leading-relaxed text-[#5C6490] md:text-lg">
-            Simple tools designed for small businesses — not enterprise complexity.
-          </p>
+          </div>
+
+          <div>
+            <h2 className="features-heading max-w-4xl font-[family-name:var(--font-bricolage)] text-4xl font-black leading-[0.96] tracking-[-0.04em] text-white sm:text-5xl md:text-6xl lg:text-[4.7rem]">
+              Everything buyers need to find,
+              <span className="ml-2 font-[family-name:var(--font-playfair)] font-normal italic text-[#FF5A4D]">
+                and sellers need to be found.
+              </span>
+            </h2>
+            <p className="features-desc mt-8 max-w-2xl text-base leading-7 text-white/60 md:text-lg">
+              Ahiver connects both sides of the local market: people can discover and search for what they need nearby, while businesses get a clearer way to show up.
+            </p>
+          </div>
         </div>
 
-        {/* ── Feature grid (light glass) ── */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px max-w-7xl mx-auto bg-[#E2E6F0]">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-               ref={(el) => { featuresRef.current[index] = el }}
-              className="bg-white p-8 lg:p-10 group hover:bg-white transition-colors duration-500"
-            >
-              <div className="w-12 h-12 bg-[#0D1020] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 ease-elastic shadow-lg shadow-navy/20">
-                <feature.icon className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-[#0D1020] mb-3 group-hover:text-[#0D1020] transition-colors duration-500">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-[#5C6490] leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
+        <div className="mt-20 border-t border-white/15 lg:mt-28">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => {
+              const Icon = feature.icon;
 
-        {/* ── Highlight strip ── */}
-        <div className="features-highlight mx-auto mt-20 max-w-6xl">
-          <div className="grid grid-cols-1 items-center gap-12 rounded-3xl border border-[#E2E6F0] bg-white p-10 md:p-14 lg:grid-cols-2 lg:gap-16 lg:p-16">
-            <div>
-              <div
-                className="mb-4 text-[11px] font-semibold uppercase tracking-[0.3em]"
-                style={{ color: '#FF5A4D' }}
-              >
-                Built for phones first
-              </div>
-              <h3 className="text-3xl leading-[1.02] tracking-tight text-[#0D1020] md:text-4xl font-black font-[family-name:var(--font-bricolage)]">
-                Your phone is your{' '}
-                <span
-                  className="italic font-normal font-[family-name:var(--font-playfair)]"
-                  style={{ color: '#FF5A4D' }}
+              return (
+                <article
+                  key={feature.number}
+                  className="feature-item group relative flex min-h-[300px] flex-col border-b border-white/15 p-6 transition-colors duration-300 hover:bg-white/[0.035] sm:p-8 lg:min-h-[330px] lg:p-9"
                 >
-                  office.
-                </span>
-              </h3>
-              <p className="mt-6 text-base leading-relaxed text-[#5C6490] md:text-lg">
-                We built Ahiver mobile-first because that&apos;s how you and your customers actually
-                work.
-              </p>
-              <ul className="mt-8 space-y-3">
-                {[
-                  'Fast even on slow connections',
-                  'Works offline with smart caching',
-                  'Optimised for low data usage',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[#0D1020]">
-                    <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
-                      style={{ background: '#FF5A4D' }}
-                    />
-                    <span className="text-base">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-[#E2E6F0]">
-              <img
-                src="https://images.unsplash.com/photo-1766806756904-bad81fe3b104?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                alt="Mobile shopping"
-                className="h-72 w-full object-cover md:h-96"
-              />
-            </div>
+                  <div className="mb-12 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span
+                        className="flex h-10 w-10 items-center justify-center rounded-xl"
+                        style={{ backgroundColor: `${feature.accent}1A`, color: feature.accent }}
+                      >
+                        <Icon className="h-5 w-5" strokeWidth={1.8} />
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/45">
+                        {feature.label}
+                      </span>
+                    </div>
+                    <span className="font-mono text-[11px] tracking-[0.18em] text-white/35">{feature.number}</span>
+                  </div>
+
+                  <div className="mt-auto">
+                    <h3 className="max-w-sm font-[family-name:var(--font-bricolage)] text-xl font-bold leading-tight tracking-[-0.02em] text-white sm:text-2xl">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-4 max-w-sm text-sm leading-6 text-white/55">
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  <ArrowUpRight
+                    className="absolute bottom-8 right-8 h-5 w-5 text-white/25 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                    style={{ color: feature.accent }}
+                    aria-hidden="true"
+                  />
+                </article>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="features-footer mt-16 grid gap-8 border-t border-white/15 pt-7 sm:grid-cols-3 sm:gap-6">
+          <div className="flex items-center gap-3 text-sm text-white/70">
+            <Users className="h-4 w-4 text-[#6D63FF]" strokeWidth={1.8} />
+            <span>For finding and being found</span>
+          </div>
+          <div className="flex items-center gap-3 text-sm text-white/70">
+            <MapPin className="h-4 w-4 text-[#FF5A4D]" strokeWidth={1.8} />
+            <span>Designed around your neighbourhood</span>
+          </div>
+          <div className="flex items-center gap-3 text-sm text-white/70 sm:justify-self-end">
+            <span className="h-2 w-2 rounded-full bg-[#12A67C]" />
+            <span>Ready when the search starts</span>
           </div>
         </div>
       </div>
