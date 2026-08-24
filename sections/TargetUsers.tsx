@@ -14,25 +14,25 @@ const users = [
     number: '01',
     title: 'Solo entrepreneurs',
     examples: 'Home bakers · Beauty sellers · Clothing resellers',
-    image: '/assets/heroImg1.jpg',
+    image: '/assets/soloEnterpreneur.jpg',
   },
   {
     number: '02',
     title: 'Creators & makers',
     examples: 'Jewelry makers · Artists · Handcraft artisans',
-    image: '/assets/heroImg2.jpg',
+    image: '/assets/creators.jpg',
   },
   {
     number: '03',
     title: 'Small retail',
     examples: 'Boutiques · Local shops · Pop-up vendors',
-    image: '/assets/heroImg3.jpg',
+    image: '/assets/smallRetail.jpg',
   },
   {
     number: '04',
     title: 'Informal vendors',
     examples: 'Market traders · Street vendors · Side hustlers',
-    image: '/assets/heroImg4.jpg',
+    image: '/assets/vendors.jpg',
   },
 ];
 
