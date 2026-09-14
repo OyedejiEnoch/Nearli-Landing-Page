@@ -99,7 +99,7 @@ export function Cta() {
           <div className="cta-actions mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <div ref={btnRef} className="magnetic-btn w-full sm:w-auto">
               <a
-                href={APP_URL}
+                href="https://seller.ahiver.com/register"
                 style={{ touchAction: 'manipulation' }}
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#FF5A4D] px-9 py-4 text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[0_20px_50px_-12px_rgba(255,90,77,0.6)] transition-colors hover:bg-[#F04638] sm:w-auto"
               >
