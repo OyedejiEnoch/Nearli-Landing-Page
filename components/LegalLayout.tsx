@@ -114,10 +114,10 @@ export default function LegalLayout({
               <p className="mt-2 text-base leading-relaxed text-[#5C6490]">
                 Reach us any time at{" "}
                 <a
-                  href="mailto:oyedejienoch@gmail.com"
+                  href="mailto:hello@ahiver.com"
                   className="font-medium text-[#0D1020] underline"
                 >
-                  oyedejienoch@gmail.com
+                  hello@ahiver.com
                 </a>{" "}
                 and we&apos;ll get back to you.
               </p>

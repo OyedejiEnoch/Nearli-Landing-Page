@@ -174,7 +174,7 @@ export function Faq() {
           <p className="text-sm text-[#5C6490]">
             Still have questions?{' '}
             <a
-              href="mailto:oyedejienoch@gmail.com"
+              href="mailto:hello@ahiver.com"
               className="text-[#0D1020] font-semibold hover:underline transition-colors"
             >
               Email us directly

@@ -163,7 +163,7 @@ const Navbar = () => {
         role="dialog"
         aria-modal="true"
         aria-label="Main menu"
-        className={`md:hidden fixed top-0 right-0 z-[120] flex h-[100dvh] w-[88%] max-w-sm flex-col bg-[#0D1020] shadow-2xl transition-transform duration-300 ease-out ${
+        className={`md:hidden fixed top-0 right-0 z-[120] flex h-[100dvh] w-[88%] max-w-sm flex-col bg-[#0D1020]/80 backdrop-blur-2xl shadow-2xl transition-transform duration-300 ease-out ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
@@ -236,11 +236,11 @@ const Navbar = () => {
           </Button>
 
           <a
-            href="mailto:oyedejienoch@gmail.com"
+            href="mailto:hello@ahiver.com"
             className="mt-5 flex items-center justify-center gap-2 text-sm text-[#E2E6F0] hover:text-white transition-colors"
           >
             <Mail className="w-4 h-4" />
-            oyedejienoch@gmail.com
+            hello@ahiver.com
           </a>
 
           <p className="mt-4 text-center text-[10px] text-white/40 font-bold tracking-[0.2em] uppercase">
