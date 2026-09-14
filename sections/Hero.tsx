@@ -45,10 +45,6 @@ const Hero = () => {
     window.location.href = "https://app.ahiver.com/"
   }
 
-  const scrollToHowItWorks = () => {
-    document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
     <section
       className="relative isolate min-h-[100svh] w-full overflow-hidden bg-[#0D1020] text-white"
@@ -168,14 +164,14 @@ const Hero = () => {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
-            <button
-              onClick={scrollToHowItWorks}
+            <a
+              href="https://seller.ahiver.com/register"
               style={{ touchAction: "manipulation" }}
               className="group inline-flex min-h-11 items-center gap-2 px-3 text-sm font-semibold text-white/80 transition-colors hover:text-white"
             >
-              See how it works
+              Become a seller
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
           </motion.div>
         </div>
 
