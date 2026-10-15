@@ -8,6 +8,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 const navLinks = [
   { label: 'Features', href: '/#features' },
+  { label: 'Buyer AI', href: '/#buyer-ai' },
   { label: 'How It Works', href: '/#how-it-works' },
   { label: 'About', href: '/about' },
   { label: 'Seller Guide', href: '/seller-guide' },
@@ -93,7 +94,7 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop nav */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-8 whitespace-nowrap">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -114,7 +115,7 @@ const Navbar = () => {
 
             {/* Mobile hamburger — animated to X */}
             <button
-              className="md:hidden relative z-[130] w-11 h-11 -mr-2 flex items-center justify-center rounded-lg active:bg-black/5 transition-colors"
+              className="lg:hidden relative z-[130] w-11 h-11 -mr-2 flex items-center justify-center rounded-lg active:bg-black/5 transition-colors"
               style={{ touchAction: 'manipulation' }}
               onClick={() => setMobileOpen((v) => !v)}
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
@@ -152,7 +153,7 @@ const Navbar = () => {
       <div
         onClick={closeMenu}
         aria-hidden={!mobileOpen}
-        className={`md:hidden fixed inset-0 z-[110] bg-[#0D1020]/50 backdrop-blur-[2px] transition-opacity duration-300 ${
+        className={`lg:hidden fixed inset-0 z-[110] bg-[#0D1020]/50 backdrop-blur-[2px] transition-opacity duration-300 ${
           mobileOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
       />
@@ -163,7 +164,7 @@ const Navbar = () => {
         role="dialog"
         aria-modal="true"
         aria-label="Main menu"
-        className={`md:hidden fixed top-0 right-0 z-[120] flex h-[100dvh] w-[88%] max-w-sm flex-col bg-[#0D1020] shadow-2xl transition-transform duration-300 ease-out ${
+        className={`lg:hidden fixed top-0 right-0 z-[120] flex h-[100dvh] w-[88%] max-w-sm flex-col bg-black/80 backdrop-blur-2xl shadow-2xl transition-transform duration-300 ease-out ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
@@ -236,11 +237,11 @@ const Navbar = () => {
           </Button>
 
           <a
-            href="mailto:oyedejienoch@gmail.com"
+            href="mailto:hello@ahiver.com"
             className="mt-5 flex items-center justify-center gap-2 text-sm text-[#E2E6F0] hover:text-white transition-colors"
           >
             <Mail className="w-4 h-4" />
-            oyedejienoch@gmail.com
+            hello@ahiver.com
           </a>
 
           <p className="mt-4 text-center text-[10px] text-white/40 font-bold tracking-[0.2em] uppercase">

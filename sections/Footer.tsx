@@ -4,6 +4,7 @@ export function Footer() {
   const footerLinks = {
     product: [
       { label: 'Features', href: '#features' },
+      { label: 'Buyer AI', href: '#buyer-ai' },
       { label: 'How It Works', href: '#how-it-works' },
       { label: 'Pricing', href: '#' },
       { label: 'FAQ', href: '#' }
@@ -17,7 +18,9 @@ export function Footer() {
       { label: 'Privacy Policy', href: '/legal/privacy-policy' },
       { label: 'Terms of Service', href: '/legal/terms' },
       { label: 'Cookie Policy', href: '/legal/cookie-policy' },
-      { label: 'Refund Policy', href: '/legal/refunds' }
+      { label: 'Refund Policy', href: '/legal/refunds' },
+      { label: 'Shipping Policy', href: '/legal/shipping' },
+      { label: 'Acceptable Use', href: '/legal/acceptable-use' }
     ]
   };
 
@@ -44,8 +47,8 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#e3e3e6]" />
-                <a href="mailto:oyedejienoch@gmail.com" className="text-[#e3e3e6] hover:text-white transition-colors">
-                  oyedejienoch@gmail.com
+                <a href="mailto:hello@ahiver.com" className="text-[#e3e3e6] hover:text-white transition-colors">
+                  hello@ahiver.com
                 </a>
               </div>
             </div>
