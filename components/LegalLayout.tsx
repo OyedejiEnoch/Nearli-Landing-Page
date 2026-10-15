@@ -15,6 +15,8 @@ const otherPages = [
   { label: "Terms of Service", href: "/legal/terms" },
   { label: "Cookie Policy", href: "/legal/cookie-policy" },
   { label: "Refund Policy", href: "/legal/refunds" },
+  { label: "Shipping Policy", href: "/legal/shipping" },
+  { label: "Acceptable Use", href: "/legal/acceptable-use" },
 ]
 
 export default function LegalLayout({

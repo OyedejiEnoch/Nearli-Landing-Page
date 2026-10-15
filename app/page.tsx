@@ -1,4 +1,4 @@
-import { BuyerSection } from "@/sections/BuyerSection";
+import { BuyerAi } from "@/sections/BuyerAi";
 import { Categories } from "@/sections/Categories";
 import { Cta } from "@/sections/Cta";
 import { Faq } from "@/sections/Faq";
@@ -27,6 +27,7 @@ export default function Home() {
         smoothWheel: true,
         wheelMultiplier: 0.9,
         touchMultiplier: 1.5,
+        anchors: { offset: -85, immediate: true },
       }}
     >
       <LenisGsapBridge />
@@ -36,7 +37,7 @@ export default function Home() {
       <Mission />
       {/* <HowItWorks /> */}
       <Features />
-      <BuyerSection />
+      {/* <BuyerAi /> */}
       {/* <Spotlight /> */}
       <Categories />
       <Showcase />

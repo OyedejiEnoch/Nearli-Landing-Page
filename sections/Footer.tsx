@@ -4,6 +4,7 @@ export function Footer() {
   const footerLinks = {
     product: [
       { label: 'Features', href: '#features' },
+      { label: 'Buyer AI', href: '#buyer-ai' },
       { label: 'How It Works', href: '#how-it-works' },
       { label: 'Pricing', href: '#' },
       { label: 'FAQ', href: '#' }
@@ -17,7 +18,9 @@ export function Footer() {
       { label: 'Privacy Policy', href: '/legal/privacy-policy' },
       { label: 'Terms of Service', href: '/legal/terms' },
       { label: 'Cookie Policy', href: '/legal/cookie-policy' },
-      { label: 'Refund Policy', href: '/legal/refunds' }
+      { label: 'Refund Policy', href: '/legal/refunds' },
+      { label: 'Shipping Policy', href: '/legal/shipping' },
+      { label: 'Acceptable Use', href: '/legal/acceptable-use' }
     ]
   };
 

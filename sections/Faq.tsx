@@ -31,7 +31,15 @@ const faqs = [
   },
   {
     question: "Can buyers also use Ahiver?",
-    answer: "Absolutely. Ahiver works for both sides. Buyers get a local discovery feed showing businesses, products, and live inventory near them. Sellers get found. Buyers find what they need. Everyone wins."
+    answer: "Yes. Browse local businesses on Ahiver, or ask Buyer AI on WhatsApp. Tell it what you need and share a location pin or type your neighbourhood and city. It suggests businesses to explore, with links to their storefronts."
+  },
+  {
+    question: "Do I need an account to use Buyer AI on WhatsApp?",
+    answer: "No buyer account or new app is needed to start a WhatsApp search. Send a text request, share your area, and explore the suggested stores. Contact the seller to confirm prices, availability, and arrangements before buying."
+  },
+  {
+    question: "Can I buy and pay through Buyer AI?",
+    answer: "Buyer AI helps you discover businesses and open their Ahiver storefronts. It does not take payments or complete purchases in WhatsApp. Confirm the product, price, and any pickup or delivery arrangements directly with the seller."
   }
 ];
 
