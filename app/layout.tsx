@@ -1,51 +1,38 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Bricolage_Grotesque, Playfair_Display, Barlow_Condensed, Syne, Fraunces } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 // ── Ahiver Immersive Design Language (matches main app) ──
-const inter = Inter({
+const inter = localFont({
+  src: "./fonts/inter.ttf",
   variable: "--font-inter",
-  subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: "100 900",
 });
 
-const bricolage = Bricolage_Grotesque({
+const bricolage = localFont({
+  src: "./fonts/bricolagegrotesque.ttf",
   variable: "--font-bricolage",
-  subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: "200 800",
 });
 
-const playfair = Playfair_Display({
+const playfair = localFont({
+  src: [
+    { path: "./fonts/playfairdisplay.ttf", weight: "400 900", style: "normal" },
+    { path: "./fonts/playfairdisplay-Italic.ttf", weight: "400 900", style: "italic" },
+  ],
   variable: "--font-playfair",
-  subsets: ["latin"],
   display: "swap",
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-// ── Legacy fonts (still referenced by unmigrated sections; remove after full sweep) ──
-const barlowCondensed = Barlow_Condensed({
-  variable: "--font-barlow",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const syne = Syne({
-  variable: "--font-syne",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const fraunces = Fraunces({
+const fraunces = localFont({
+  src: [
+    { path: "./fonts/fraunces.ttf", weight: "100 900", style: "normal" },
+    { path: "./fonts/fraunces-Italic.ttf", weight: "100 900", style: "italic" },
+  ],
   variable: "--font-fraunces",
-  subsets: ["latin"],
   display: "swap",
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700", "900"],
 });
 
 const SITE_URL = "https://ahiver.com";
@@ -167,7 +154,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${bricolage.variable} ${playfair.variable} ${barlowCondensed.variable} ${syne.variable} ${fraunces.variable} antialiased`}
+        className={`${inter.variable} ${bricolage.variable} ${playfair.variable} ${fraunces.variable} antialiased`}
       >
         {children}
       </body>
