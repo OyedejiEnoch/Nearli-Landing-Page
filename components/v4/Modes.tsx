@@ -94,7 +94,7 @@ export default function Modes() {
   }
 
   return (
-    <section id="find" ref={root} data-bg="#0B0B0C" aria-label="Find it your way" className="relative h-[100svh] min-h-[640px] overflow-hidden bg-[#0B0B0C] text-white [--phone-h:54svh] lg:[--phone-h:76svh]">
+    <section id="find" ref={root} data-bg="#0B0B0C" aria-label="Find it your way" className="relative h-[100svh] min-h-[640px] overflow-hidden bg-[#0B0B0C] text-white">
       <svg aria-hidden="true" className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block" viewBox="0 0 1440 900" preserveAspectRatio="none">
         <path data-arc d="M 860 120 C 1180 100, 1400 260, 1380 560" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="2" strokeDasharray="6 10" pathLength={900} />
       </svg>
@@ -105,8 +105,10 @@ export default function Modes() {
           <p className="hidden max-w-[22rem] text-lg leading-relaxed text-white/70 lg:block">Four ways in. All of them end at a real shop near you.</p>
         </div>
 
-        <div className="flex items-center justify-center py-4 lg:py-0">
-          <div data-modes-phone className="relative overflow-hidden rounded-[40px] border-[9px] border-[#1E1E22] bg-white shadow-[0_50px_100px_-40px_rgba(0,0,0,0.9)] lg:rounded-[46px] lg:border-[10px]" style={{ height: "min(var(--phone-h), 800px)", aspectRatio: "390 / 844" }}>
+        {/* Phones: sized by width and allowed to run off the bottom with a fade,
+            so the screen reads at a useful size. Desktop: sized by height. */}
+        <div className="flex min-h-0 items-start justify-center overflow-hidden pt-5 [mask-image:linear-gradient(to_bottom,black_78%,transparent)] lg:items-center lg:overflow-visible lg:pt-0 lg:[mask-image:none]">
+          <div data-modes-phone className="relative w-[min(74vw,330px)] shrink-0 overflow-hidden rounded-[40px] border-[9px] border-[#1E1E22] bg-white shadow-[0_50px_100px_-40px_rgba(0,0,0,0.9)] lg:h-[min(76svh,800px)] lg:w-auto lg:rounded-[46px] lg:border-[10px]" style={{ aspectRatio: "390 / 844" }}>
             {MODES.map((m, i) => (
               <div
                 key={m.id}
