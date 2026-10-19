@@ -6,7 +6,6 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import { Chip, display } from "../ui"
-import { useSound } from "../sound"
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
@@ -59,7 +58,6 @@ const STEPS = [
 
 export default function BizSteps() {
   const root = useRef<HTMLElement>(null)
-  const { play } = useSound()
 
   useGSAP(
     () => {
@@ -73,7 +71,6 @@ export default function BizSteps() {
         gsap.from("[data-digit]", {
           opacity: 0, y: 8, duration: 0.25, stagger: 0.12, ease: "power2.out",
           scrollTrigger: { trigger: "[data-digit]", start: "top 80%" }, delay: 0.6,
-          onStart: () => play("tick"),
         })
         gsap.from("[data-chip]", { scale: 0.9, opacity: 0, y: 10, duration: 0.6, ease: "back.out(1.8)", scrollTrigger: { trigger: "[data-chip]", start: "top 80%" }, delay: 0.9 })
       })

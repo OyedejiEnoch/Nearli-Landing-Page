@@ -30,7 +30,6 @@ export default function Hero({ oyo, qr }: { oyo: number | null; qr: string }) {
           .from("[data-fade]", { y: 18, opacity: 0, duration: 0.9, stagger: 0.07 }, 0.45)
           .from("[data-chip]", {
             scale: 0.92, opacity: 0, y: 8, duration: 0.6, stagger: 0.18, ease: "back.out(1.6)",
-            onStart: () => play("pop"),
           }, 0.9)
 
         // A ring keeps rippling out from the pin under the hand: "near you".

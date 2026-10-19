@@ -79,6 +79,8 @@ export default function BizAssistant() {
   const root = useRef<HTMLElement>(null)
   const st = useRef<ScrollTrigger | null>(null)
   const last = useRef(0)
+  // Replies ding only when the visitor picked the chat themselves, never while scrolling.
+  const tapped = useRef(false)
   const [active, setActive] = useState(0)
   const { play } = useSound()
   const lenis = useLenis()
@@ -94,7 +96,6 @@ export default function BizAssistant() {
             if (i !== last.current) {
               last.current = i
               setActive(i)
-              play("tick", { haptic: true })
             }
           },
         })
@@ -116,7 +117,7 @@ export default function BizAssistant() {
       const tl = gsap.timeline()
       msgs.forEach((el, i) => {
         const ai = el.dataset.from === "ai"
-        tl.from(el, { opacity: 0, y: 12, scale: 0.97, duration: 0.4, ease: "back.out(1.4)", transformOrigin: ai ? "0% 100%" : "100% 100%", onStart: () => { if (i > 0 && ai) play("ding") } }, i === 0 ? 0.1 : ai ? "+=0.45" : "+=0.3")
+        tl.from(el, { opacity: 0, y: 12, scale: 0.97, duration: 0.4, ease: "back.out(1.4)", transformOrigin: ai ? "0% 100%" : "100% 100%", onStart: () => { if (tapped.current && i > 0 && ai) play("ding") } }, i === 0 ? 0.1 : ai ? "+=0.45" : "+=0.3")
       })
       return () => tl.kill()
     },
@@ -124,6 +125,8 @@ export default function BizAssistant() {
   )
 
   const go = (i: number) => {
+    tapped.current = true
+    play("tick", { haptic: true })
     const s = st.current
     if (!s) return setActive(i)
     const y = s.start + ((i + 0.5) / SKILLS.length) * (s.end - s.start)
@@ -145,7 +148,7 @@ export default function BizAssistant() {
         {/* Phones: swipeable tabs above the chat. */}
         <div role="tablist" aria-label="What the assistant does" className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 [scrollbar-width:none] lg:hidden">
           {SKILLS.map((s, i) => (
-            <button key={s.id} role="tab" type="button" aria-selected={i === active} onClick={() => { setActive(i); play("tick", { haptic: true }) }} className={`h-10 shrink-0 rounded-full px-4 text-[14px] font-semibold transition-colors duration-200 ${i === active ? "bg-white text-[#0B0B0C]" : "bg-white/10 text-white"}`}>{s.title}</button>
+            <button key={s.id} role="tab" type="button" aria-selected={i === active} onClick={() => { tapped.current = true; setActive(i); play("tick", { haptic: true }) }} className={`h-10 shrink-0 rounded-full px-4 text-[14px] font-semibold transition-colors duration-200 ${i === active ? "bg-white text-[#0B0B0C]" : "bg-white/10 text-white"}`}>{s.title}</button>
           ))}
         </div>
 

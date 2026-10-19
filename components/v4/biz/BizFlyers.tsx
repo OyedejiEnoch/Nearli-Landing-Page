@@ -6,7 +6,6 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import { display } from "../ui"
-import { useSound } from "../sound"
 import { Bubble, WaPhone } from "./chat"
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
@@ -31,7 +30,6 @@ function Tag({ title, sub }: { title: string; sub: string }) {
 // The signature moment: the flyer leaves the chat, then becomes a Status.
 export default function BizFlyers() {
   const root = useRef<HTMLElement>(null)
-  const { play } = useSound()
 
   useGSAP(
     () => {
@@ -40,8 +38,8 @@ export default function BizFlyers() {
         gsap.from("[data-fl-head] > *", { y: 40, opacity: 0, duration: 1, ease: "expo.out", stagger: 0.08, scrollTrigger: { trigger: root.current, start: "top 70%" } })
         const tl = gsap.timeline({ scrollTrigger: { trigger: "[data-fl-row]", start: "top 70%" } })
         tl.from("[data-fl='chat']", { y: 60, opacity: 0, duration: 1, ease: "expo.out" })
-          .from("[data-fl='group']", { x: -160, scale: 0.45, rotate: 0, opacity: 0, duration: 1.1, ease: "expo.out", onStart: () => play("whoosh") }, "+=0.15")
-          .from("[data-fl='status']", { x: -160, scale: 0.6, opacity: 0, duration: 1.1, ease: "expo.out", onStart: () => play("whoosh") }, "+=0.2")
+          .from("[data-fl='group']", { x: -160, scale: 0.45, rotate: 0, opacity: 0, duration: 1.1, ease: "expo.out" }, "+=0.15")
+          .from("[data-fl='status']", { x: -160, scale: 0.6, opacity: 0, duration: 1.1, ease: "expo.out" }, "+=0.2")
           .fromTo("[data-status-bar]", { scaleX: 0 }, { scaleX: 1, duration: 3, ease: "none", transformOrigin: "0% 50%" }, "<0.6")
           .from("[data-arrow]", { opacity: 0, duration: 0.4, stagger: 0.6 }, 0.6)
       })

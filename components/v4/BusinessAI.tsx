@@ -65,7 +65,6 @@ export default function BusinessAI() {
           tl.set(el, { display: "flex" }, i === 0 ? 0.2 : ai ? ">" : "+=0.6")
           tl.to(el, {
             opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.4)", transformOrigin: ai ? "0% 100%" : "100% 100%",
-            onStart: () => play(ai ? "ding" : "pop"),
           }, "<")
         })
         ScrollTrigger.create({ trigger: "[data-biz-phone]", start: "top 60%", once: true, onEnter: () => tl.play() })

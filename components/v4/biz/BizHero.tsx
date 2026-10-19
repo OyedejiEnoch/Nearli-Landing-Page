@@ -33,7 +33,7 @@ export default function BizHero({ total }: { total: number | null }) {
           .from("[data-fade]", { y: 18, opacity: 0, duration: 0.9, stagger: 0.07 }, 0.45)
         // Shoppers' messages arrive one at a time, as if from their distance.
         gsap.utils.toArray<HTMLElement>("[data-ask]").forEach((el, i) => {
-          tl.from(el, { y: 16, scale: 0.94, opacity: 0, duration: 0.6, ease: "back.out(1.6)", onStart: () => play("pop") }, 1.1 + i * 0.45)
+          tl.from(el, { y: 16, scale: 0.94, opacity: 0, duration: 0.6, ease: "back.out(1.6)" }, 1.1 + i * 0.45)
         })
         gsap.fromTo("[data-pulse]", { scale: 0.4, opacity: 0.6 }, { scale: 1.8, opacity: 0, duration: 2.6, ease: "power2.out", repeat: -1, transformOrigin: "50% 50%", delay: 1.6 })
 
@@ -52,12 +52,12 @@ export default function BizHero({ total }: { total: number | null }) {
   )
 
   return (
-    <section ref={root} data-bg="#3B55FF" aria-label="Be the shop around the corner" className="relative min-h-[100svh] overflow-hidden bg-[#3B55FF] text-white">
+    <section ref={root} data-bg="#100A30" aria-label="Be the shop around the corner" className="relative min-h-[100svh] overflow-hidden bg-[#100A30] text-white">
       {/* Rings around the shop's pin: 300 m, 1 km, 3 km. */}
       <div data-rings aria-hidden="true" className="absolute right-[-560px] top-[86%] h-[1200px] w-[1200px] -translate-y-1/2 sm:right-[-380px] sm:top-[60%] lg:right-[-200px] lg:top-[56%]">
         <svg className="h-full w-full" viewBox="0 0 1200 1200">
-          <circle data-pulse cx="600" cy="600" r="120" fill="none" stroke="#0B0B0C" strokeWidth="6" />
-          {RINGS.map((r) => <circle key={r} data-ring cx="600" cy="600" r={r} fill="none" stroke="#0B0B0C" strokeWidth="44" />)}
+          <circle data-pulse cx="600" cy="600" r="120" fill="none" stroke="#3B55FF" strokeWidth="6" />
+          {RINGS.map((r) => <circle key={r} data-ring cx="600" cy="600" r={r} fill="none" stroke="#3B55FF" strokeWidth="44" />)}
         </svg>
         <span data-pin className="absolute left-1/2 top-1/2 flex h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[28%] bg-white p-4 shadow-[0_30px_60px_-20px_rgba(11,11,12,0.6)]">
           <AhiverMark size={68} className="h-full w-full" />
@@ -67,7 +67,7 @@ export default function BizHero({ total }: { total: number | null }) {
       <div className="pointer-events-none absolute inset-0 z-[3] mx-auto hidden max-w-[1440px] lg:block">
         {ASKS.map((a) => (
           <div key={a.who} data-ask className={`absolute flex flex-col gap-1.5 ${a.cls}`}>
-            <span className="w-fit rounded-full bg-[#0B0B0C] px-3 py-1.5 text-[13px] font-bold">{a.who} · {a.dist}</span>
+            <span className="w-fit rounded-full bg-[#3B55FF] px-3 py-1.5 text-[13px] font-bold">{a.who} · {a.dist}</span>
             <span className="max-w-[240px] rounded-[16px] rounded-tl-md bg-white px-3.5 py-2.5 text-[15px] leading-snug text-[#0B0B0C] shadow-[0_16px_34px_-14px_rgba(11,11,12,0.5)]">{a.text}</span>
           </div>
         ))}
@@ -96,7 +96,7 @@ export default function BizHero({ total }: { total: number | null }) {
       </div>
 
       <div data-ask className="absolute bottom-[6%] left-5 z-[3] flex flex-col gap-1.5 lg:hidden">
-        <span className="w-fit rounded-full bg-[#0B0B0C] px-3 py-1.5 text-[13px] font-bold">Tolu · 300 m</span>
+        <span className="w-fit rounded-full bg-[#3B55FF] px-3 py-1.5 text-[13px] font-bold">Tolu · 300 m</span>
         <span className="max-w-[220px] rounded-[16px] rounded-tl-md bg-white px-3.5 py-2.5 text-[14px] leading-snug text-[#0B0B0C] shadow-[0_16px_34px_-14px_rgba(11,11,12,0.5)]">Do you have it in size 12?</span>
       </div>
     </section>

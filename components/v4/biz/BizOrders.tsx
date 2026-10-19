@@ -5,7 +5,6 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import { display } from "../ui"
-import { useSound } from "../sound"
 import { Bubble, WaPhone } from "./chat"
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
@@ -34,7 +33,6 @@ function RequestCard() {
 
 export default function BizOrders() {
   const root = useRef<HTMLElement>(null)
-  const { play } = useSound()
 
   useGSAP(
     () => {
@@ -47,8 +45,8 @@ export default function BizOrders() {
         const tl = gsap.timeline({ scrollTrigger: { trigger: "[data-or-art]", start: "top 65%" } })
         tl.from("[data-or-card]", { x: -80, rotate: -8, opacity: 0, duration: 1, ease: "expo.out" })
           .from("[data-or-alert]", { y: 60, opacity: 0, duration: 1, ease: "expo.out" }, "<0.15")
-          .to(msgs[0], { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)", onStart: () => play("ding") }, "+=0.2")
-          .to(msgs[1], { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)", onStart: () => play("ding") }, "+=1.1")
+          .to(msgs[0], { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, "+=0.2")
+          .to(msgs[1], { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, "+=1.1")
       })
       return () => mm.revert()
     },

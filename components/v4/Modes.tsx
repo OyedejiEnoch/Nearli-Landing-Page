@@ -72,7 +72,6 @@ export default function Modes() {
             if (i !== last.current) {
               last.current = i
               setActive(i)
-              play("tick", { haptic: true })
             }
           },
         })
@@ -84,7 +83,9 @@ export default function Modes() {
     { scope: root },
   )
 
+  // Sound and touch answer taps only; scrolling through the modes stays silent.
   const go = (i: number) => {
+    play("tick", { haptic: true })
     const s = st.current
     if (!s) return setActive(i)
     const y = s.start + ((i + 0.5) / MODES.length) * (s.end - s.start)
