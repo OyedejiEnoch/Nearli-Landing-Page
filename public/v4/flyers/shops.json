@@ -1,0 +1,114 @@
+[
+ {
+  "slug": "jay-s-fashion",
+  "name": "Jay’s Fashion",
+  "category": "Fashion",
+  "city": "Ibadan",
+  "products": 0
+ },
+ {
+  "slug": "classic-unisex-salon",
+  "name": "Classic Unisex Salon",
+  "category": "Beauty & Health",
+  "city": "Ibadan North",
+  "products": 0
+ },
+ {
+  "slug": "fidmore",
+  "name": "Fidmore",
+  "category": "Restaurants",
+  "city": "Akinyele",
+  "products": 4
+ },
+ {
+  "slug": "awesomecakesnmore",
+  "name": "AwesomecakesNmore",
+  "category": "Food & Beverages",
+  "city": "Akinyele",
+  "products": 0
+ },
+ {
+  "slug": "kicks-wey-no-go-far",
+  "name": "Kicks wey no go far",
+  "category": "Fashion",
+  "city": "Ibadan North West",
+  "products": 20
+ },
+ {
+  "slug": "dolive-treats",
+  "name": "Dolive Treats",
+  "category": "Food & Beverages",
+  "city": "Ogbomoso",
+  "products": 7
+ },
+ {
+  "slug": "kate-optical-world",
+  "name": "Kate Optical World",
+  "category": "Beauty & Health",
+  "city": "Ibadan South West",
+  "products": 1
+ },
+ {
+  "slug": "mide-atelier",
+  "name": "Mide_Atelier",
+  "category": "Fashion",
+  "city": "Ibadan South West",
+  "products": 9
+ },
+ {
+  "slug": "teegrills",
+  "name": "Teegrills",
+  "category": "Food & Beverages",
+  "city": "Ibadan South West",
+  "products": 1
+ },
+ {
+  "slug": "tenteen-crochets",
+  "name": "Tenteen Crochets",
+  "category": "Fashion",
+  "city": "Ibadan South West",
+  "products": 1
+ },
+ {
+  "slug": "de-light-s-touch-hair-care",
+  "name": "De-light's touch hair care",
+  "category": "Beauty & Health",
+  "city": "Ibadan South West",
+  "products": 6
+ },
+ {
+  "slug": "ayoz-confectionery-bliss",
+  "name": "Ayoz Confectionery Bliss",
+  "category": "Food & Beverages",
+  "city": "Ibadan South West",
+  "products": 1
+ },
+ {
+  "slug": "moa-hopex-hub",
+  "name": "Moa hopex hub",
+  "category": "Fashion",
+  "city": "Ido",
+  "products": 3
+ },
+ {
+  "slug": "egbo-ati-ewa-pipi",
+  "name": "Egbo ati Ewa Pipi",
+  "category": "Restaurants",
+  "city": "Ido",
+  "products": 1
+ },
+ {
+  "slug": "superkay-plumbing-works-buildi",
+  "name": "SUPERKAY PLUMBING WORKS& BUILDING CONTRACTOR",
+  "category": "Services",
+  "city": "Oluyole",
+  "products": 1
+ },
+ {
+  "slug": "the-clothing-maker",
+  "name": "The Clothing Maker",
+  "category": "Tailoring",
+  "city": "Oluyole",
+  "products": 1
+ }
+]
