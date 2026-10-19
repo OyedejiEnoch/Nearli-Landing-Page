@@ -93,19 +93,19 @@ export default function Modes() {
   }
 
   return (
-    <section id="find" ref={root} data-bg="#0B0B0C" aria-label="Find it your way" className="relative h-[100svh] min-h-[640px] overflow-hidden bg-[#0B0B0C] text-white [--phone-h:50svh] lg:[--phone-h:64svh]">
+    <section id="find" ref={root} data-bg="#0B0B0C" aria-label="Find it your way" className="relative h-[100svh] min-h-[640px] overflow-hidden bg-[#0B0B0C] text-white [--phone-h:54svh] lg:[--phone-h:76svh]">
       <svg aria-hidden="true" className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block" viewBox="0 0 1440 900" preserveAspectRatio="none">
         <path data-arc d="M 860 120 C 1180 100, 1400 260, 1380 560" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="2" strokeDasharray="6 10" pathLength={900} />
       </svg>
 
-      <div className="relative mx-auto grid h-full max-w-[1440px] grid-rows-[auto_1fr_auto] px-5 pb-8 pt-20 sm:px-8 lg:grid-cols-[1fr_auto_1fr] lg:grid-rows-1 lg:items-center lg:gap-10 lg:px-14 lg:pt-0">
+      <div className="relative mx-auto grid h-full max-w-[1440px] grid-rows-[auto_1fr_auto] px-5 pb-8 pt-20 sm:px-8 lg:grid-cols-[1fr_auto_1fr] lg:grid-rows-1 lg:items-center lg:gap-16 lg:px-14 lg:pt-[72px]">
         <div className="flex flex-col gap-4 lg:self-end lg:pb-24">
-          <h2 className={`${display} text-[clamp(2.8rem,7vw,6.4rem)]`}>Find it<br />your way.</h2>
+          <h2 className={`${display} text-[clamp(2.8rem,5.4vw,6rem)]`}>Find it<br />your way.</h2>
           <p className="hidden max-w-[22rem] text-lg leading-relaxed text-white/70 lg:block">Four ways in. All of them end at a real shop near you.</p>
         </div>
 
         <div className="flex items-center justify-center py-4 lg:py-0">
-          <div data-modes-phone className="relative overflow-hidden rounded-[40px] border-[9px] border-[#1E1E22] bg-white shadow-[0_50px_100px_-40px_rgba(0,0,0,0.9)] lg:rounded-[46px] lg:border-[10px]" style={{ height: "min(var(--phone-h), 660px)", aspectRatio: "390 / 844" }}>
+          <div data-modes-phone className="relative overflow-hidden rounded-[40px] border-[9px] border-[#1E1E22] bg-white shadow-[0_50px_100px_-40px_rgba(0,0,0,0.9)] lg:rounded-[46px] lg:border-[10px]" style={{ height: "min(var(--phone-h), 800px)", aspectRatio: "390 / 844" }}>
             {MODES.map((m, i) => (
               <div
                 key={m.id}

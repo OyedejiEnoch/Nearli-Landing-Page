@@ -1,6 +1,6 @@
 "use client"
 
-import { useId, useState } from "react"
+import { useState } from "react"
 import { display } from "./ui"
 import { useSound } from "./sound"
 
@@ -23,8 +23,7 @@ const FAQ: Record<"shoppers" | "businesses", QA[]> = {
   ],
 }
 
-function Item({ qa, open, onToggle }: { qa: QA; open: boolean; onToggle: () => void }) {
-  const id = useId()
+function Item({ qa, id, open, onToggle }: { qa: QA; id: string; open: boolean; onToggle: () => void }) {
   return (
     <li className="border-b border-[#E7E7EA]">
       <h3>
@@ -80,7 +79,7 @@ export default function Faq() {
         </div>
         <ul key={who} className="border-t border-[#E7E7EA]">
           {FAQ[who].map((qa, i) => (
-            <Item key={qa.q} qa={qa} open={open === i} onToggle={() => setOpen(open === i ? -1 : i)} />
+            <Item key={qa.q} qa={qa} id={`faq-${who}-${i}`} open={open === i} onToggle={() => setOpen(open === i ? -1 : i)} />
           ))}
         </ul>
       </div>

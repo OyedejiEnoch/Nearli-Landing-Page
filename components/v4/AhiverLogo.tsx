@@ -1,5 +1,4 @@
 "use client";
-import { useId } from 'react';
 
 // Ahiver logo (brand v3, 18 Oct 2026): the violet→blue gradient pin, traced
 // from the founder's "Ahiver Gradient Pin Logo". The gradient is the logo's
@@ -21,7 +20,9 @@ function Gradient({ id }: { id: string }) {
 
 // The pin on its own (favicons, the icon rail, avatars of Ahiver itself).
 export function AhiverMark({ size = 32, className = '', title }: { size?: number; className?: string; title?: string }) {
-  const id = `ahiver-mark-${useId().replace(/:/g, '')}`;
+  // Fixed ids: every copy defines the same gradient, so sharing one is safe
+  // and server and browser always agree.
+  const id = 'ahiver-mark-grad';
   return (
     <svg
       viewBox="0 0 471 431"
@@ -40,7 +41,7 @@ export function AhiverMark({ size = 32, className = '', title }: { size?: number
 
 // Mark + wordmark. `height` sets the size; the width follows (1845:431).
 export default function AhiverLogo({ height = 28, className = '', title = 'Ahiver' }: { height?: number; className?: string; title?: string }) {
-  const id = `ahiver-logo-${useId().replace(/:/g, '')}`;
+  const id = 'ahiver-logo-grad';
   return (
     <svg viewBox="0 0 1845 431" height={height} width={Math.round((height * 1845) / 431)} className={className} role="img" aria-label={title}>
       <defs><Gradient id={id} /></defs>
