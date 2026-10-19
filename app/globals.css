@@ -57,11 +57,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-bricolage), "Bricolage Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+/* In the base layer so Tailwind utilities on a heading (leading, tracking)
+   win over these defaults. */
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-bricolage), "Bricolage Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
 }
 
 /* Editorial accent — one word per key headline, matches the landing's
@@ -249,16 +253,16 @@ h1, h2, h3, h4 {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--warm-gray);
+  background: #F5F5F7;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--navy);
+  background: #0B0B0C;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--navy-light);
+  background: #3B55FF;
 }
 
 /* ── Showcase scroller — hide the horizontal scrollbar (drag + arrows drive it) ── */
@@ -284,4 +288,15 @@ h1, h2, h3, h4 {
 }
 @media (prefers-reduced-motion: reduce) {
   .nearli-marquee { animation: none; }
+}
+
+/* ── Landing v4 ── */
+/* Each section paints its own colour (works with no JS and with reduced
+   motion). When BgMorph runs, sections go clear and one backdrop eases
+   between their colours as you scroll. */
+.v4-morph [data-bg] { background-color: transparent !important; }
+.v4 { --ease-out: cubic-bezier(0.23, 1, 0.32, 1); }
+.v4 :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .v4 *, .v4 *::before, .v4 *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
 }
