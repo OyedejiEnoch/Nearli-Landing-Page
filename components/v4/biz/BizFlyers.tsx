@@ -60,9 +60,9 @@ export default function BizFlyers() {
           <div data-fl="chat" className="flex flex-col items-center gap-4 max-lg:hidden">
             <WaPhone className="w-[300px]">
               <div className="flex flex-col gap-2 px-3 pt-4">
-                <Bubble attr={false} m={{ from: "me", text: "flyer for the ankara peplum top" }} />
-                <Bubble attr={false} m={{ from: "ai", text: "**Advert: Ankara peplum top**\nPress and hold the image below, tap **Forward**, then choose your groups or customers." }} />
-                <Bubble attr={false} m={{ from: "ai", image: { src: "/v4/biz/flyer-group.webp", w: 720, h: 900, alt: "", width: "50%" } }} />
+                <Bubble attr={false} m={{ from: "me", text: "flyer for the kente shirt" }} />
+                <Bubble attr={false} m={{ from: "ai", text: "**Advert: Kente shirt**\nPress and hold the image below, tap **Forward**, then choose your groups or customers." }} />
+                <Bubble attr={false} m={{ from: "ai", image: { src: "/v4/biz/kente-group.webp", w: 720, h: 900, alt: "", width: "50%" } }} />
                 <Bubble attr={false} m={{ from: "ai", text: "Want it sized for your WhatsApp Status too?", button: "Status size" }} />
               </div>
             </WaPhone>
@@ -71,14 +71,14 @@ export default function BizFlyers() {
           <Arrow />
           <div className="flex flex-col items-center gap-5">
             <div data-fl="group" className="w-[min(78vw,330px)] -rotate-3 overflow-hidden rounded-[22px] shadow-[0_40px_80px_-36px_rgba(11,11,12,0.55)]">
-              <Image src="/v4/biz/flyer-group.webp" alt="A group-size flyer the assistant made for an Ankara peplum top, ₦14,500" width={720} height={900} sizes="330px" className="h-auto w-full" />
+              <Image src="/v4/biz/kente-group.webp" alt="A group-size flyer the assistant made for a kente shirt, ₦22,000" width={720} height={900} sizes="330px" className="h-auto w-full" />
             </div>
             <Tag title="2 · Group size" sub="For chats and groups" />
           </div>
           <Arrow />
           <div className="flex flex-col items-center gap-5">
             <div data-fl="status" className="relative w-[min(66vw,280px)] overflow-hidden rounded-[40px] border-[10px] border-[#16161A] bg-black shadow-[0_50px_90px_-34px_rgba(11,11,12,0.55)]" style={{ aspectRatio: "9 / 16" }}>
-              <Image src="/v4/biz/flyer-status.webp" alt="The Status-size flyer as it shows on WhatsApp Status" fill sizes="280px" className="object-cover" />
+              <Image src="/v4/biz/kente-status.webp" alt="The Status-size flyer as it shows on WhatsApp Status" fill sizes="280px" className="object-cover" />
               <span className="absolute inset-x-3 top-3 h-[3px] overflow-hidden rounded-full bg-white/40"><span data-status-bar className="block h-full w-full rounded-full bg-white" /></span>
               <span className="absolute left-3.5 top-6 flex items-center gap-2 text-[12px] font-semibold text-white"><span className="h-6 w-6 rounded-full bg-white/80" />My status · just now</span>
             </div>

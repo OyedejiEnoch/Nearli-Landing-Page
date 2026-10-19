@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 const STORIES = [
   { id: "ahiver-bisi-v3", who: "Olabisi", what: "Creator, Ibadan" },
-  { id: "ahiver-founder-v5", who: "Enoch", what: "Founder, Ahiver" },
+  { id: "ahiver-founder-v5", who: "Enoch", what: "Team member, Ahiver" },
   { id: "ahiver-cc-v2", who: "On Ahiver", what: "Creator, Ibadan" },
 ]
 
@@ -95,7 +95,7 @@ export default function Stories() {
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
         <div data-stories-head className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <h2 className={`${display} max-w-[10ch] text-[clamp(2.6rem,6.4vw,6rem)]`}>Real shops. Real streets.</h2>
-          <p className="max-w-[26rem] text-lg leading-relaxed text-[#62636B]">The people selling on Ahiver, and the person building it, in their own words.</p>
+          <p className="max-w-[26rem] text-lg leading-relaxed text-[#62636B]">The people selling on Ahiver, and the team building it, in their own words.</p>
         </div>
         <div data-stories-row className="-mx-5 mt-16 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:mx-0 sm:px-0 lg:mt-24 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible">
           {STORIES.map((s, i) => (

@@ -12,7 +12,7 @@ import { Bubble, TransferShot, WaPhone, type Msg } from "./chat"
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 const PHOTO = { src: "/v4/chat-top.webp", w: 480, h: 640, alt: "A product photo sent to the assistant", width: "46%" }
-const FLYER = { src: "/v4/biz/flyer-group.webp", w: 720, h: 900, alt: "The flyer the assistant made", width: "56%" }
+const FLYER = { src: "/v4/biz/kente-group.webp", w: 720, h: 900, alt: "The flyer the assistant made", width: "56%" }
 
 type Skill = { id: string; title: string; line: string; chat: Msg[] }
 // Replies use the assistant's own wording; names and amounts are examples.
@@ -36,8 +36,8 @@ const SKILLS: Skill[] = [
   {
     id: "flyers", title: "Flyers", line: "A ready-to-post flyer for any product, sized for groups and Status.",
     chat: [
-      { from: "me", text: "flyer for the ankara peplum top" },
-      { from: "ai", text: "**Advert: Ankara peplum top**\nPress and hold the image below, tap **Forward**, then choose your groups or customers." },
+      { from: "me", text: "flyer for the kente shirt" },
+      { from: "ai", text: "**Advert: Kente shirt**\nPress and hold the image below, tap **Forward**, then choose your groups or customers." },
       { from: "ai", image: FLYER },
       { from: "ai", text: "Want it sized for your WhatsApp Status too?", button: "Status size" },
     ],
@@ -46,7 +46,7 @@ const SKILLS: Skill[] = [
     id: "daily", title: "Today's adverts", line: "Not sure what to post? It picks today's product and makes the collage.",
     chat: [
       { from: "me", text: "what should I post today?" },
-      { from: "ai", text: "**Your adverts for today**\nAnkara peplum top leads today: it's new in your store. Below: its advert, a collage of 3 products, and a caption you can forward." },
+      { from: "ai", text: "**Your adverts for today**\nKente shirt leads today: it's new in your store. Below: its advert, a collage of 3 products, and a caption you can forward." },
       { from: "ai", image: { ...FLYER, width: "48%" } },
     ],
   },
