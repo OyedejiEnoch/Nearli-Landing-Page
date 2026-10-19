@@ -4,7 +4,7 @@ import { useState } from "react"
 import { display } from "./ui"
 import { useSound } from "./sound"
 
-type QA = { q: string; a: string }
+export type QA = { q: string; a: string }
 const FAQ: Record<"shoppers" | "businesses", QA[]> = {
   shoppers: [
     { q: "Is Ahiver free?", a: "Yes. Finding shops, messaging them and sending order requests costs you nothing." },
@@ -23,7 +23,7 @@ const FAQ: Record<"shoppers" | "businesses", QA[]> = {
   ],
 }
 
-function Item({ qa, id, open, onToggle }: { qa: QA; id: string; open: boolean; onToggle: () => void }) {
+export function Item({ qa, id, open, onToggle }: { qa: QA; id: string; open: boolean; onToggle: () => void }) {
   return (
     <li className="border-b border-[#E7E7EA]">
       <h3>

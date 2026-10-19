@@ -14,6 +14,7 @@ export const C = {
 
 export const APP_URL = "https://app.ahiver.com"
 export const SELL_URL = "https://seller.ahiver.com/register"
+export const SELLER_LOGIN_URL = "https://seller.ahiver.com/login"
 
 export function PinIcon({ size = 16 }: { size?: number }) {
   return (

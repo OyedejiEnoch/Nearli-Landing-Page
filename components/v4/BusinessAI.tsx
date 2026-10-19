@@ -93,7 +93,7 @@ export default function BusinessAI() {
             <a href={SELL_URL} onPointerDown={() => play("tick", { haptic: true })} className="inline-flex h-14 items-center gap-2.5 rounded-full bg-white px-6 text-[17px] font-bold text-[#0B0B0C] transition-transform duration-150 ease-out hover:-translate-y-0.5 active:scale-[0.97]">
               Open your shop free <ArrowIcon />
             </a>
-            <span className="text-[15px] text-white/60">Your shop goes live straight away.</span>
+            <a href="/business" className="text-[15px] font-semibold text-white/80 underline decoration-[#3B55FF] decoration-2 underline-offset-4 hover:text-white">See everything it does</a>
           </div>
         </div>
 

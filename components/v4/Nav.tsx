@@ -3,17 +3,28 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import AhiverLogo from "./AhiverLogo"
-import { APP_URL, SELL_URL } from "./ui"
+import { APP_URL, SELL_URL, SELLER_LOGIN_URL } from "./ui"
 
-const LINKS = [
+const SHOPPER_LINKS = [
   { href: "#find", label: "For shoppers" },
-  { href: "#business", label: "For businesses" },
+  { href: "/business", label: "For businesses" },
   { href: "#stories", label: "Stories" },
+  { href: "#faq", label: "FAQ" },
+]
+const BUSINESS_LINKS = [
+  { href: "/", label: "For shoppers" },
+  { href: "#how", label: "How it works" },
+  { href: "#stories", label: "Shops on Ahiver" },
   { href: "#faq", label: "FAQ" },
 ]
 
 // Transparent over the hero; a frosted ink bar once you scroll.
-export default function Nav() {
+export default function Nav({ variant = "shoppers" }: { variant?: "shoppers" | "business" }) {
+  const biz = variant === "business"
+  const LINKS = biz ? BUSINESS_LINKS : SHOPPER_LINKS
+  // Shoppers: "Sell on Ahiver" leads to the business page. Business page: log in / open a shop.
+  const second = biz ? { href: SELLER_LOGIN_URL, label: "Log in" } : { href: "/business", label: "Sell on Ahiver" }
+  const first = biz ? { href: SELL_URL, label: "Open your shop" } : { href: APP_URL, label: "Open Ahiver" }
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -49,11 +60,11 @@ export default function Nav() {
             ))}
           </ul>
           <div className="hidden items-center gap-3 lg:flex">
-            <a href={SELL_URL} className="inline-flex h-11 items-center rounded-full border-[1.5px] border-white/40 px-5 text-[15px] font-semibold text-white transition-colors hover:border-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-              Sell on Ahiver
+            <a href={second.href} className="inline-flex h-11 items-center rounded-full border-[1.5px] border-white/40 px-5 text-[15px] font-semibold text-white transition-colors hover:border-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+              {second.label}
             </a>
-            <a href={APP_URL} className="inline-flex h-11 items-center rounded-full bg-white px-5 text-[15px] font-bold text-[#0B0B0C] transition-transform duration-150 ease-out active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-              Open Ahiver
+            <a href={first.href} className="inline-flex h-11 items-center rounded-full bg-white px-5 text-[15px] font-bold text-[#0B0B0C] transition-transform duration-150 ease-out active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+              {first.label}
             </a>
           </div>
           <button
@@ -84,8 +95,8 @@ export default function Nav() {
           ))}
         </ul>
         <div className="mt-10 flex flex-col gap-3">
-          <a href={APP_URL} className="flex h-14 items-center justify-center rounded-2xl bg-white text-base font-bold text-[#0B0B0C]">Open Ahiver</a>
-          <a href={SELL_URL} className="flex h-14 items-center justify-center rounded-2xl border border-white/30 text-base font-semibold text-white">Sell on Ahiver</a>
+          <a href={first.href} className="flex h-14 items-center justify-center rounded-2xl bg-white text-base font-bold text-[#0B0B0C]">{first.label}</a>
+          <a href={second.href} className="flex h-14 items-center justify-center rounded-2xl border border-white/30 text-base font-semibold text-white">{second.label}</a>
         </div>
       </div>
     </>

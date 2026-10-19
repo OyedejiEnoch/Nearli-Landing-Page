@@ -14,7 +14,7 @@ const STORIES = [
   { id: "ahiver-cc-v2", who: "On Ahiver", what: "Creator, Ibadan" },
 ]
 
-function Story({ id, who, what, offset }: { id: string; who: string; what: string; offset: string }) {
+export function Story({ id, who, what, offset }: { id: string; who: string; what: string; offset: string }) {
   const ref = useRef<HTMLVideoElement>(null)
   const [muted, setMuted] = useState(true)
 

@@ -21,8 +21,8 @@ export default function BgMorph({ target }: { target: string }) {
     const triggers = sections.map((s, i) =>
       ScrollTrigger.create({
         trigger: s,
-        start: "top 50%",
-        end: "bottom 50%",
+        start: "top 70%",
+        end: "bottom 70%",
         onEnter: () => to(s.dataset.bg!),
         onEnterBack: () => to(s.dataset.bg!),
         onLeaveBack: () => i > 0 && to(sections[i - 1].dataset.bg!),

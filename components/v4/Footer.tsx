@@ -1,9 +1,9 @@
 import Link from "next/link"
 import AhiverLogo from "./AhiverLogo"
-import { APP_URL, SELL_URL } from "./ui"
+import { APP_URL } from "./ui"
 
 const COLS = [
-  { title: "Ahiver", links: [{ href: APP_URL, label: "Open Ahiver" }, { href: SELL_URL, label: "Sell on Ahiver" }, { href: "/about", label: "About" }, { href: "/seller-guide", label: "Seller guide" }] },
+  { title: "Ahiver", links: [{ href: APP_URL, label: "Open Ahiver" }, { href: "/business", label: "Sell on Ahiver" }, { href: "/about", label: "About" }, { href: "/seller-guide", label: "Seller guide" }] },
   { title: "Legal", links: [{ href: "/legal/privacy-policy", label: "Privacy" }, { href: "/legal/terms", label: "Terms" }, { href: "/legal/cookie-policy", label: "Cookies" }, { href: "/legal/refunds", label: "Refunds" }] },
   { title: "Talk to us", links: [{ href: "mailto:hello@ahiver.com", label: "hello@ahiver.com" }] },
 ]
