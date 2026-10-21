@@ -5,7 +5,7 @@ import Image from "next/image"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
-import { display } from "../ui"
+import { ArrowIcon, SELL_URL, display } from "../ui"
 import { Story } from "../Stories"
 import { SHOPS } from "../shops"
 import type { Kind } from "../shops"
@@ -75,6 +75,16 @@ export default function BizProof({ live }: { live: { total: number; byCategory: 
               </a>
             ))}
           </div>
+        </div>
+
+        <div className="mt-20 flex flex-col gap-6 border-t border-[#D5D5DA] pt-8 sm:mt-24 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h3 className={`${display} text-[clamp(1.8rem,3.5vw,3rem)]`}>Your shop could be next.</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#62636B]">Join the local businesses people are discovering on Ahiver.</p>
+          </div>
+          <a href={SELL_URL} className="inline-flex h-14 w-fit shrink-0 items-center gap-2.5 rounded-full bg-[#0B0B0C] px-6 text-[16px] font-bold text-white transition-transform duration-150 ease-out hover:-translate-y-0.5 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3B55FF]">
+            Open your shop free <ArrowIcon />
+          </a>
         </div>
       </div>
     </section>

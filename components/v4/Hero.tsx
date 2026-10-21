@@ -85,7 +85,7 @@ export default function Hero({ oyo, qr }: { oyo: number | null; qr: string }) {
             onPointerDown={() => play("tick", { haptic: true })}
             className="inline-flex h-14 items-center gap-2.5 rounded-full bg-white px-6 text-[17px] font-bold text-[#0B0B0C] transition-transform duration-150 ease-out hover:-translate-y-0.5 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
-            Show me what&apos;s near <ArrowIcon />
+            Find businesses near you <ArrowIcon />
           </a>
           <span className="hidden h-14 items-center gap-3 rounded-full bg-[#0B0B0C]/30 py-2 pl-2 pr-4 lg:inline-flex">
             <span className="overflow-hidden rounded-[10px] bg-white p-1">
