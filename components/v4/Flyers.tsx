@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
-import { APP_URL, display } from "./ui"
+import { APP_URL, ArrowIcon, SELL_URL, display } from "./ui"
 import { useSound } from "./sound"
 import { SHOPS, type Kind } from "./shops"
 
@@ -122,6 +122,16 @@ export default function Flyers({ counts }: { counts: { total: number; byCategory
         {/* Two columns on phones, four on desktop: same flyers, laid out to fit. */}
         <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">{split(2).map((col, ci) => wall(col, ci))}</div>
         <div className="mt-24 hidden grid-cols-4 gap-8 lg:grid">{split(4).map((col, ci) => wall(col, ci))}</div>
+
+        <div className="mt-20 flex flex-col gap-6 border-t border-[#D5D5DA] pt-8 sm:mt-24 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h3 className={`${display} text-[clamp(1.8rem,3.5vw,3rem)]`}>Your business belongs here, too.</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#62636B]">Open a free shop and help people nearby find you.</p>
+          </div>
+          <a href={SELL_URL} className="inline-flex h-14 w-fit shrink-0 items-center gap-2.5 rounded-full bg-[#0B0B0C] px-6 text-[16px] font-bold text-white transition-transform duration-150 ease-out hover:-translate-y-0.5 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3B55FF]">
+            Open your shop on Ahiver <ArrowIcon />
+          </a>
+        </div>
       </div>
     </section>
   )
