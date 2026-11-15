@@ -60,7 +60,8 @@ const sections: LegalSection[] = [
           When you ask for something by voice, your phone&apos;s speech recognition turns your speech
           into text (on some phones this uses Google&apos;s or Apple&apos;s speech service), and only
           that text is sent to Ahiver. Ahiver never receives, records or keeps audio. The microphone is
-          used only while you are asking.
+          used only while you are asking. Ask Ahiver matches the text of your question against real
+          businesses and products near the area you chose, on our own servers.
         </p>
 
         <p className="!mt-6 font-semibold text-[#0D1020]">1.3 Information from other sources</p>
@@ -159,10 +160,6 @@ const sections: LegalSection[] = [
             Android) and Apple Push Notification service (on iPhone)
           </li>
           <li>Maps (Mapbox), to show businesses on a map</li>
-          <li>
-            AI providers (Google Gemini), only when you use Ask Ahiver: the text of your question and the
-            area you are asking about are sent to find matching businesses
-          </li>
           <li>Analytics tools (used to understand product usage)</li>
         </ul>
         <p>
