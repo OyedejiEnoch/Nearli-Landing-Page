@@ -345,7 +345,7 @@ const sections: LegalSection[] = [
           at:
         </p>
         <p>
-          <strong>Ahiver Technologies</strong>
+          <strong>Ahiver Services</strong>
           <br />
           Email: <a href="mailto:privacy@ahiver.com">privacy@ahiver.com</a>
           <br />
@@ -371,7 +371,7 @@ export default function PrivacyPolicyPage() {
           This Privacy Policy explains how Ahiver (&ldquo;we&rdquo;, &ldquo;us&rdquo;,
           &ldquo;our&rdquo;) collects, uses, shares, and protects your information when you use our
           platform — whether through our website, mobile app, or any related service (collectively,
-          the &ldquo;Service&rdquo;). Ahiver is operated by Ahiver Technologies, a company registered
+          the &ldquo;Service&rdquo;). Ahiver is operated by Ahiver Services, a company registered
           in Nigeria. We comply with the Nigeria Data Protection Act 2023 (NDPA) and other applicable
           data protection laws. By using Ahiver, you agree to the practices described here. If you do
           not agree, please do not use the Service.
