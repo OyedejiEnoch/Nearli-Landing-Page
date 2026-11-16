@@ -235,7 +235,7 @@ const sections: LegalSection[] = [
       <>
         <p>
           The Ahiver platform — including the brand name, logo, designs, code, and all features — is
-          owned by Ahiver Technologies and protected by intellectual property laws.
+          owned by Ahiver Services and protected by intellectual property laws.
         </p>
         <p>You may not:</p>
         <ul>
@@ -272,7 +272,7 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          To the maximum extent permitted by law, Ahiver Technologies and its team will not be liable
+          To the maximum extent permitted by law, Ahiver Services and its team will not be liable
           for:
         </p>
         <ul>
@@ -297,7 +297,7 @@ const sections: LegalSection[] = [
     body: (
       <>
         <p>
-          You agree to defend and hold harmless Ahiver Technologies from any claims, damages, or
+          You agree to defend and hold harmless Ahiver Services from any claims, damages, or
           expenses (including legal fees) arising from:
         </p>
         <ul>
@@ -372,7 +372,7 @@ const sections: LegalSection[] = [
       <>
         <p>If you have any questions about these Terms, contact us at:</p>
         <p>
-          <strong>Ahiver Technologies</strong>
+          <strong>Ahiver Services</strong>
           <br />
           Email: <a href="mailto:hello@ahiver.com">hello@ahiver.com</a>
           <br />
@@ -397,7 +397,7 @@ export default function TermsPage() {
           Ahiver platform, including our website, mobile app, and related services (collectively, the
           &ldquo;Service&rdquo;). By creating an account or using Ahiver, you agree to these Terms. If
           you don&apos;t agree, please don&apos;t use the Service. Ahiver is operated by Ahiver
-          Technologies, a company registered in Nigeria.
+          Services, a company registered in Nigeria.
         </>
       }
       sections={sections}
