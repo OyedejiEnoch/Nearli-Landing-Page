@@ -226,6 +226,12 @@ const sections: LegalSection[] = [
           Violation of these rules may result in immediate account termination and, where applicable,
           legal action.
         </p>
+        <p>
+          There is no tolerance for objectionable or abusive content or users. You can report a
+          business, a message or a post, and block a business, from the app. We review reports within
+          24 hours, remove content that breaks these terms, and suspend or remove the accounts
+          responsible.
+        </p>
       </>
     ),
   },
@@ -389,7 +395,7 @@ export default function TermsPage() {
   return (
     <LegalLayout
       title="Terms of Service"
-      lastUpdated="[DATE]"
+      lastUpdated="26 November 2026"
       currentHref="/legal/terms"
       intro={
         <>
