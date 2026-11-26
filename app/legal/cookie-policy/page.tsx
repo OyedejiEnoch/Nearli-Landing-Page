@@ -206,7 +206,7 @@ export default function CookiePolicyPage() {
   return (
     <LegalLayout
       title="Cookie Policy"
-      lastUpdated="[DATE]"
+      lastUpdated="26 November 2026"
       currentHref="/legal/cookie-policy"
       intro={
         <>
