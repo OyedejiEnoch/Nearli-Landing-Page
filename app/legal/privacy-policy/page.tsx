@@ -11,7 +11,7 @@ const sections: LegalSection[] = [
         <p>When you sign up and use Ahiver, we collect:</p>
         <ul>
           <li>Your full name</li>
-          <li>Email address</li>
+          <li>Email address (the Ahiver app signs you in with a one-time code sent to it)</li>
           <li>Phone number (if you choose to provide it)</li>
           <li>
             Password (stored securely as an encrypted hash — we never store your raw password)
@@ -27,6 +27,19 @@ const sections: LegalSection[] = [
           <li>Store category, location, and contact information</li>
           <li>Product photos, descriptions, prices, and inventory</li>
         </ul>
+        <p>When you use the Ahiver app as a buyer, we also keep:</p>
+        <ul>
+          <li>
+            Orders you place: what you asked for, and the name and phone number you give so the
+            business can confirm the order with you
+          </li>
+          <li>
+            What you tell the street (requests to nearby businesses for something you need) and the
+            replies businesses send
+          </li>
+          <li>Your messages with businesses</li>
+          <li>Businesses you follow and things you save</li>
+        </ul>
 
         <p className="!mt-6 font-semibold text-[#0D1020]">1.2 Information collected automatically</p>
         <p>When you use Ahiver, we automatically collect:</p>
@@ -36,7 +49,20 @@ const sections: LegalSection[] = [
           <li>Usage data (pages you visit, features you use, time spent on the app, search queries)</li>
           <li>Log data (IP address, access times, referring URLs)</li>
           <li>Cookies and similar technologies (see our Cookie Policy)</li>
+          <li>
+            If you allow notifications in the Ahiver app: a notification token for your phone, an ID
+            for this install of the app, and the notification types you turned off
+          </li>
         </ul>
+
+        <p className="!mt-6 font-semibold text-[#0D1020]">Voice in the Ahiver app</p>
+        <p>
+          When you ask for something by voice, your phone&apos;s speech recognition turns your speech
+          into text (on some phones this uses Google&apos;s or Apple&apos;s speech service), and only
+          that text is sent to Ahiver. Ahiver never receives, records or keeps audio. The microphone is
+          used only while you are asking. Ask Ahiver matches the text of your question against real
+          businesses and products near the area you chose, on our own servers.
+        </p>
 
         <p className="!mt-6 font-semibold text-[#0D1020]">1.3 Information from other sources</p>
         <p>
@@ -71,7 +97,13 @@ const sections: LegalSection[] = [
         <p className="!mt-6 font-semibold text-[#0D1020]">Communicate with you:</p>
         <ul>
           <li>Send transactional emails (account verification, password resets, important account updates)</li>
-          <li>Send notifications you&apos;ve opted into (new messages, store activity, board replies)</li>
+          <li>
+            Send notifications you&apos;ve allowed: new messages, replies to what you told the street,
+            order updates, new businesses near the area you last used (at most twice a week), and news
+            from the Ahiver team (at most three times a week, never at night). You can turn each type
+            off in the app under You → Settings → Notifications, or turn all of them off in your
+            phone&apos;s settings.
+          </li>
           <li>Respond to your support requests</li>
         </ul>
 
@@ -109,6 +141,11 @@ const sections: LegalSection[] = [
             to buyers
           </li>
           <li>Messages you send to other users are visible to them</li>
+          <li>
+            When you tell the street what you need, nearby businesses see the request but not who you
+            are. Your name and phone number go to a business only when you order from it, and only to
+            that business, so it can confirm the order with you.
+          </li>
         </ul>
 
         <p className="!mt-6 font-semibold text-[#0D1020]">3.2 With service providers</p>
@@ -121,6 +158,11 @@ const sections: LegalSection[] = [
           <li>Push notification services (web push providers, Apple and Google for the app)</li>
           <li>Maps (Mapbox) — shows the map in the app and collects usage and diagnostic data about the map; you can opt out with the (i) button on the map</li>
           <li>Google (Gemini) — writes replies for businesses that switch on an automatic assistant, and helps Ask understand what you need (see &ldquo;Automatic assistants&rdquo; below)</li>
+          <li>
+            Push notification services: web push providers, Expo, Google Firebase Cloud Messaging (on
+            Android) and Apple Push Notification service (on iPhone)
+          </li>
+          <li>Maps (Mapbox), to show businesses on a map</li>
           <li>Analytics tools (used to understand product usage)</li>
         </ul>
         <p className="!mt-6 font-semibold text-[#0D1020]">Automatic assistants</p>
@@ -175,6 +217,11 @@ const sections: LegalSection[] = [
             Your specific location is never shown to other users. Sellers only see general distance
             ranges (for example, &ldquo;0.5km away&rdquo;) — not your precise coordinates.
           </li>
+          <li>
+            If you allow notifications in the Ahiver app, we keep the area you last used with your
+            phone&apos;s registration, rounded to about 1 km, only to tell you about new businesses that
+            open near it. Signing out removes it.
+          </li>
           <li>You can disable location access at any time through your device settings.</li>
         </ul>
         <p className="!mt-6 font-semibold text-[#0D1020]">Reports and blocks</p>
@@ -208,8 +255,9 @@ const sections: LegalSection[] = [
           </li>
         </ul>
         <p>
-          To delete your account, go to Settings → Account → Delete Account in the app, or email{" "}
-          <a href="mailto:privacy@ahiver.com">privacy@ahiver.com</a>.
+          To delete your account, open the Ahiver app and go to You → Settings → Delete account, or
+          email <a href="mailto:privacy@ahiver.com">privacy@ahiver.com</a>. Step-by-step instructions,
+          and what is kept, are on our <a href="/legal/delete-account">Delete your account</a> page.
         </p>
       </>
     ),
@@ -320,13 +368,11 @@ const sections: LegalSection[] = [
           at:
         </p>
         <p>
-          <strong>Ahiver Technologies</strong>
+          <strong>Ahiver Services</strong>
           <br />
           Email: <a href="mailto:privacy@ahiver.com">privacy@ahiver.com</a>
           <br />
           Support: <a href="mailto:hello@ahiver.com">hello@ahiver.com</a>
-          <br />
-          Address: [Your registered business address]
         </p>
         <p>
           You can also contact the Nigeria Data Protection Commission at{" "}
@@ -348,7 +394,7 @@ export default function PrivacyPolicyPage() {
           This Privacy Policy explains how Ahiver (&ldquo;we&rdquo;, &ldquo;us&rdquo;,
           &ldquo;our&rdquo;) collects, uses, shares, and protects your information when you use our
           platform — whether through our website, mobile app, or any related service (collectively,
-          the &ldquo;Service&rdquo;). Ahiver is operated by Ahiver Technologies, a company registered
+          the &ldquo;Service&rdquo;). Ahiver is operated by Ahiver Services, a company registered
           in Nigeria. We comply with the Nigeria Data Protection Act 2023 (NDPA) and other applicable
           data protection laws. By using Ahiver, you agree to the practices described here. If you do
           not agree, please do not use the Service.

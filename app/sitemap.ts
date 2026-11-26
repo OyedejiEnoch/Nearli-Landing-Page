@@ -43,6 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
+      url: `${SITE_URL}/legal/delete-account`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
       url: `${SITE_URL}/legal/cookie-policy`,
       lastModified: now,
       changeFrequency: "yearly",

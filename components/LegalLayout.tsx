@@ -17,6 +17,7 @@ const otherPages = [
   { label: "Refund Policy", href: "/legal/refunds" },
   { label: "Shipping Policy", href: "/legal/shipping" },
   { label: "Acceptable Use", href: "/legal/acceptable-use" },
+  { label: "Delete your account", href: "/legal/delete-account" },
 ]
 
 export default function LegalLayout({
@@ -101,7 +102,7 @@ export default function LegalLayout({
                     </span>
                     {s.heading}
                   </h2>
-                  <div className="space-y-4 text-base leading-relaxed text-[#5C6490] [&_a]:font-medium [&_a]:text-[#0D1020] [&_a]:underline [&_li]:ml-1 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
+                  <div className="space-y-4 text-base leading-relaxed text-[#5C6490] [&_a]:font-medium [&_a]:text-[#0D1020] [&_a]:underline [&_li]:ml-1 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-5">
                     {s.body}
                   </div>
                 </div>

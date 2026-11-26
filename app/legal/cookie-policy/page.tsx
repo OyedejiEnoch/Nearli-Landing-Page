@@ -191,7 +191,7 @@ const sections: LegalSection[] = [
       <>
         <p>If you have questions about how we use cookies, contact us at:</p>
         <p>
-          <strong>Ahiver Technologies</strong>
+          <strong>Ahiver Services</strong>
           <br />
           Email: <a href="mailto:privacy@ahiver.com">privacy@ahiver.com</a>
           <br />
