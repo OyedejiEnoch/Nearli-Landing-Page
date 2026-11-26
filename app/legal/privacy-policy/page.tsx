@@ -31,7 +31,7 @@ const sections: LegalSection[] = [
         <p className="!mt-6 font-semibold text-[#0D1020]">1.2 Information collected automatically</p>
         <p>When you use Ahiver, we automatically collect:</p>
         <ul>
-          <li>Your approximate location (with your permission) — used to show you businesses near you</li>
+          <li>Your location (with your permission), rounded to about 110 metres — used to show you businesses near you</li>
           <li>Device information (device model, operating system, browser type, screen size)</li>
           <li>Usage data (pages you visit, features you use, time spent on the app, search queries)</li>
           <li>Log data (IP address, access times, referring URLs)</li>
@@ -118,9 +118,21 @@ const sections: LegalSection[] = [
           <li>Image storage (ImageKit)</li>
           <li>Email delivery providers</li>
           <li>Payment processors (Paystack, Flutterwave) — when subscription payments are processed</li>
-          <li>Push notification services (web push providers)</li>
+          <li>Push notification services (web push providers, Apple and Google for the app)</li>
+          <li>Maps (Mapbox) — shows the map in the app and collects usage and diagnostic data about the map; you can opt out with the (i) button on the map</li>
+          <li>Google (Gemini) — writes replies for businesses that switch on an automatic assistant, and helps Ask understand what you need (see &ldquo;Automatic assistants&rdquo; below)</li>
           <li>Analytics tools (used to understand product usage)</li>
         </ul>
+        <p className="!mt-6 font-semibold text-[#0D1020]">Automatic assistants</p>
+        <p>
+          Some businesses use an automatic assistant to answer messages when they are busy. Before it
+          answers you, the app asks whether you allow it. If you allow it, your messages in chats with
+          businesses that use one, and the few messages before them, are sent to Google (Gemini) to write
+          a reply. Replies written this way are labelled. If you say no, or never answer, nothing you
+          write is sent and the business answers you itself. You can change your answer in Privacy
+          choices at any time. Businesses that message Ahiver on WhatsApp can also use an assistant,
+          which sends their messages to Google (Gemini) in the same way.
+        </p>
         <p>
           These providers have access to your information only to perform tasks for us and are
           obligated to protect it.
@@ -155,13 +167,23 @@ const sections: LegalSection[] = [
             We request your location permission through your device. You can decline and still use
             Ahiver — we&apos;ll default to showing businesses in a city of your choice.
           </li>
-          <li>We store your approximate location (latitude and longitude), not your exact home address.</li>
+          <li>
+            We use your location rounded to about 110 metres, never your exact home address. When you
+            send a request to nearby businesses (Tell), that rounded location is kept with the request.
+          </li>
           <li>
             Your specific location is never shown to other users. Sellers only see general distance
             ranges (for example, &ldquo;0.5km away&rdquo;) — not your precise coordinates.
           </li>
           <li>You can disable location access at any time through your device settings.</li>
         </ul>
+        <p className="!mt-6 font-semibold text-[#0D1020]">Reports and blocks</p>
+        <p>
+          You can report a business, a message or an area-board post, and block a business. A report
+          is seen only by the Ahiver team; the business or person reported is not told who sent it. A
+          blocked business can&apos;t message you and isn&apos;t told. Your blocks are deleted when you
+          delete your account.
+        </p>
       </>
     ),
   },
@@ -319,7 +341,7 @@ export default function PrivacyPolicyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      lastUpdated="[DATE]"
+      lastUpdated="26 November 2026"
       currentHref="/legal/privacy-policy"
       intro={
         <>
